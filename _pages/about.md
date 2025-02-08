@@ -10,7 +10,7 @@ redirect_from:
 
 I am Naixu Guo (郭 乃绪), a Ph.D. student at [CQT](https://www.quantumlah.org/) (NUS) advised by [Patrick Rebentrost](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en) and [Miklos Santha](https://scholar.google.com.sg/citations?user=pER3wbkAAAAJ&hl=en). I received my bachelor in 2020 from Kyoto University. Later, I received my master in 2022 from Osaka University, advised by Keisuke Fujii and Kosuke Mitarai.
 
-More information can be seen in this [interview by CQT](https://www.quantumlah.org/about/highlight/2024-11-meet-guo-naixu).
+More information can be seen in this [interview by CQT](https://www.quantumlah.org/about/highlight/2024-11-meet-guo-naixu). For people who are interested in Quantum Machine Learning, one may refer to our [tutorial](https://arxiv.org/abs/2502.01146).
 
 Research interests
 ======
