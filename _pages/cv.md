@@ -61,5 +61,4 @@ Professional Service
 * Reviewer
   * Journal: Quantum, PRX Quantum, Physical Review Research, Quantum Machine Intelligence
   * Conference: QIP2023/2024, TQC2023/2024, QCTIP2024
-* Student Supervising
-  * Maxime Meyer, Aman Agrawal
+
