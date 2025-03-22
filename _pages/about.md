@@ -42,6 +42,10 @@ Talks and Conferences
 ======
 The attached slides only reflect the speaker's thoughts at that moment and probably consist of errors.
 
+- Design nearly optimal quantum algorithm for linear differential equations via Lindbladians
+
+  University of Latvia (Andris Ambainis group)
+
 - Computational thinking in Quantum
 
   NUS Physics (Wen wei Ho group)
