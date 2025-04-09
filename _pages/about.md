@@ -44,7 +44,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Design nearly optimal quantum algorithm for linear differential equations via Lindbladians
 
-  University of Latvia (Andris Ambainis group)
+  University of Latvia (Andris Ambainis group), CQT joint seminar
 
 - Computational thinking in Quantum
 
@@ -52,7 +52,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Quantum linear algebra is all you need for transformer architectures
 
-  JPMorgan Chase, [CQT CS Seminar](https://drive.google.com/file/d/1lT8meb_bFYDmnyXfGyX-SuW9JsVbgHJO/view?usp=sharing), RWTH Aachen (Institute for Quantum Information), Free University of Berlin (Jens Eisert group), QTML 2024
+  JPMorgan Chase, [CQT CS Seminar](https://drive.google.com/file/d/1lT8meb_bFYDmnyXfGyX-SuW9JsVbgHJO/view?usp=sharing), RWTH Aachen (Institute for Quantum Information), Free University of Berlin (Jens Eisert group), QTML 2024, School of Physical and Mathematical Sciences (NTU)
 
 - Introduction to modern machine learning 
 
