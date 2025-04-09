@@ -52,7 +52,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Quantum linear algebra is all you need for transformer architectures
 
-  JPMorgan Chase, [CQT CS Seminar](https://drive.google.com/file/d/1lT8meb_bFYDmnyXfGyX-SuW9JsVbgHJO/view?usp=sharing), RWTH Aachen (Institute for Quantum Information), Free University of Berlin (Jens Eisert group), QTML 2024, School of Physical and Mathematical Sciences (NTU)
+  JPMorgan Chase, [CQT CS Seminar](https://drive.google.com/file/d/1lT8meb_bFYDmnyXfGyX-SuW9JsVbgHJO/view?usp=sharing), RWTH Aachen (Institute for Quantum Information), Free University of Berlin (Jens Eisert group), QTML 2024, NTU (School of Physical and Mathematical Sciences)
 
 - Introduction to modern machine learning 
 
@@ -60,7 +60,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Provable learning of quantum states with graphical models
   
-  Peking University (Xiao Yuan group), QIP 24 (poster), [IPAM (by Patrick)](https://www.youtube.com/watch?v=GDKxhXmd0uA&t=1607s)
+  Peking University (Xiao Yuan group), QIP 24 (poster), [IPAM (by Patrick)](https://www.youtube.com/watch?v=GDKxhXmd0uA&t=1607s), The Hong Kong University of Science and Technology (Xin Wang group)
 
 - Quantum Alphatron: quantum advantage for learning with kernels and noise
   
