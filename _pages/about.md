@@ -60,7 +60,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Provable learning of quantum states with graphical models
   
-  Peking University (Xiao Yuan group), QIP 24 (poster), [IPAM (by Patrick)](https://www.youtube.com/watch?v=GDKxhXmd0uA&t=1607s), The Hong Kong University of Science and Technology (Xin Wang group)
+  Peking University (Xiao Yuan group), QIP 2024 (poster), [IPAM (by Patrick)](https://www.youtube.com/watch?v=GDKxhXmd0uA&t=1607s), The Hong Kong University of Science and Technology (Xin Wang group)
 
 - Quantum Alphatron: quantum advantage for learning with kernels and noise
   
@@ -72,6 +72,6 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Nonlinear transformation of complex amplitudes via quantum singular value transformation
 
-  [Nagoya University](https://drive.google.com/file/d/1Zf-U_e8FYVwcK1CibgPA5IrKzNWyLzXS/view?usp=sharing), [Qleap AI](https://drive.google.com/file/d/1Y0f48uYliyMXGqAIoS9RWPujcSc5euIi/view?usp=sharing), [TQC 21](https://drive.google.com/file/d/1cFB-CUBnA7koun60nT_IEEx4uFhnICk7/view?usp=sharing), [QIP 21](https://drive.google.com/file/d/184jUftu5RYpeL6bULCRj_wjWqxnI2Qqq/view?usp=sharing), [AQIS 20](https://drive.google.com/file/d/1H-jIOYfV-fKAgUWwQQ_7-luebPAsufhF/view?usp=sharing)
+  [Nagoya University](https://drive.google.com/file/d/1Zf-U_e8FYVwcK1CibgPA5IrKzNWyLzXS/view?usp=sharing), [Qleap AI](https://drive.google.com/file/d/1Y0f48uYliyMXGqAIoS9RWPujcSc5euIi/view?usp=sharing), [TQC 2021](https://drive.google.com/file/d/1cFB-CUBnA7koun60nT_IEEx4uFhnICk7/view?usp=sharing), [QIP 2021](https://drive.google.com/file/d/184jUftu5RYpeL6bULCRj_wjWqxnI2Qqq/view?usp=sharing), [AQIS 2020](https://drive.google.com/file/d/1H-jIOYfV-fKAgUWwQQ_7-luebPAsufhF/view?usp=sharing)
   
   
