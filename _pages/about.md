@@ -44,7 +44,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Design nearly optimal quantum algorithm for linear differential equations via Lindbladians
 
-  University of Latvia (Andris Ambainis group), CQT joint seminar
+  University of Latvia (Andris Ambainis group), CQT joint seminar, QIOP 2025
 
 - Computational thinking in Quantum
 
