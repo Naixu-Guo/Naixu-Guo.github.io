@@ -28,8 +28,7 @@ Publications
 All of my works are also available on my [ArXiv](https://scirate.com/Naixu-Guo/papers) and [Google Scholar](https://scholar.google.com/citations?hl=en&user=r2I_WtAAAAAJ&view_op=list_works&gmla=AJsN-F4R90e-0IvThoZVAs4uhYFfG-2VP_Hbd4-qNcW5mjlNq_E1YFT_x18SVcVfvzNbs5mUamJeu5JO9TYKLj-oE7tjlBhtyFsy7fG-057qZH6Nj_YHmCg) pages.
 
 * Y. Du, X. Wang, **N. Guo**, Z. Yu, Y. Qian, K. Zhang, M. Hsieh, P. Rebentrost, D. Tao, *Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers*, [arXiv:2502.01146](https://arxiv.org/abs/2502.01146)
-* M. Meyer, S. Adhikary, **N. Guo**, and P. Rebentrost, *Online Learning of Pure States is as Hard as Mixed States*, [arXiv:2502.00823
-](https://arxiv.org/abs/2502.00823#:~:text=Quantum%20state%20tomography%2C%20the%20task,fundamental%20problem%20in%20quantum%20information.)
+* M. Meyer, S. Adhikary, **N. Guo**, and P. Rebentrost, *Online Learning of Pure States is as Hard as Mixed States*, [arXiv:2502.00823](https://arxiv.org/abs/2502.00823#:~:text=Quantum%20state%20tomography%2C%20the%20task,fundamental%20problem%20in%20quantum%20information.)
 * Z. Shang, **N. Guo**, D. An, and Q. Zhao, *Design nearly optimal quantum algorithm for linear differential equations via Lindbladians*, [arxiv: 2410.19628](https://arxiv.org/abs/2410.19628)
 * **N. Guo**, Z. Yu, M. Choi, A. Agrawal, K. Nakaji, A. Aspuru-Guzik, and P. Rebentrost, *Quantum linear algebra is all you need for Transformer architectures*, [arxiv:2402.16714](https://arxiv.org/abs/2402.16714) [Twi thread](https://twitter.com/gnx_kns/status/1762761865724326013) [PennyLane blog](https://pennylane.ai/blog/2024/04/quantum_transformers/)
 * L. Zhao, **N. Guo**, M. Luo, and P. Rebentrost, *Provable learning of quantum states with graphical models*, [arxiv:2309.09235](https://arxiv.org/abs/2309.09235)
@@ -44,7 +43,7 @@ The attached slides only reflect the speaker's thoughts at that moment and proba
 
 - Design nearly optimal quantum algorithm for linear differential equations via Lindbladians
 
-  University of Latvia (Andris Ambainis group), CQT joint seminar, QIOP 2025
+  University of Latvia (Andris Ambainis group), CQT joint seminar, QIOP 2025, AQIS 2025
 
 - Computational thinking in Quantum
 
