@@ -10,7 +10,7 @@ permalink: /
         <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
                 <div class="profile-image mb-4">
-                    <img src="/images/bio-photo.jpg" alt="Naixu Guo" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid rgba(255,255,255,0.3);">
+                    <img src="/images/photo.jpg" alt="Naixu Guo" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid rgba(255,255,255,0.3);">
                 </div>
                 <h1 class="display-4 fw-bold mb-4 text-white" style="font-family: 'Georgia', serif; font-weight: 300; letter-spacing: 0.05em;">Naixu Guo</h1>
                 <div class="d-flex justify-content-center gap-3 mb-5">
