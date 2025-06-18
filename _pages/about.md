@@ -40,7 +40,7 @@ permalink: /
                         I am a fourth year PhD student at the Centre for Quantum Technologies (CQT), National University of Singapore, 
                         working under the supervision of Patrick Rebentrost and Miklos Santha. 
                         My research focuses on quantum algorithms and the intersection between quantum and artificial intelligence.
-                        <strong>I'm on the job market this year, looking for postdoc and other positions starting 2026 Fall.<strong>
+                        <strong>I'm on the job market this year, looking for postdoc and other positions starting 2026 Fall.</strong>
                     </p>
                     <p style="color: #34495e; line-height: 1.8;">
                         I am interested in developing quantum algorithms that can provide advantages over classical machine learning methods. 
