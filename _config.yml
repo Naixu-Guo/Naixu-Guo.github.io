@@ -8,22 +8,25 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Naixu Guo"
-title_separator          : "-"
-name                     : &name "Naixu Guo"
-description              : &description "Home page"
-url                      : https://naixu-guo.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+title_separator          : "|"
+subtitle                 : "Ph.D. Student at CQT (NUS)"
+name                     : "Naixu Guo"
+description              : "Ph.D. student at Centre for Quantum Technologies (NUS), researching quantum machine learning and quantum information theory."
+url                      : "https://naixu-guo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : ""
 repository               : "Naixu-Guo/Naixu-Guo.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/logo.png"
+masthead_title          : "Naixu Guo"
+breadcrumbs              : false # set to true to show breadcrumb navigation
+words_per_minute        : 200
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "disqus"
   disqus:
-    shortname            :
+    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -81,47 +84,80 @@ analytics:
 # Site Author
 author:
   name             : "Naixu Guo"
-  avatar           : "profile-3.JPG"
-  bio              : "A researcher exploring nature and intelligence"
+  avatar           : "profile.png"
+  bio              : "Ph.D. Student at Centre for Quantum Technologies (NUS)"
   location         : "Singapore"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=r2I_WtAAAAAJ&view_op=list_works&gmla=AJsN-F4R90e-0IvThoZVAs4uhYFfG-2VP_Hbd4-qNcW5mjlNq_E1YFT_x18SVcVfvzNbs5mUamJeu5JO9TYKLj-oE7tjlBhtyFsy7fG-057qZH6Nj_YHmCg"
-  email            : "naixug@u.nus.edu"
+  googlescholar    : "YOUR_GOOGLE_SCHOLAR_ID"
+  email            : "naixu.guo@u.nus.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "naixu-guo"
   foursquare       :
-  github           : 
+  github           : "naixu-guo"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "naixu-guo"
   orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "https://twitter.com/gnx_kns"
+  twitter          : "naixu_guo"
   vine             :
   weibo            :
   xing             :
   youtube          :
   wikipedia        :
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:naixu.guo@u.nus.edu"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/naixu-guo"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/naixu_guo"
 
+# Site Footer
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:naixu.guo@u.nus.edu"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/naixu-guo"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/naixu_guo"
 
 # Reading Files
 include:
-  - .htaccess
   - _pages
-  - files
+  - _posts
+  - _publications
+  - _talks
+  - .htaccess
+  - robots.txt
+  - assets
+  - images
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -175,75 +211,70 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
     output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name/
   talks:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name/
 
 
 # Defaults
 defaults:
-  # _posts
-  - scope:
+  -
+    scope:
       path: ""
-      type: posts
+      type: "pages"
     values:
-      layout: single
+      layout: "default"
       author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
+  -
+    scope:
       path: ""
-      type: pages
+      type: "posts"
     values:
-      layout: single
+      layout: "default"
       author_profile: true
-  # _teaching
-  - scope:
+  -
+    scope:
       path: ""
-      type: teaching
+      type: "publications"
     values:
-      layout: single
+      layout: "default"
       author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
+  -
+    scope:
       path: ""
-      type: publications
+      type: "talks"
     values:
-      layout: single
+      layout: "default"
       author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+
+# Build Settings
+# remote_theme: mmistakes/minimal-mistakes@4.24.0
+# minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-relative-links
+  - jekyll-archives
+  - jekyll-seo-tag
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'
 
 # Sass/SCSS
 sass:
@@ -252,19 +283,20 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:title/
 # paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
+paginate: 5
+paginate_path: "/blog/page:num/"
 timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-redirect-from
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-sitemap
+#   - jekyll-gist
+#   - jekyll-feed
+#   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
@@ -272,35 +304,6 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jemoji
-
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
 
 # HTML Compression

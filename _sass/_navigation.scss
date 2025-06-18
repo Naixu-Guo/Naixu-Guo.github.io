@@ -225,26 +225,29 @@
 
     a {
       position: relative;
+      transition: color 0.3s ease, transform 0.2s ease;
+      transform: translateY(0);
 
       &:before {
         content: "";
         position: absolute;
         left: 0;
-        bottom: 0;
-        height: 4px;
-        background: mix(#fff, $primary-color, 50%);
+        bottom: -2px;
+        height: 2px;
+        background: $primary-color;
         width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
-        -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
+        transition: transform 0.3s ease;
+        transform: scaleX(0);
+        transform-origin: left center;
       }
 
-      &:hover:before {
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
+      &:hover {
+        color: $primary-color;
+        transform: translateY(-1px);
+
+        &:before {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -258,51 +261,20 @@
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: #fff;
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    box-shadow: 0 4px 20px rgba(#000, 0.15);
+    transition: all 0.3s ease;
 
     a {
       margin: 0;
-      padding: 10px 20px;
+      padding: 12px 20px;
       font-size: $type-size-5;
+      transition: all 0.2s ease;
+      border-radius: 3px;
 
       &:hover {
-        color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
-      }
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: $border-color transparent;
-      display: block;
-      z-index: 0;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: #fff transparent;
-      display: block;
-      z-index: 1;
-    }
-
-    li {
-      display: block;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border-bottom: none;
+        color: $primary-color;
+        background: mix(#fff, $primary-color, 95%);
+        transform: translateX(3px);
       }
     }
   }
