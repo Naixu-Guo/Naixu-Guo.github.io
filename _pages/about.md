@@ -37,8 +37,8 @@ permalink: /
                 <h2 class="section-title mb-4" style="color: #2c3e50;">About Me</h2>
                 <div class="about-content">
                     <p class="lead mb-4" style="color: #34495e; line-height: 1.8;">
-                        I am a Ph.D. student at the Centre for Quantum Technologies (CQT), National University of Singapore, 
-                        working under the supervision of Prof. <a href="https://www.quantum-machine.org/" style="color: #667eea;">Vedran Dunjko</a>. 
+                        I am a fourth year PhD student at the Centre for Quantum Technologies (CQT), National University of Singapore, 
+                        working under the supervision of Prof. <a href="[https://www.quantum-machine.org/](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en)" style="color: #667eea;">Patrick Rebentrost and Miklos Santha</a>. 
                         My research focuses on quantum machine learning, particularly quantum algorithms for machine learning tasks.
                     </p>
                     <p style="color: #34495e; line-height: 1.8;">
