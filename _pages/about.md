@@ -37,6 +37,7 @@ permalink: /
                 <h2 class="section-title mb-4" style="color: #2c3e50;">About Me</h2>
                 <div class="about-content">
                     <p class="lead mb-4" style="color: #34495e; line-height: 1.8;">
+                        I am renewing the homepage at the moment.
                         I am a fourth year PhD student at the Centre for Quantum Technologies (CQT), National University of Singapore, 
                         working under the supervision of Patrick Rebentrost and Miklos Santha. 
                         My research focuses on quantum algorithms and the intersection between quantum and artificial intelligence.
