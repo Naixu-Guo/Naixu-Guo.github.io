@@ -42,6 +42,7 @@ h4 { font-size: 1.25rem; }
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 0.5rem;
+    scroll-margin-top: 90px; /* Adjust to match or slightly exceed navbar height */
 }
 
 .section-title::after {
@@ -252,11 +253,18 @@ h4 { font-size: 1.25rem; }
 
 /* Smooth scrolling */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
 }
 
 /* Focus states for accessibility */
 .btn:focus, .news-link:focus, .publication-link:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
+}
+
+/* Anchor scroll offset for section headings */
+h1[id="research"],
+h1[id="publications"], 
+h1[id="talks"] {
+    scroll-margin-top: 90px;
 } 

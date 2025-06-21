@@ -213,7 +213,7 @@ kramdown:
 collections:
   publications:
     output: true
-    permalink: /:collection/:name/
+    permalink: /publications/:path/
   talks:
     output: true
     permalink: /:collection/:name/
@@ -263,6 +263,8 @@ plugins:
   - jekyll-relative-links
   - jekyll-archives
   - jekyll-seo-tag
+  - jekyll-titles-from-headings
+  - jekyll-github-metadata
 
 # Archives
 jekyll-archives:
@@ -303,7 +305,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
+  - jekyll-github-metadata
 
 
 # HTML Compression

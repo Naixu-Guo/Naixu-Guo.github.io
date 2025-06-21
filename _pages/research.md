@@ -5,11 +5,11 @@ permalink: /research/
 ---
 
 <!-- Research Header -->
-<section class="hero-section-small py-4">
+<section class="hero-section-small py-4" style="margin-top: 90px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-5 fw-bold mb-2">Research</h1>
+                <h1 id="research" class="display-5 fw-bold mb-2">Research</h1>
             </div>
         </div>
     </div>
