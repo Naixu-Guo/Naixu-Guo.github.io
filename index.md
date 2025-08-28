@@ -117,17 +117,16 @@ description: {{ site.data.about.hero.tagline }}
         <div class="mb-12 text-center">
             <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Recent News</h2>
         </div>
-        <div class="space-y-6">
-            {% assign limit = site.data.about.news.limit | default: 5 %}
-            {% assign items = site.data.news | slice: 0, limit %}
+        {% assign limit = site.data.about.news.limit | default: 5 %}
+        {% assign items = site.data.news | slice: 0, limit %}
+        <ul class="space-y-3">
             {% for news in items %}
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <div class="text-gray-700">
-                    {{ news.content | markdownify }}
-                </div>
-            </div>
+            <li class="flex items-start">
+                <i class="fas fa-star text-blue-500 mr-3 mt-1"></i>
+                <div class="text-gray-700">{{ news.content | markdownify }}</div>
+            </li>
             {% endfor %}
-        </div>
+        </ul>
     </div>
 </section>
 
