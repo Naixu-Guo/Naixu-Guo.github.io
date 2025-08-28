@@ -5,7 +5,7 @@ permalink: /publications/
 
 # Publications
 
-{% assign publications = site.data.publications | sort: 'date' | reverse %}
+{% assign publications = site.data.publications %}
 {% for pub in publications %}
 <div class="publication-item mb-3 p-3 bg-white rounded shadow-sm">
     <div class="publication-header d-flex align-items-baseline mb-2">

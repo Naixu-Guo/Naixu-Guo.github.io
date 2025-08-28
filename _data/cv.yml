@@ -1,37 +1,43 @@
+# Please replace this template with your actual CV information
+# Remove the # comments when you add your real data
+
 education:
-  - degree: "Ph.D. in Computer Science"
-    institution: "Stanford University"
-    year: "2020-2024"
-    description: "Thesis: Quantum Algorithms for Machine Learning"
+  - degree: "Ph.D. in [Your Field]"
+    institution: "[Your University]"
+    year: "[Year Range]"
+    description: "[Your thesis topic or focus area]"
 
-  - degree: "M.S. in Computer Science"
-    institution: "MIT"
-    year: "2018-2020"
-    description: "Focus on Quantum Computing"
-
-  - degree: "B.S. in Computer Science"
-    institution: "UC Berkeley"
-    year: "2014-2018"
-    description: "Minor in Mathematics"
+  # Add more education entries as needed
+  # - degree: "M.S. in [Field]"
+  #   institution: "[University]"
+  #   year: "[Year Range]"
+  #   description: "[Description]"
 
 experience:
-  - position: "Postdoctoral Researcher"
-    institution: "Google Quantum AI"
-    year: "2024-present"
-    description: "Research on quantum machine learning algorithms"
+  - position: "[Your Current Position]"
+    institution: "[Your Institution/Company]"
+    year: "[Year Range]"
+    description: "[Brief description of your role and achievements]"
 
-  - position: "Research Assistant"
-    institution: "Stanford University"
-    year: "2020-2024"
-    description: "Developed quantum algorithms for optimization"
-
-  - position: "Software Engineer Intern"
-    institution: "IBM Quantum"
-    year: "2019"
-    description: "Worked on quantum error correction"
+  # Add more experience entries as needed
+  # - position: "[Position Title]"
+  #   institution: "[Institution/Company]"
+  #   year: "[Year Range]"
+  #   description: "[Description]"
 
 skills:
-  technical: ["Python", "Qiskit", "TensorFlow", "PyTorch", "C++", "Julia"]
-  quantum: ["Quantum Circuits", "Quantum Algorithms", "Error Correction", "Quantum Machine Learning"]
-  languages: ["English", "Chinese (Mandarin)"]
+  technical: ["[Skill 1]", "[Skill 2]", "[Skill 3]"]
+  quantum: ["[Quantum Skill 1]", "[Quantum Skill 2]", "[Quantum Skill 3]"]
+  languages: ["[Language 1]", "[Language 2]"]
+
+# Add other sections as needed:
+# awards:
+#   - title: "[Award Name]"
+#     year: "[Year]"
+#     description: "[Description]"
+#
+# publications:
+#   - title: "[Publication Title]"
+#     journal: "[Journal/Conference]"
+#     year: "[Year]"
 

@@ -44,15 +44,15 @@
   link: "https://arxiv.org/abs/2410.19628"
   pdf_link: "#"
   code_link: "#"
-  media_link: "[Conference Talk](https://www.youtube.com/watch?v=your-video-id)"
+  media_link: "#"
 
 - title: "Provable learning of quantum states with graphical models"
   authors: "L Zhao, **N Guo**, MX Luo, P Rebentrost"
   journal: "arXiv:2309.09235 (2023)"
   link: "https://arxiv.org/abs/2309.09235"
   pdf_link: "#"
-  code_link: "https://github.com/your-repo/quantum-graphical-models"
-  media_link: "[Demo Video](https://www.youtube.com/watch?v=your-demo-video)"
+  code_link: "#"
+  media_link: "#"
 
 - title: "Estimating properties of a quantum state by importance-sampled operator shadows"
   authors: "**N Guo**, F Pan, P Rebentrost"
