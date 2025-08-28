@@ -5,15 +5,15 @@ research_areas:
   - title: "Quantum linear algebra and its applications"
     icon: "dna"
     description: |
-      As we approach the limitations of classical hardware scaling, the development of quantum computing provides 
+      As we approach the limitations of classical hardware scaling, the development of quantum computing provides
       the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of
       quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry.
       My works have provided efficient methods for element-wise operations of matrices on quantum computers, and explored quantum advantage for transformer inference and kernel methods.
 
       **Selected works:**
       - N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714
-      - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research 6, 043227
-      - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum 7, 1174
+      - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research (2024)
+      - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum (2023)
 
   - title: "Open system based computation"
     icon: "cogs"
@@ -28,9 +28,9 @@ research_areas:
   - title: "Artificial intelligence for quantum"
     icon: "brain"
     description: |
-      As we confront the immense complexity and environmental sensitivity of near-term quantum processors, 
+      As we confront the immense complexity and environmental sensitivity of near-term quantum processors,
       the field of AI for Quantum provides a critical pathway toward practical quantum advantage.
-      This discipline leverages powerful classical machine learning methods to address fundamental challenges 
+      This discipline leverages powerful classical machine learning methods to address fundamental challenges
       in building and operating quantum computers.
       This also includes the theoretical analysis of the learnability of quantum states and the training of machine learning models for quantum systems.
 
