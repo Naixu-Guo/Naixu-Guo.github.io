@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "{{ site.data.cv.title }}"
 permalink: /cv/
 ---
