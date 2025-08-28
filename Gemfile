@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
+gem "jekyll", "~> 3.9.5"
 gem "jekyll-feed", "~> 0.17"
 gem "jekyll-seo-tag", "~> 2.8"
 gem "webrick", "~> 1.8"
+gem "kramdown-parser-gfm", "~> 1.1"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

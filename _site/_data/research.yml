@@ -1,0 +1,38 @@
+title: "Research Portfolio"
+subtitle: "Advancing computational methodologies for scientific discovery and applications"
+
+research_areas:
+  - title: "Quantum linear algebra and its applications"
+    icon: "dna"
+    description: |
+      As we approach the limitations of classical hardware scaling, the development of quantum computing provides
+      the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of
+      quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry.
+      My works have provided efficient methods for element-wise operations of matrices on quantum computers, and explored quantum advantage for transformer inference and kernel methods.
+
+      **Selected works:**
+      - N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714
+      - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research (2024)
+      - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum (2023)
+
+  - title: "Open system based computation"
+    icon: "cogs"
+    description: |
+      As classical and closed-system quantum models face scaling challenges, open-system approaches offer a new paradigm for quantum algorithms.
+      By leveraging the natural non-unitary dynamics of Lindbladian evolution, this framework transforms environmental interactions from obstacles into computational resources.
+      My works have introduced methods to encode and solve linear ordinary differential equations within density matrices, demonstrating how dissipation and decoherence can be harnessed as fundamental tools for quantum computation.
+
+      **Selected works:**
+      - ZX Shang, N Guo, D An, Q Zhao, Design nearly optimal quantum algorithm for linear differential equations via Lindbladians, Physical Review Letters
+
+  - title: "Artificial intelligence for quantum"
+    icon: "brain"
+    description: |
+      As we confront the immense complexity and environmental sensitivity of near-term quantum processors,
+      the field of AI for Quantum provides a critical pathway toward practical quantum advantage.
+      This discipline leverages powerful classical machine learning methods to address fundamental challenges
+      in building and operating quantum computers.
+      This also includes the theoretical analysis of the learnability of quantum states and the training of machine learning models for quantum systems.
+
+      **Selected works:**
+      - L. Ming, N. Guo, M. Luo, P. Rebentrost, Provable learning of quantum states with graphical models, arXiv:2309.09235
