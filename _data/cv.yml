@@ -1,0 +1,37 @@
+education:
+  - degree: "Ph.D. in Computer Science"
+    institution: "Stanford University"
+    year: "2020-2024"
+    description: "Thesis: Quantum Algorithms for Machine Learning"
+
+  - degree: "M.S. in Computer Science"
+    institution: "MIT"
+    year: "2018-2020"
+    description: "Focus on Quantum Computing"
+
+  - degree: "B.S. in Computer Science"
+    institution: "UC Berkeley"
+    year: "2014-2018"
+    description: "Minor in Mathematics"
+
+experience:
+  - position: "Postdoctoral Researcher"
+    institution: "Google Quantum AI"
+    year: "2024-present"
+    description: "Research on quantum machine learning algorithms"
+
+  - position: "Research Assistant"
+    institution: "Stanford University"
+    year: "2020-2024"
+    description: "Developed quantum algorithms for optimization"
+
+  - position: "Software Engineer Intern"
+    institution: "IBM Quantum"
+    year: "2019"
+    description: "Worked on quantum error correction"
+
+skills:
+  technical: ["Python", "Qiskit", "TensorFlow", "PyTorch", "C++", "Julia"]
+  quantum: ["Quantum Circuits", "Quantum Algorithms", "Error Correction", "Quantum Machine Learning"]
+  languages: ["English", "Chinese (Mandarin)"]
+
