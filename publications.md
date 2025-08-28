@@ -37,7 +37,7 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
                                     <span class="font-semibold">Authors:</span> X Chen, X Dai, Y Du, Q Feng, N Guo, T Gu, Y Gao, Y Gao, X Han, X Jiang, ...
                                 </div>
                                 <div class="text-sm">
-                                    <span class="font-semibold text-gray-600">Venue:</span> arXiv preprint arXiv:2505.08744
+                                    <span class="font-semibold text-gray-600">Venue:</span> arXiv:2505.08744
                                     <span class="text-blue-600 font-medium"> (2025)</span>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
                                     <span class="font-semibold">Authors:</span> Y Du, X Wang, N Guo, Z Yu, Y Qian, K Zhang, MH Hsieh, P Rebentrost, ...
                                 </div>
                                 <div class="text-sm">
-                                    <span class="font-semibold text-gray-600">Venue:</span> Springer Nature
+                                    <span class="font-semibold text-gray-600">Publisher:</span> Springer Nature
                                     <span class="text-blue-600 font-medium"> (2025)</span>
                                 </div>
                             </div>
