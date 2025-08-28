@@ -16,12 +16,10 @@ sections:
         institution: "National University of Singapore"
         duration: "2022 - 2026 (expected)"
         details: "Advisor: Patrick Rebentrost and Miklos Santha"
-      
       - title: "M.E. in Electrical Engineering"
         institution: "Osaka University"
         duration: "2020 - 2022"
         details: "Advisor: Keisuke Fujii"
-      
       - title: "B.E. in Applied Physics"
         institution: "Kyoto University"
         duration: "2016 - 2020"
@@ -33,27 +31,22 @@ sections:
         institution: "Host: Alán Aspuru-Guzik"
         duration: "Aug-Sep 2024"
         details: ""
-      
       - title: "Peking University & Tsinghua University"
         institution: "Host: Dong An & Ziwen Liu"
         duration: "Dec 2024"
         details: ""
-      
       - title: "The Hong Kong University of Science and Technology (Guangzhou)"
         institution: "Host: Xin Wang"
         duration: "Dec 2024"
         details: ""
-      
       - title: "RWTH Aachen & Free University of Berlin"
         institution: "Host: Mario Berta & Jens Eisert"
         duration: "Jun-Jul 2024"
         details: ""
-      
       - title: "Nagoya University"
         institution: "Host: François Le Gall"
         duration: "Jul 2021 - Mar 2022"
         details: ""
-      
       - title: "Kyoto University"
         institution: "Host: Keisuke Fujii"
         duration: "Mar-Jul 2019"
@@ -65,22 +58,18 @@ sections:
         institution: "Sandbox AQ"
         duration: "2025"
         details: ""
-      
       - title: "CQT Young Researcher Career Development Grant"
         institution: "Centre for Quantum Technologies"
         duration: "2025"
         details: ""
-      
       - title: "Distinguished Scholarship Award"
         institution: "National University of Singapore"
         duration: "2022"
         details: ""
-      
       - title: "Hirose International Scholarship"
         institution: "Hirose Foundation"
         duration: "2017-2022"
         details: ""
-      
       - title: "Monbukagakusho Honors Scholarship"
         institution: "Monbukagakusho"
         duration: "2016-2017"
@@ -92,12 +81,10 @@ sections:
         institution: "Joint CQT-MCQST workshop"
         duration: ""
         details: ""
-      
       - title: "Reviewer (Journals)"
         institution: "Quantum, PRX Quantum, Physical Review Research, Quantum Machine Intelligence"
         duration: ""
         details: ""
-      
       - title: "Reviewer (Conferences)"
         institution: "QIP 2023/2024, TQC 2023/2024, QCTIP 2024, AQIS 2025, QCE 2025"
         duration: ""

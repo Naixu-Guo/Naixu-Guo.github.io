@@ -19,7 +19,6 @@ categories:
           - title: "Quantum algorithms by Andris Ambainis"
             link: "https://www.lu.lv/fileadmin/user_upload/lu_portal/projekti/quantum/Quantum_algorithms.pdf"
             type: "lecture_notes"
-      
       - title: "Learning"
         items:
           - title: "A Survey of Quantum Learning Theory"
@@ -34,7 +33,6 @@ categories:
           - title: "Introduction to Haar Measure Tools in Quantum Information"
             link: "https://arxiv.org/abs/2112.01349"
             type: "paper"
-      
       - title: "Complexity"
         items:
           - title: "Around the quantum PCP Conjecture"
@@ -43,7 +41,6 @@ categories:
           - title: "Quantum proofs"
             link: "https://arxiv.org/abs/1201.2189"
             type: "paper"
-      
       - title: "Information"
         items:
           - title: "Theory of Quantum Information"
@@ -88,7 +85,6 @@ categories:
           - title: "Introduction to Online Convex Optimization"
             link: "https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/"
             type: "lecture_notes"
-      
       - title: "Deep Learning"
         items:
           - title: "Deep Learning by Ian Goodfellow"
@@ -97,7 +93,6 @@ categories:
           - title: "Neural Networks and Deep Learning by Michael Nielsen"
             link: "http://neuralnetworksanddeeplearning.com/"
             type: "book"
-      
       - title: "Machine Learning"
         items:
           - title: "Pattern Recognition and Machine Learning by Christopher Bishop"
@@ -106,7 +101,6 @@ categories:
           - title: "The Elements of Statistical Learning by Trevor Hastie"
             link: "https://web.stanford.edu/~hastie/ElemStatLearn/"
             type: "book"
-      
       - title: "Programming"
         items:
           - title: "Python Documentation"
@@ -115,7 +109,6 @@ categories:
           - title: "Julia Documentation"
             link: "https://docs.julialang.org/"
             type: "documentation"
-      
       - title: "Tools"
         items:
           - title: "Jupyter Notebook"

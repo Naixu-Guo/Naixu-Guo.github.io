@@ -5,7 +5,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers"
   authors: "Y Du, X Wang, **N Guo**, Z Yu, Y Qian, K Zhang, MH Hsieh, P Rebentrost, ..."
   journal: "Springer Nature (2025)"
@@ -13,7 +12,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Online Learning of Pure States is as Hard as Mixed States"
   authors: "M Meyer, S Adhikary, **N Guo**, P Rebentrost"
   journal: "arXiv:2502.00823 (2025)"
@@ -21,7 +19,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Quantum linear algebra is all you need for Transformer architectures"
   authors: "**N Guo**, Z Yu, M Choi, A Agrawal, K Nakaji, A Aspuru-Guzik, P Rebentrost"
   journal: "arXiv:2402.16714 (2024)"
@@ -29,7 +26,6 @@
   pdf_link: "#"
   code_link: "https://pennylane.ai/blog/2024/04/quantum_transformers"
   media_link: "[Pennylane Blog Post](https://pennylane.ai/blog/2024/04/quantum_transformers)"
-
 - title: "Nonlinear transformation of complex amplitudes via quantum singular value transformation"
   authors: "**N Guo**, K Mitarai, K Fujii"
   journal: "Phys. Rev. Research (2024)"
@@ -37,7 +33,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Design nearly optimal quantum algorithm for linear differential equations via Lindbladians"
   authors: "ZX Shang, **N Guo**, D An, Q Zhao"
   journal: "Phys. Rev. Letters (2025)"
@@ -45,7 +40,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Provable learning of quantum states with graphical models"
   authors: "L Zhao, **N Guo**, MX Luo, P Rebentrost"
   journal: "arXiv:2309.09235 (2023)"
@@ -53,7 +47,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Estimating properties of a quantum state by importance-sampled operator shadows"
   authors: "**N Guo**, F Pan, P Rebentrost"
   journal: "arXiv:2305.09374 (2023)"
@@ -61,7 +54,6 @@
   pdf_link: "#"
   code_link: "#"
   media_link: "#"
-
 - title: "Quantum Alphatron: quantum advantage for learning with kernels and noise"
   authors: "S Yang, **N Guo**, M Santha, P Rebentrost"
   journal: "Quantum (2023)"
