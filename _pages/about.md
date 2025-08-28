@@ -16,7 +16,7 @@ permalink: /about/
     {% assign news = site.data.news | slice: 0, 5 %}
     {% for item in news %}
     <div class="news-item mb-2">
-      <strong>{{ item.date }}:</strong> {{ item.text | markdownify }}
+      {{ item.content | markdownify }}
     </div>
     {% endfor %}
   </div>
