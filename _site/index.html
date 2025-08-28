@@ -1,26 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naixu Guo - homepage</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications" />
-    <meta name="author" content="Dr. [Your Name]" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Dr. Naixu Guo - Academic Homepage</title>
+    <meta name="description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
+    <meta name="author" content="Dr. Naixu Guo">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naixu-guo.github.io/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Home">
+    <meta name="twitter:description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                        Dr. Naixu Guo
+                    </a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
+                    <a href="/publications" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
+                    <a href="/cv" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="Dr. [Your Name] - Academic Homepage" />
-    <meta property="og:description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+<section class="py-20 px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-6xl mx-auto text-center">
+        <div class="mb-8">
+            <img src="/photo.jpg" alt="Naixu Guo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg" />
+        </div>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
+            Naixu Guo
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+            PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications
+        </p>
+        <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+            My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/research" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                View Research
+            </a>
+            <a href="/publications" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
+                Publications
+            </a>
+        </div>
+    </div>
+</section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <script type="module" crossorigin src="/assets/index-BWk3IWDC.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C8WIWvha.css">
-  </head>
+<!-- Research Focus Section -->
+<section class="py-16 px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-12 text-center">
+            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Research Focus</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence.
+            </p>
+        </div>
 
-  <body>
-    <div id="root"></div>
-  </body>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Quantum Linear Algebra Card -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-book-open text-2xl text-blue-600 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Quantum linear algebra and its applications</h3>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    As we approach the limitations of classical hardware scaling, the development of quantum computing provides the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry.
+                </p>
+                <div class="text-sm text-gray-600">
+                    <strong>Selected works:</strong><br />
+                    • N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714<br />
+                    • N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research 6, 043227<br />
+                    • S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum 7, 1174
+                </div>
+            </div>
+
+            <!-- AI for Quantum Card -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-brain text-2xl text-purple-600 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Artificial intelligence for quantum</h3>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    As we confront the immense complexity and environmental sensitivity of near-term quantum processors, the field of AI for Quantum provides a critical pathway toward practical quantum advantage. This discipline leverages powerful classical machine learning methods to address fundamental challenges in building and operating quantum computers.
+                </p>
+                <div class="text-sm text-gray-600">
+                    <strong>Selected works:</strong><br />
+                    • L. Ming, N. Guo, M. Luo, P. Rebentrost, Provable learning of quantum states with graphical models, arXiv:2309.09235
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent News Section -->
+<section class="py-16 px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-12 text-center">
+            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Recent News</h2>
+        </div>
+        
+        <div class="space-y-6">
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[08/2025] Our paper <a href="https://arxiv.org/abs/2410.19628">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a> has been accepted by Physical Review Letters.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[08/2025] I started my visit to Xanadu, University of Toronto, and University of Waterloo.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[08/2025] I have received the <a href="https://www.sandboxaq.com/company/scholarships">research excellence scholarship</a> from Sandbox AQ.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[08/2025] Our paper <a href="https://arxiv.org/abs/2402.16714">Quantum linear algebra is all you need for Transformer architectures</a> has been presented as a plenary talk at AQIS 2025 by Patrick.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[06/2025] Our paper <a href="https://arxiv.org/abs/2410.19628">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a> has been accepted for a talk at AQIS 2025.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[05/2025] I gave a talk on work <a href="https://arxiv.org/abs/2410.19628">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a> at Joint CQT-MCQST workshop.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[04/2025] I gave a invited talk on work <a href="https://arxiv.org/abs/2402.16714">Quantum linear algebra is all you need for Transformer architectures</a> at Nanyang Technological University, hosted by Mile Gu.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[04/2025] I gave a invited talk on work <a href="https://arxiv.org/abs/2410.19628">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a> at Centre for Quantum Technologies, NUS.</p>
+
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="text-gray-700">
+                    <p>[03/2025] I gave a invited talk on work <a href="https://arxiv.org/abs/2410.19628">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a> at University of Latvia, hosted by Andris Ambainis.</p>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 px-8 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">Get in Touch</h2>
+        <p class="text-lg text-gray-700 mb-8">
+            I'm always interested in discussing research collaborations, opportunities, or just having a chat about quantum computing and AI.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:your.email@example.com" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                <i class="fas fa-envelope mr-2"></i>Email Me
+            </a>
+            <a href="/cv" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
+                <i class="fas fa-file-alt mr-2"></i>Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Dr. Naixu Guo. All rights reserved. | PhD Candidate, University of Excellence
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
 </html>
