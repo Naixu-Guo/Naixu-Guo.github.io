@@ -57,7 +57,7 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
                     <div class="flex items-start mb-4">
                         <span class="text-blue-600 font-bold mr-4 text-lg bg-blue-50 px-3 py-1 rounded-full">2</span>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">A Gentle Introduction to Quantum Machine Learning</h3>
                             <div class="text-gray-700 space-y-2">
                                 <div class="text-sm font-medium text-gray-600">
                                     <span class="font-semibold">Authors:</span> Y Du, X Wang, N Guo, Z Yu, Y Qian, K Zhang, MH Hsieh, P Rebentrost, ...
