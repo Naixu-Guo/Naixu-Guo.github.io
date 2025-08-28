@@ -43,7 +43,6 @@ permalink: /publications/
                     <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
                     <a href="/publications" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
                     <a href="/cv" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
-                    <a href="/contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
                 </div>
             </div>
         </div>
