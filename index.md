@@ -11,7 +11,7 @@ description: PhD Student and Rising Star Researcher - Academic Homepage showcasi
             <img src="{{ '/photo.jpg' | relative_url }}" alt="Dr. Naixu Guo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg">
         </div>
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
-            Dr. Naixu Guo
+            Naixu Guo
         </h1>
         <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
             PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications
