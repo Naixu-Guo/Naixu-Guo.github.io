@@ -6,39 +6,69 @@ description: {{ site.data.about.hero.tagline }}
 ---
 
 <!-- Hero Section -->
-<section class="py-20 px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Left: Text -->
-      <div>
-        <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-4">
-          {{ site.data.about.hero.name_en }}
+<section class="py-16 px-8 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid lg:grid-cols-3 gap-12 items-start">
+      <!-- Left: Text spans 2 columns -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center space-x-3 mb-2">
+          <i class="fas fa-user text-gray-600"></i>
+          <span class="text-gray-600 font-medium">{{ site.data.about.hero.role }}</span>
+        </div>
+        
+        <h1 class="text-4xl font-serif font-bold text-gray-900 leading-tight">
+          {{ site.data.about.hero.name_en }}{% if site.data.about.hero.name_zh %} ({{ site.data.about.hero.name_zh }}){% endif %}
         </h1>
-        {% if site.data.about.hero.name_zh %}
-        <h2 class="text-2xl md:text-3xl text-gray-700 mb-4">{{ site.data.about.hero.name_zh }}</h2>
-        {% endif %}
-        <p class="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl">
-          {{ site.data.about.hero.tagline }}
-        </p>
-        <p class="text-lg text-gray-600 mb-8 max-w-3xl">
+        
+        <div class="flex items-center space-x-3 text-gray-700">
+          <i class="fas fa-building text-gray-600"></i>
+          <span class="font-medium">{{ site.data.about.hero.affiliation }}</span>
+        </div>
+        
+        <p class="text-lg text-gray-700 leading-relaxed">
           {{ site.data.about.hero.summary }}
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
+        
+        <div class="flex flex-wrap gap-4">
           {% if site.data.about.hero.cta_primary %}
-          <a href="{{ site.data.about.hero.cta_primary.url | relative_url }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-            {{ site.data.about.hero.cta_primary.label }}
+          <a href="{{ site.data.about.hero.cta_primary.url | relative_url }}" class="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-md font-semibold">
+            <i class="fas fa-book-open mr-2"></i>{{ site.data.about.hero.cta_primary.label }}
           </a>
           {% endif %}
           {% if site.data.about.hero.cta_secondary %}
-          <a href="{{ site.data.about.hero.cta_secondary.url | relative_url }}" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
-            {{ site.data.about.hero.cta_secondary.label }}
+          <a href="{{ site.data.about.hero.cta_secondary.url | relative_url }}" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-semibold">
+            <i class="fas fa-external-link-alt mr-2"></i>{{ site.data.about.hero.cta_secondary.label }}
+          </a>
+          {% endif %}
+          {% if site.data.about.hero.contact_email %}
+          <a href="mailto:{{ site.data.about.hero.contact_email }}" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-semibold">
+            <i class="fas fa-envelope mr-2"></i>Contact
+          </a>
+          {% endif %}
+        </div>
+
+        <div class="flex space-x-4 pt-2">
+          {% if site.data.about.hero.socials.scholar %}
+          <a href="{{ site.data.about.hero.socials.scholar }}" class="text-gray-500 hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+          {% endif %}
+          {% if site.data.about.hero.socials.x %}
+          <a href="{{ site.data.about.hero.socials.x }}" class="text-gray-500 hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          {% endif %}
+          {% if site.data.about.hero.socials.linkedin %}
+          <a href="{{ site.data.about.hero.socials.linkedin }}" class="text-gray-500 hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
           </a>
           {% endif %}
         </div>
       </div>
-      <!-- Right: Photo -->
-      <div class="flex justify-center md:justify-end">
-        <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="{{ site.data.about.hero.name_en }}" class="w-56 h-56 rounded-full object-cover shadow-2xl border-4 border-white" />
+
+      <!-- Right: Avatar -->
+      <div class="flex justify-center lg:justify-end">
+        <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="{{ site.data.about.hero.name_en }}" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-lg" />
       </div>
     </div>
   </div>

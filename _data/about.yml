@@ -2,6 +2,8 @@ hero:
   name_en: "Naixu Guo"
   name_zh: "郭乃绪"
   avatar: "/photo.jpg"
+  role: "PhD student in Quantum Information and Computing"
+  affiliation: "National University of Singapore | Centre for Quantum Technologies"
   tagline: "PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications"
   summary: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
   cta_primary:
@@ -10,6 +12,11 @@ hero:
   cta_secondary:
     label: "Publications"
     url: "/publications"
+  contact_email: "naixug@u.nus.edu"
+  socials:
+    scholar: "https://scholar.google.com/citations?user=r2I_WtAAAAAJ&hl=en"
+    x: "https://x.com/gnx_kns"
+    linkedin: "https://www.linkedin.com/in/naixu-guo-a0567626a/"
 
 research_focus:
   title: "Research Focus"
@@ -29,7 +36,7 @@ research_focus:
         - "L. Ming, N. Guo, M. Luo, P. Rebentrost, Provable learning of quantum states with graphical models, arXiv:2309.09235"
 
 news:
-  source: "site.data.news"  # Use existing data/news.yml
+  source: "site.data.news"
   limit: 5
 
 contact:
