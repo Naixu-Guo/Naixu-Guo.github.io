@@ -5,8 +5,13 @@ hero:
   role: "PhD student in Quantum Information and Computing"
   affiliation: "National University of Singapore | Centre for Quantum Technologies"
   tagline: "Meow"
-  summary: "I am a fourth-year PhD student at CQT, advised by [Patrick Rebentrost](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en) and [Miklos Santha](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en).
-            Previously, I graduated from Kyoto University and Osaka University, under the supervision of [Keisuke Fujii](https://scholar.google.com/citations?user=CS6HdE0AAAAJ&hl=en) and [Kosuke Mitarai](https://scholar.google.com/citations?user=TfsGcnMAAAAJ&hl=en)."
+  summary: "I am a fourth-year PhD student at CQT, advised by [Patrick Rebentrost](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en) and Miklos Santha.
+            Previously, I graduated from Kyoto University and Osaka University, under the supervision of Keisuke Fujii and Kosuke Mitarai.
+            To know more about quantum machine learning, welcome to read our [book](https://arxiv.org/abs/2502.01146).
+
+
+            **I am on the job market this year, and actively looking for postdoc positions and other opportunities.**
+            "
   cta_primary:
     label: "View Research"
     url: "/research"
@@ -25,11 +30,10 @@ research_focus:
   areas:
     - icon: "book-open"
       title: "Quantum linear algebra and its applications"
-      description: "As we approach the limitations of classical hardware scaling, the development of quantum computing provides the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry."
     - icon: "brain"
       title: "Artificial intelligence for quantum"
-      description: "As we confront the immense complexity and environmental sensitivity of near-term quantum processors, the field of AI for Quantum provides a critical pathway toward practical quantum advantage. This discipline leverages powerful classical machine learning methods to address fundamental challenges in building and operating quantum computers."
-
+    - icon: "cogs"
+      title: "Quantum open system based computation"
 news:
   source: "site.data.news"
   limit: 5

@@ -30,7 +30,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="{{ '/' | relative_url }}" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                        Dr. Naixu Guo
+                        Naixu Guo
                     </a>
                 </div>
                 <div class="flex items-center space-x-8">
@@ -38,6 +38,7 @@
                     <a href="{{ '/research' | relative_url }}" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
                     <a href="{{ '/publications' | relative_url }}" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
                     <a href="{{ '/cv' | relative_url }}" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
+                    <a href="{{ '/mini_lib' | relative_url }}" class="text-gray-700 hover:text-blue-600 transition-colors">Mini Library</a>
                 </div>
             </div>
         </div>
@@ -60,8 +61,8 @@
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <style>
-      .news-content a { color: #2563eb; text-decoration: none; }
-      .news-content a:hover { text-decoration: underline; }
+      .news-content a, .hero-summary a { color: #2563eb; text-decoration: none; }
+      .news-content a:hover, .hero-summary a:hover { text-decoration: underline; }
     </style>
 </body>
 </html>

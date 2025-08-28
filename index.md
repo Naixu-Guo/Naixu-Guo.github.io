@@ -15,7 +15,7 @@ description: {{ site.data.about.hero.tagline }}
                     <span class="text-gray-600 font-medium">{{ site.data.about.hero.role }}</span>
                 </div>
                 
-                <h1 class="text-4xl font-serif font-bold text-gray-900 leading-tight">
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 leading-tight">
                     {{ site.data.about.hero.name_en }}{% if site.data.about.hero.name_zh %} ({{ site.data.about.hero.name_zh }}){% endif %}
                 </h1>
                 
@@ -24,7 +24,7 @@ description: {{ site.data.about.hero.tagline }}
                     <span class="font-medium">{{ site.data.about.hero.affiliation }}</span>
                 </div>
                 
-                <div class="hero-summary text-lg text-gray-700 leading-relaxed">
+                <div class="hero-summary text-base md:text-lg text-gray-700 leading-relaxed">
                     {{ site.data.about.hero.summary | markdownify }}
                 </div>
                 
@@ -53,8 +53,10 @@ description: {{ site.data.about.hero.tagline }}
                     </a>
                     {% endif %}
                     {% if site.data.about.hero.socials.x %}
-                    <a href="{{ site.data.about.hero.socials.x }}" class="text-gray-500 hover:text-gray-700" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-x-twitter"></i>
+                    <a href="{{ site.data.about.hero.socials.x }}" class="text-gray-500 hover:text-gray-700" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
                     </a>
                     {% endif %}
                     {% if site.data.about.hero.socials.linkedin %}
@@ -66,7 +68,7 @@ description: {{ site.data.about.hero.tagline }}
             </div>
 
             <!-- Right: Avatar -->
-            <div class="flex justify-center lg:justify-end">
+            <div class="flex justify-center lg:justify-end mt-12">
                 <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="{{ site.data.about.hero.name_en }}" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-lg" />
             </div>
         </div>
@@ -83,26 +85,30 @@ description: {{ site.data.about.hero.tagline }}
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
             {% for area in site.data.about.research_focus.areas %}
-            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-center mb-4">
-                    {% if area.icon == 'book-open' %}
-                        <i class="fas fa-book-open text-2xl text-blue-600 mr-3"></i>
-                    {% elsif area.icon == 'brain' %}
-                        <i class="fas fa-brain text-2xl text-purple-600 mr-3"></i>
-                    {% else %}
-                        <i class="fas fa-flask text-2xl text-blue-600 mr-3"></i>
-                    {% endif %}
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3 text-blue-600">
+                        {% if area.icon == 'book-open' %}
+                            <i class="fas fa-book-open"></i>
+                        {% elsif area.icon == 'brain' %}
+                            <i class="fas fa-brain"></i>
+                        {% else %}
+                            <i class="fas fa-flask"></i>
+                        {% endif %}
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-900">{{ area.title }}</h3>
                 </div>
                 <p class="text-gray-700 mb-4">{{ area.description }}</p>
                 {% if area.selected_works %}
-                <div class="text-sm text-gray-600">
-                    <strong>Selected works:</strong><br>
-                    {% for work in area.selected_works %}
-                        • {{ work }}<br>
-                    {% endfor %}
+                <div class="text-sm text-gray-700">
+                    <div class="font-semibold mb-1">Selected works:</div>
+                    <ul class="list-disc pl-5 space-y-1">
+                        {% for work in area.selected_works %}
+                        <li>{{ work }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
                 {% endif %}
             </div>
@@ -123,7 +129,7 @@ description: {{ site.data.about.hero.tagline }}
             {% for news in items %}
             <li class="flex items-start">
                 <i class="fas fa-circle-check text-blue-600 mr-3 mt-1"></i>
-                <div class="news-content text-gray-700">{{ news.content | markdownify }}</div>
+                <div class="news-content text-gray-700 text-base md:text-lg">{{ news.content | markdownify }}</div>
             </li>
             {% endfor %}
         </ul>
@@ -144,11 +150,7 @@ description: {{ site.data.about.hero.tagline }}
                 <i class="fas fa-envelope mr-2"></i>Email Me
             </a>
             {% endif %}
-            {% if site.data.about.contact.cv_url %}
-            <a href="{{ site.data.about.contact.cv_url | relative_url }}" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
-                <i class="fas fa-file-alt mr-2"></i>Download CV
-            </a>
-            {% endif %}
+            
         </div>
     </div>
 </section>

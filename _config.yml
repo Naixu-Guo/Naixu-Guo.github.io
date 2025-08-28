@@ -16,6 +16,9 @@ collections:
   publications:
     output: true
     permalink: /publications/:title/
+  talks:
+    output: true
+    permalink: /talks/:title/
 
 # Defaults
 defaults:
