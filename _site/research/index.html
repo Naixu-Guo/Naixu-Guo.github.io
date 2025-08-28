@@ -1,87 +1,40 @@
-<p>&lt;!DOCTYPE html&gt;</p>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research - Dr. Naixu Guo - Academic Homepage</title>
-    <meta name="description" content="Research areas and computational methodologies for scientific discovery" />
-    <meta name="author" content="Dr. Naixu Guo" />
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Research" />
-    <meta property="og:description" content="Research areas and computational methodologies for scientific discovery" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://naixu-guo.github.io/research/" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Research" />
-    <meta name="twitter:description" content="Research areas and computational methodologies for scientific discovery" />
-    
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-</head>
-<body class="bg-white text-gray-900">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                        Dr. Naixu Guo
-                    </a>
-                </div>
-                <div class="flex items-center space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
-                    <a href="/publications" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
-                    <a href="/cv" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<!-- Header -->
+<section class="py-12 px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <a href="/" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Home
+        </a>
+        
+        <h1 class="text-4xl font-serif font-bold text-gray-900 mb-4">
+            Research Portfolio
+        </h1>
+        <p class="text-xl text-gray-700 max-w-3xl">
+            Advancing computational methodologies for scientific discovery and applications
+        </p>
+    </div>
+</section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Header -->
-        <section class="py-12 px-8 bg-gray-50">
-            <div class="max-w-6xl mx-auto">
-                <a href="/" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
-                    <i class="fas fa-arrow-left mr-2"></i>
-                    Back to Home
-                </a>
-                
-                <h1 class="text-4xl font-serif font-bold text-gray-900 mb-4">
-                    Research Portfolio
-                </h1>
-                <p class="text-xl text-gray-700 max-w-3xl">
-                    Advancing computational methodologies for scientific discovery and applications
-                </p>
-            </div>
-        </section>
-
-        <!-- Research Areas -->
-        <section class="py-12 px-8 bg-white">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research Areas</h2>
-                
-                <div class="space-y-12">
-                    
-                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                        <div class="p-8">
-                            <div class="flex items-center mb-6">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
-                                    
-                                        <i class="fas fa-dna text-2xl text-pink-600"></i>
-                                    
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">Quantum linear algebra and its applications</h3>
-                            </div>
+<!-- Research Areas -->
+<section class="py-12 px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research Areas</h2>
+        
+        <div class="space-y-12">
+            
+            <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
                             
-                            <div class="prose prose-lg text-gray-700 leading-relaxed">
-                                <p>As we approach the limitations of classical hardware scaling, the development of quantum computing provides
+                                <i class="fas fa-dna text-2xl text-pink-600"></i>
+                            
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Quantum linear algebra and its applications</h3>
+                    </div>
+                    
+                    <div class="prose prose-lg text-gray-700 leading-relaxed">
+                        <p>As we approach the limitations of classical hardware scaling, the development of quantum computing provides
 the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of
 quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry.
 My works have provided efficient methods for element-wise operations of matrices on quantum computers, and explored quantum advantage for transformer inference and kernel methods.</p>
@@ -93,23 +46,23 @@ My works have provided efficient methods for element-wise operations of matrices
   <li>S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum (2023)</li>
 </ul>
 
-                            </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
+                            
+                                <i class="fas fa-cogs text-2xl text-purple-600"></i>
+                            
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Open system based computation</h3>
                     </div>
                     
-                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                        <div class="p-8">
-                            <div class="flex items-center mb-6">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
-                                    
-                                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
-                                    
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">Open system based computation</h3>
-                            </div>
-                            
-                            <div class="prose prose-lg text-gray-700 leading-relaxed">
-                                <p>As classical and closed-system quantum models face scaling challenges, open-system approaches offer a new paradigm for quantum algorithms.
+                    <div class="prose prose-lg text-gray-700 leading-relaxed">
+                        <p>As classical and closed-system quantum models face scaling challenges, open-system approaches offer a new paradigm for quantum algorithms.
 By leveraging the natural non-unitary dynamics of Lindbladian evolution, this framework transforms environmental interactions from obstacles into computational resources.
 My works have introduced methods to encode and solve linear ordinary differential equations within density matrices, demonstrating how dissipation and decoherence can be harnessed as fundamental tools for quantum computation.</p>
 
@@ -118,23 +71,23 @@ My works have introduced methods to encode and solve linear ordinary differentia
   <li>ZX Shang, N Guo, D An, Q Zhao, Design nearly optimal quantum algorithm for linear differential equations via Lindbladians, Physical Review Letters</li>
 </ul>
 
-                            </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
+                            
+                                <i class="fas fa-brain text-2xl text-orange-600"></i>
+                            
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Artificial intelligence for quantum</h3>
                     </div>
                     
-                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                        <div class="p-8">
-                            <div class="flex items-center mb-6">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
-                                    
-                                        <i class="fas fa-brain text-2xl text-orange-600"></i>
-                                    
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-900">Artificial intelligence for quantum</h3>
-                            </div>
-                            
-                            <div class="prose prose-lg text-gray-700 leading-relaxed">
-                                <p>As we confront the immense complexity and environmental sensitivity of near-term quantum processors,
+                    <div class="prose prose-lg text-gray-700 leading-relaxed">
+                        <p>As we confront the immense complexity and environmental sensitivity of near-term quantum processors,
 the field of AI for Quantum provides a critical pathway toward practical quantum advantage.
 This discipline leverages powerful classical machine learning methods to address fundamental challenges
 in building and operating quantum computers.
@@ -145,20 +98,16 @@ This also includes the theoretical analysis of the learnability of quantum state
   <li>L. Ming, N. Guo, M. Luo, P. Rebentrost, Provable learning of quantum states with graphical models, arXiv:2309.09235</li>
 </ul>
 
-                            </div>
-                        </div>
                     </div>
-                    
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-8 text-center">
-            <p>&copy; 2025 Dr. Naixu Guo. All rights reserved.</p>
+            
         </div>
-    </footer>
-</body>
-</html>
+    </div>
+</section>
+
+<!-- Include Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
