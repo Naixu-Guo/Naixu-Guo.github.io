@@ -1,0 +1,45 @@
+# Jekyll Configuration for Naixu Guo's Academic Website
+title: "Dr. Naixu Guo - Academic Homepage"
+description: "PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications"
+author: "Dr. Naixu Guo"
+email: "your.email@example.com"
+url: "https://naixu-guo.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /publications/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+
+# Include
+include:
+  - _pages
+  - _data
