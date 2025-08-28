@@ -1,43 +1,105 @@
-# Please replace this template with your actual CV information
-# Remove the # comments when you add your real data
+title: "Curriculum Vitae"
+subtitle: "Academic and professional background"
 
-education:
-  - degree: "Ph.D. in [Your Field]"
-    institution: "[Your University]"
-    year: "[Year Range]"
-    description: "[Your thesis topic or focus area]"
+personal_info:
+  name: "Naixu Guo"
+  title: "Ph.D. student in Computer Science (Quantum Information)"
+  institution: "National University of Singapore"
+  email: "naixug@u.nus.edu"
+  phone: ""
+  location: "Singapore"
 
-  # Add more education entries as needed
-  # - degree: "M.S. in [Field]"
-  #   institution: "[University]"
-  #   year: "[Year Range]"
-  #   description: "[Description]"
+sections:
+  - title: "Education"
+    items:
+      - title: "Ph.D. in Computer Science (Quantum Information)"
+        institution: "National University of Singapore"
+        duration: "2022 - 2026 (expected)"
+        details: "Advisor: Patrick Rebentrost and Miklos Santha"
+      
+      - title: "M.E. in Electrical Engineering"
+        institution: "Osaka University"
+        duration: "2020 - 2022"
+        details: "Advisor: Keisuke Fujii"
+      
+      - title: "B.E. in Applied Physics"
+        institution: "Kyoto University"
+        duration: "2016 - 2020"
+        details: "Advisor: Takayuki Miyadera"
 
-experience:
-  - position: "[Your Current Position]"
-    institution: "[Your Institution/Company]"
-    year: "[Year Range]"
-    description: "[Brief description of your role and achievements]"
+  - title: "Academic Visits & Research Experience"
+    items:
+      - title: "University of Toronto"
+        institution: "Host: Alán Aspuru-Guzik"
+        duration: "Aug-Sep 2024"
+        details: ""
+      
+      - title: "Peking University & Tsinghua University"
+        institution: "Host: Dong An & Ziwen Liu"
+        duration: "Dec 2024"
+        details: ""
+      
+      - title: "The Hong Kong University of Science and Technology (Guangzhou)"
+        institution: "Host: Xin Wang"
+        duration: "Dec 2024"
+        details: ""
+      
+      - title: "RWTH Aachen & Free University of Berlin"
+        institution: "Host: Mario Berta & Jens Eisert"
+        duration: "Jun-Jul 2024"
+        details: ""
+      
+      - title: "Nagoya University"
+        institution: "Host: François Le Gall"
+        duration: "Jul 2021 - Mar 2022"
+        details: ""
+      
+      - title: "Kyoto University"
+        institution: "Host: Keisuke Fujii"
+        duration: "Mar-Jul 2019"
+        details: ""
 
-  # Add more experience entries as needed
-  # - position: "[Position Title]"
-  #   institution: "[Institution/Company]"
-  #   year: "[Year Range]"
-  #   description: "[Description]"
+  - title: "Honors, Awards & Fellowships"
+    items:
+      - title: "Research Excellence Scholarship"
+        institution: "Sandbox AQ"
+        duration: "2025"
+        details: ""
+      
+      - title: "CQT Young Researcher Career Development Grant"
+        institution: "Centre for Quantum Technologies"
+        duration: "2025"
+        details: ""
+      
+      - title: "Distinguished Scholarship Award"
+        institution: "National University of Singapore"
+        duration: "2022"
+        details: ""
+      
+      - title: "Hirose International Scholarship"
+        institution: "Hirose Foundation"
+        duration: "2017-2022"
+        details: ""
+      
+      - title: "Monbukagakusho Honors Scholarship"
+        institution: "Monbukagakusho"
+        duration: "2016-2017"
+        details: ""
 
-skills:
-  technical: ["[Skill 1]", "[Skill 2]", "[Skill 3]"]
-  quantum: ["[Quantum Skill 1]", "[Quantum Skill 2]", "[Quantum Skill 3]"]
-  languages: ["[Language 1]", "[Language 2]"]
-
-# Add other sections as needed:
-# awards:
-#   - title: "[Award Name]"
-#     year: "[Year]"
-#     description: "[Description]"
-#
-# publications:
-#   - title: "[Publication Title]"
-#     journal: "[Journal/Conference]"
-#     year: "[Year]"
+  - title: "Professional Service"
+    items:
+      - title: "Program Committee (Conference & Workshop)"
+        institution: "Joint CQT-MCQST workshop"
+        duration: ""
+        details: ""
+      
+      - title: "Reviewer (Journals)"
+        institution: "Quantum, PRX Quantum, Physical Review Research, Quantum Machine Intelligence"
+        duration: ""
+        details: ""
+      
+      - title: "Reviewer (Conferences)"
+        institution: "QIP 2023/2024, TQC 2023/2024, QCTIP 2024, AQIS 2025, QCE 2025"
+        duration: ""
+        details: ""
 
