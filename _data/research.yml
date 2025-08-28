@@ -12,11 +12,11 @@ research_areas:
 
       **Selected works:**
       - N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714
-      - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research
-      - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum
+      - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research 6, 043227
+      - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum 7, 1174
 
   - title: "Open system based computation"
-    icon: "brain"
+    icon: "cogs"
     description: |
       As classical and closed-system quantum models face scaling challenges, open-system approaches offer a new paradigm for quantum algorithms.
       By leveraging the natural non-unitary dynamics of Lindbladian evolution, this framework transforms environmental interactions from obstacles into computational resources.

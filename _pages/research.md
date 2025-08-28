@@ -78,4 +78,5 @@ permalink: /research/
 
 .fa-dna { color: #e83e8c !important; }
 .fa-brain { color: #fd7e14 !important; }
+.fa-cogs { color: #6f42c1 !important; }
 </style>
