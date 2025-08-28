@@ -7,33 +7,39 @@ description: {{ site.data.about.hero.tagline }}
 
 <!-- Hero Section -->
 <section class="py-20 px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
-  <div class="max-w-6xl mx-auto text-center">
-    <div class="mb-8">
-      <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="{{ site.data.about.hero.name_en }}" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg">
-    </div>
-    <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
-      {{ site.data.about.hero.name_en }}
-    </h1>
-    {% if site.data.about.hero.name_zh %}
-    <h2 class="text-2xl md:text-3xl text-gray-700 mb-4">{{ site.data.about.hero.name_zh }}</h2>
-    {% endif %}
-    <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
-      {{ site.data.about.hero.tagline }}
-    </p>
-    <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-      {{ site.data.about.hero.summary }}
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      {% if site.data.about.hero.cta_primary %}
-      <a href="{{ site.data.about.hero.cta_primary.url | relative_url }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-        {{ site.data.about.hero.cta_primary.label }}
-      </a>
-      {% endif %}
-      {% if site.data.about.hero.cta_secondary %}
-      <a href="{{ site.data.about.hero.cta_secondary.url | relative_url }}" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
-        {{ site.data.about.hero.cta_secondary.label }}
-      </a>
-      {% endif %}
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left: Text -->
+      <div>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-4">
+          {{ site.data.about.hero.name_en }}
+        </h1>
+        {% if site.data.about.hero.name_zh %}
+        <h2 class="text-2xl md:text-3xl text-gray-700 mb-4">{{ site.data.about.hero.name_zh }}</h2>
+        {% endif %}
+        <p class="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl">
+          {{ site.data.about.hero.tagline }}
+        </p>
+        <p class="text-lg text-gray-600 mb-8 max-w-3xl">
+          {{ site.data.about.hero.summary }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          {% if site.data.about.hero.cta_primary %}
+          <a href="{{ site.data.about.hero.cta_primary.url | relative_url }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+            {{ site.data.about.hero.cta_primary.label }}
+          </a>
+          {% endif %}
+          {% if site.data.about.hero.cta_secondary %}
+          <a href="{{ site.data.about.hero.cta_secondary.url | relative_url }}" class="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
+            {{ site.data.about.hero.cta_secondary.label }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <!-- Right: Photo -->
+      <div class="flex justify-center md:justify-end">
+        <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="{{ site.data.about.hero.name_en }}" class="w-56 h-56 rounded-full object-cover shadow-2xl border-4 border-white" />
+      </div>
     </div>
   </div>
 </section>
