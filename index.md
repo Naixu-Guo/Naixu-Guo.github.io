@@ -122,8 +122,8 @@ description: {{ site.data.about.hero.tagline }}
         <ul class="space-y-3">
             {% for news in items %}
             <li class="flex items-start">
-                <i class="fas fa-star text-blue-500 mr-3 mt-1"></i>
-                <div class="text-gray-700">{{ news.content | markdownify }}</div>
+                <i class="fas fa-circle-check text-blue-600 mr-3 mt-1"></i>
+                <div class="news-content text-gray-700">{{ news.content | markdownify }}</div>
             </li>
             {% endfor %}
         </ul>
