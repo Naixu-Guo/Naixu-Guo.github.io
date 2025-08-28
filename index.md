@@ -24,9 +24,9 @@ description: {{ site.data.about.hero.tagline }}
                     <span class="font-medium">{{ site.data.about.hero.affiliation }}</span>
                 </div>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    {{ site.data.about.hero.summary }}
-                </p>
+                <div class="hero-summary text-lg text-gray-700 leading-relaxed">
+                    {{ site.data.about.hero.summary | markdownify }}
+                </div>
                 
                 <div class="flex flex-wrap gap-4">
                     {% if site.data.about.hero.cta_primary %}
