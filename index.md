@@ -8,7 +8,7 @@ description: PhD Student and Rising Star Researcher - Academic Homepage showcasi
 <section class="py-20 px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="max-w-6xl mx-auto text-center">
         <div class="mb-8">
-            <img src="{{ '/photo.jpg' | relative_url }}" alt="Dr. Naixu Guo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg">
+            <img src="{{ '/photo.jpg' | relative_url }}" alt="Naixu Guo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg">
         </div>
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
             Naixu Guo
