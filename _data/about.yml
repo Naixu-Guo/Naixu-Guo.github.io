@@ -1,0 +1,40 @@
+hero:
+  name_en: "Naixu Guo"
+  name_zh: "郭乃绪"
+  avatar: "/photo.jpg"
+  tagline: "PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications"
+  summary: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
+  cta_primary:
+    label: "View Research"
+    url: "/research"
+  cta_secondary:
+    label: "Publications"
+    url: "/publications"
+
+research_focus:
+  title: "Research Focus"
+  intro: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
+  areas:
+    - icon: "book-open"
+      title: "Quantum linear algebra and its applications"
+      description: "As we approach the limitations of classical hardware scaling, the development of quantum computing provides the next leap in computational capability. Quantum linear algebra explores efficient methods based on the principles of quantum mechanics, which is intrinsically linear, and applies them to real-world applications, like machine learning, optimization, and chemistry."
+      selected_works:
+        - "N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714"
+        - "N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research 6, 043227"
+        - "S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum 7, 1174"
+    - icon: "brain"
+      title: "Artificial intelligence for quantum"
+      description: "As we confront the immense complexity and environmental sensitivity of near-term quantum processors, the field of AI for Quantum provides a critical pathway toward practical quantum advantage. This discipline leverages powerful classical machine learning methods to address fundamental challenges in building and operating quantum computers."
+      selected_works:
+        - "L. Ming, N. Guo, M. Luo, P. Rebentrost, Provable learning of quantum states with graphical models, arXiv:2309.09235"
+
+news:
+  source: "site.data.news"  # Use existing data/news.yml
+  limit: 5
+
+contact:
+  enabled: true
+  title: "Get in Touch"
+  message: "I'm always interested in discussing research collaborations, opportunities, or just having a chat about quantum computing and AI."
+  email: "your.email@example.com"
+  cv_url: "/cv"
