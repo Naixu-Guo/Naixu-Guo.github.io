@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "{{ site.data.research.title }}"
+title: "Research Portfolio"
 permalink: /research/
 ---
 

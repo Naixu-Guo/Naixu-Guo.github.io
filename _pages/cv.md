@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "{{ site.data.cv.title }}"
+title: "Curriculum Vitae"
 permalink: /cv/
 ---
 
