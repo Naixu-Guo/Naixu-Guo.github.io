@@ -1,61 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Naixu Guo - Academic Homepage</title>
-    <meta name="description" content="Peer-reviewed articles, conference proceedings, and academic contributions">
-    <meta name="author" content="Naixu Guo">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Publications">
-    <meta property="og:description" content="Peer-reviewed articles, conference proceedings, and academic contributions">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naixu-guo.github.io/publications/">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Publications">
-    <meta name="twitter:description" content="Peer-reviewed articles, conference proceedings, and academic contributions">
-    
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body class="bg-white text-gray-900">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                        Naixu Guo
-                    </a>
-                </div>
-                <div class="flex items-center space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
-                    <a href="/publications" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
-                    <a href="/cv" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
-                    <a href="/mini_lib" class="text-gray-700 hover:text-blue-600 transition-colors">Mini Library</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+---
+layout: default
+title: Publications
+description: Peer-reviewed articles, conference proceedings, and academic contributions
+---
 
-    <!-- Main Content -->
-    <main>
-        <!-- Header -->
+<!-- Header -->
 <section class="py-12 px-8 bg-gray-50">
     <div class="max-w-6xl mx-auto">
-        <a href="/" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
+        <a href="{{ '/' | relative_url }}" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
             <i class="fas fa-arrow-left mr-2"></i>
             Back to Home
         </a>
         
         <h1 class="text-4xl font-serif font-bold text-gray-900 mb-4">
-            Publications &amp; Research Output
+            Publications & Research Output
         </h1>
         <p class="text-xl text-gray-700 max-w-3xl">
             Peer-reviewed articles, conference proceedings, and academic contributions
@@ -339,23 +297,3 @@
         </div>
     </div>
 </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">
-                © 2024 Naixu Guo. All rights reserved. | PhD Candidate, National University of Singapore
-            </p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="/assets/js/main.js"></script>
-    <style>
-      .news-content a, .hero-summary a { color: #2563eb; text-decoration: none; }
-      .news-content a:hover, .hero-summary a:hover { text-decoration: underline; }
-    </style>
-</body>
-</html>

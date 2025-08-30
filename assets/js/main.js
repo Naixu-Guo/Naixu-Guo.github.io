@@ -56,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Console welcome message
-    console.log('Welcome to Dr. Naixu Guo\'s Academic Website! 🚀');
+    console.log('Welcome to Naixu Guo\'s Academic Website! 🚀');
     console.log('Built with Jekyll and Tailwind CSS');
 });

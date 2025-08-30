@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.data.cv.title }} - Dr. Naixu Guo - Academic Homepage</title>
+    <title>Curriculum Vitae - Naixu Guo - Academic Homepage</title>
     <meta name="description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
-    <meta name="author" content="Dr. Naixu Guo">
+    <meta name="author" content="Naixu Guo">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ site.data.cv.title }}">
+    <meta property="og:title" content="Curriculum Vitae">
     <meta property="og:description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://naixu-guo.github.io/cv/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ site.data.cv.title }}">
+    <meta name="twitter:title" content="Curriculum Vitae">
     <meta name="twitter:description" content="PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications">
     
     <!-- Styles -->
@@ -30,7 +30,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                        Dr. Naixu Guo
+                        Naixu Guo
                     </a>
                 </div>
                 <div class="flex items-center space-x-8">
@@ -38,6 +38,7 @@
                     <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
                     <a href="/publications" class="text-gray-700 hover:text-blue-600 transition-colors">Publications</a>
                     <a href="/cv" class="text-gray-700 hover:text-blue-600 transition-colors">CV</a>
+                    <a href="/mini_lib" class="text-gray-700 hover:text-blue-600 transition-colors">Mini Library</a>
                 </div>
             </div>
         </div>
@@ -46,139 +47,134 @@
     <!-- Main Content -->
     <main>
         <!-- Header -->
-<section class="py-12 px-8 bg-gray-50">
+<section class="py-8 px-8 bg-gray-50">
     <div class="max-w-6xl mx-auto">
-        <a href="/" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
-            <i class="fas fa-arrow-left mr-2"></i>
-            Back to Home
-        </a>
-        
-        <h1 class="text-4xl font-serif font-bold text-gray-900 mb-4">
-            Curriculum Vitae
-        </h1>
-        <p class="text-xl text-gray-700 max-w-3xl">
-            Academic and professional background
-        </p>
-    </div>
-</section>
-
-<!-- Personal Information -->
-<section class="py-8 px-8 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 text-center shadow-lg">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                Naixu Guo
-            </h2>
-            <p class="text-xl text-gray-700 mb-4">
-                Ph.D. student in Computer Science (Quantum Information)
-            </p>
-            <p class="text-lg text-gray-600 mb-6">
-                National University of Singapore
-            </p>
-            
-            <div class="flex justify-center items-center space-x-8 text-gray-600">
-                
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-envelope text-blue-600"></i>
-                    <span>naixug@u.nus.edu</span>
-                </div>
-                
-                
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-phone text-blue-600"></i>
-                    <span></span>
-                </div>
-                
-                
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-map-marker-alt text-blue-600"></i>
-                    <span>Singapore</span>
-                </div>
-                
+        <div class="flex items-start justify-between gap-4">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-gray-900">
+                    Curriculum Vitae
+                </h1>
+                <p class="text-base md:text-lg text-gray-700 max-w-3xl mt-2">
+                    Academic and professional background
+                </p>
+            </div>
+            <div class="mt-1">
+                <button onclick="window.print()" class="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-semibold">
+                    <i class="fas fa-file-download mr-2"></i> Print / Save as PDF
+                </button>
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<!-- CV Sections -->
-<section class="py-8 px-8 bg-gray-50">
+<!-- Personal Information (compact) -->
+<section class="py-6 px-8 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+            Naixu Guo
+        </h2>
+        <p class="text-base md:text-lg text-gray-700">
+            Ph.D. student in Computer Science (Quantum Information)
+        </p>
+        <p class="text-sm md:text-base text-gray-600">
+            National University of Singapore
+        </p>
+        <div class="flex justify-center items-center gap-6 text-gray-600 mt-3 text-sm">
+            
+            <div class="flex items-center gap-2">
+                <i class="fas fa-envelope text-blue-600"></i>
+                <span>naixug@u.nus.edu</span>
+            </div>
+            
+            
+            <div class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                <span>Singapore</span>
+            </div>
+            
+        </div>
+    </div>
+    </section>
+
+<!-- CV Sections (compact cards) -->
+<section class="py-4 px-8 bg-gray-50">
     <div class="max-w-6xl mx-auto">
         
-        <div class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Education</h2>
+        <div class="mb-6">
+            <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-3 text-center">Education</h2>
             
-            <div class="space-y-6">
+            <div class="space-y-3">
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Ph.D. in Computer Science (Quantum Information)
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2022 - 2026 (expected)
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         National University of Singapore
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         Advisor: Patrick Rebentrost and Miklos Santha
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             M.E. in Electrical Engineering
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2020 - 2022
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Osaka University
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         Advisor: Keisuke Fujii
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             B.E. in Applied Physics
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2016 - 2020
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Kyoto University
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         Advisor: Takayuki Miyadera
                     </p>
                     
@@ -187,156 +183,156 @@
             </div>
         </div>
         
-        <div class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Academic Visits &amp; Research Experience</h2>
+        <div class="mb-6">
+            <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-3 text-center">Academic Visits &amp; Research Experience</h2>
             
-            <div class="space-y-6">
+            <div class="space-y-3">
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             University of Toronto
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Aug-Sep 2024
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: Alán Aspuru-Guzik
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Peking University &amp; Tsinghua University
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Dec 2024
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: Dong An &amp; Ziwen Liu
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             The Hong Kong University of Science and Technology (Guangzhou)
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Dec 2024
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: Xin Wang
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             RWTH Aachen &amp; Free University of Berlin
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Jun-Jul 2024
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: Mario Berta &amp; Jens Eisert
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Nagoya University
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Jul 2021 - Mar 2022
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: François Le Gall
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Kyoto University
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             Mar-Jul 2019
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Host: Keisuke Fujii
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
@@ -345,131 +341,131 @@
             </div>
         </div>
         
-        <div class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Honors, Awards &amp; Fellowships</h2>
+        <div class="mb-6">
+            <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-3 text-center">Honors, Awards &amp; Fellowships</h2>
             
-            <div class="space-y-6">
+            <div class="space-y-3">
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Research Excellence Scholarship
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2025
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Sandbox AQ
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             CQT Young Researcher Career Development Grant
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2025
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Centre for Quantum Technologies
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Distinguished Scholarship Award
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2022
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         National University of Singapore
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Hirose International Scholarship
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2017-2022
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Hirose Foundation
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Monbukagakusho Honors Scholarship
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             2016-2017
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Monbukagakusho
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
@@ -478,81 +474,81 @@
             </div>
         </div>
         
-        <div class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Professional Service</h2>
+        <div class="mb-6">
+            <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-3 text-center">Professional Service</h2>
             
-            <div class="space-y-6">
+            <div class="space-y-3">
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Program Committee (Conference &amp; Workshop)
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Joint CQT-MCQST workshop
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Reviewer (Journals)
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         Quantum, PRX Quantum, Physical Review Research, Quantum Machine Intelligence
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
                 </div>
                 
-                <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">
+                <div class="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow p-3">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900">
                             Reviewer (Conferences)
                         </h3>
                         
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span class="bg-blue-100 text-blue-800 text-[11px] font-medium px-2 py-0.5 rounded-full">
                             
                         </span>
                         
                     </div>
                     
                     
-                    <p class="text-lg text-gray-700 font-medium mb-3">
+                    <p class="text-sm md:text-base text-gray-700 font-medium mb-1.5">
                         QIP 2023/2024, TQC 2023/2024, QCTIP 2024, AQIS 2025, QCE 2025
                     </p>
                     
                     
                     
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-[13px] text-gray-600 leading-relaxed">
                         
                     </p>
                     
@@ -563,6 +559,22 @@
         
     </div>
 </section>
+
+<!-- Print styles for PDF export -->
+<style>
+@media print {
+  nav, footer { display: none !important; }
+  body { color: #000; }
+  a { color: #000; text-decoration: none; }
+  section { padding: 0 !important; }
+  .rounded-lg, .rounded-md { border-radius: 0 !important; }
+  .border { border-color: #e5e7eb !important; }
+  .max-w-6xl { max-width: 100% !important; }
+  .bg-gray-50, .bg-white { background: #fff !important; }
+  .hover\:shadow-sm, .hover\:shadow-md { box-shadow: none !important; }
+  button { display: none !important; }
+}
+</style>
 
 <!-- Include Tailwind CSS -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
@@ -576,7 +588,7 @@
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-gray-400">
-                © 2024 Dr. Naixu Guo. All rights reserved. | PhD Candidate, University of Excellence
+                © 2024 Naixu Guo. All rights reserved. | PhD Candidate, National University of Singapore
             </p>
         </div>
     </footer>
@@ -584,8 +596,8 @@
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
     <style>
-      .news-content a { color: #2563eb; text-decoration: none; }
-      .news-content a:hover { text-decoration: underline; }
+      .news-content a, .hero-summary a { color: #2563eb; text-decoration: none; }
+      .news-content a:hover, .hero-summary a:hover { text-decoration: underline; }
     </style>
 </body>
 </html>
