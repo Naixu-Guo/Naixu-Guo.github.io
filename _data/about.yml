@@ -29,9 +29,9 @@ research_focus:
   intro: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
   areas:
     - icon: "book-open"
-      title: "Quantum linear algebra"
+      title: "Quantum machine learning"
     - icon: "cogs"
-      title: "Dissipative quantum algorithms"
+      title: "Quantum algorithms"
     - icon: "brain"
       title: "AI for quantum"
 news:
