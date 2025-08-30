@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Research Portfolio"
+title: "Research"
 permalink: /research/
 ---
 
