@@ -29,7 +29,7 @@ research_focus:
   intro: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
   areas:
     - icon: "book-open"
-      title: "Quantum machine learning"
+      title: "Quantum for AI"
     - icon: "cogs"
       title: "Quantum algorithms"
     - icon: "brain"
@@ -42,5 +42,5 @@ contact:
   enabled: true
   title: "Get in Touch"
   message: "I'm always interested in discussing research collaborations, opportunities, or just having a chat about quantum computing and AI."
-  email: "your.email@example.com"
+  email: "naixug@u.nus.edu"
   cv_url: "/cv"
