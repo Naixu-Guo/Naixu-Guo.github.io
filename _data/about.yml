@@ -29,9 +29,9 @@ research_focus:
   intro: "Explore the principles of nature to pioneer transformative algorithms and new paradigms of intelligence for accelerating scientific discovery."
   areas:
     - icon: "book-open"
-      title: "Quantum algorithm"
+      title: "Quantum simulation and algorithm"
     - icon: "cogs"
-      title: "AI for Science"
+      title: "Artificial Intelligence (AI) for Science"
 news:
   source: "site.data.news"
   limit: 5
