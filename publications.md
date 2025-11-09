@@ -44,7 +44,7 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
                                             <div class="text-sm bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 space-y-1">
                                                 <div class="text-gray-700"><span class="font-semibold text-blue-700">Authors:</span> {{ authors_markup }}</div>
                                                 {% if journal_markup %}
-                                                <div class="text-gray-700">Venue: {{ journal_markup }}</div>
+                                                <div class="text-gray-700">{{ journal_markup }}</div>
                                                 {% endif %}
                                             </div>
                                             {% if pub.talks %}
@@ -95,5 +95,6 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
         </div>
     </div>
 </section>
+
 
 
