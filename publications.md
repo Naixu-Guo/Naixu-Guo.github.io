@@ -82,9 +82,22 @@ description: Peer-reviewed articles, conference proceedings, and academic contri
                             </div>
                         </div>
                         {% if pub.image %}
+                        {% assign image_path = pub.image | relative_url %}
+                        {% assign image_ext = pub.image | split: '.' | last | downcase %}
                         <figure class="flex-shrink-0 w-full max-w-xs md:max-w-[14rem] mx-auto md:mx-0">
                             <div class="w-full h-full overflow-hidden rounded-lg border border-gray-200 shadow-sm aspect-[4/3]">
-                                <img src="{{ pub.image | relative_url }}" alt="{{ pub.image_alt | default: pub.title }}" class="w-full h-full object-cover" loading="lazy" />
+                                {% if image_ext == 'pdf' %}
+                                <object data="{{ image_path }}#view=FitH" type="application/pdf" class="w-full h-full">
+                                    <p class="text-sm text-gray-600 p-3">
+                                        PDF preview unavailable.
+                                        <a href="{{ image_path }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold">
+                                            Open PDF
+                                        </a>
+                                    </p>
+                                </object>
+                                {% else %}
+                                <img src="{{ image_path }}" alt="{{ pub.image_alt | default: pub.title }}" class="w-full h-full object-cover" loading="lazy" />
+                                {% endif %}
                             </div>
                         </figure>
                         {% endif %}
