@@ -12,13 +12,13 @@ hero:
 
             **I am on the job market this year, and actively looking for postdoc positions and other opportunities.**
             "
-  cta_primary:
-    label: "View Research"
-    url: "/research"
-  cta_secondary:
-    label: "Publications"
-    url: "/publications"
-  contact_email: "naixug@u.nus.edu"
+  # cta_primary:
+  #   label: "View Research"
+  #   url: "/research"
+  # cta_secondary:
+  #   label: "Publications"
+  #   url: "/publications"
+  # contact_email: "naixug@u.nus.edu"
   socials:
     scholar: "https://scholar.google.com/citations?user=r2I_WtAAAAAJ&hl=en"
     x: "https://x.com/gnx_kns"
@@ -26,14 +26,12 @@ hero:
 
 research_focus:
   title: "Research Focus"
-  intro: "My research aims to uncover and harness the fundamental computational principles of nature, especially quantum, to pioneer transformative algorithms and new paradigms of intelligence."
+  intro: "Explore the principles of nature to pioneer transformative algorithms and new paradigms of intelligence for accelerating scientific discovery."
   areas:
     - icon: "book-open"
-      title: "Quantum for AI"
+      title: "Quantum algorithm"
     - icon: "cogs"
-      title: "Quantum algorithms"
-    - icon: "brain"
-      title: "AI for quantum"
+      title: "AI for Science"
 news:
   source: "site.data.news"
   limit: 5
