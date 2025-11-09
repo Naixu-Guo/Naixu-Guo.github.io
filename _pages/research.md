@@ -48,6 +48,24 @@ permalink: /research/
                     <div class="prose prose-lg text-gray-700 leading-relaxed">
                         {{ area.description | markdownify }}
                     </div>
+
+                    {% if area.image %}
+                    {% assign figure_width_class = area.image_width | default: "max-w-3xl" %}
+                    {% assign figure_aspect_class = area.image_aspect | default: "aspect-[3/2]" %}
+                    <figure class="mt-8 {{ figure_width_class }} w-full mx-auto">
+                        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm {{ figure_aspect_class }}">
+                            <img src="{{ area.image | relative_url }}"
+                                 alt="{{ area.image_alt | default: area.title }}"
+                                 class="w-full h-full object-cover"
+                                 loading="lazy" />
+                        </div>
+                        {% if area.image_caption %}
+                        <figcaption class="text-sm text-gray-600 text-center mt-3">
+                            {{ area.image_caption }}
+                        </figcaption>
+                        {% endif %}
+                    </figure>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

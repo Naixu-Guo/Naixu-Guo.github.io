@@ -15,6 +15,11 @@ research_areas:
       - N. Guo, etc., Quantum linear algebra is all you need for Transformer architectures, arXiv:2402.16714
       - N. Guo, K. Mitarai, K. Fujii, Nonlinear transformation of complex amplitudes via quantum singular value transformation, Phys. Rev. Research (2024)
       - S. Yang, N. Guo, M. Santha, P. Rebentrost, Quantum Alphatron: quantum advantage for learning with kernels and noise, Quantum (2023)
+    image: "/placeholder.svg"
+    image_alt: "Illustrative placeholder graphic representing quantum linear algebra"
+    image_caption: "Illustrative placeholder. Replace with a visual from your quantum linear algebra projects."
+    image_width: "max-w-lg"
+    image_aspect: "aspect-[4/3]"
 
   - title: "Quantum open system based computation"
     icon: "cogs"

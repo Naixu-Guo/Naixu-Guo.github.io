@@ -85,7 +85,15 @@ description: {{ site.data.about.hero.tagline }}
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        {% assign area_count = site.data.about.research_focus.areas | size %}
+        {% if area_count == 1 %}
+        {% assign research_grid_classes = "grid grid-cols-1 gap-8" %}
+        {% elsif area_count == 2 %}
+        {% assign research_grid_classes = "grid grid-cols-1 md:grid-cols-2 gap-8" %}
+        {% else %}
+        {% assign research_grid_classes = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" %}
+        {% endif %}
+        <div class="{{ research_grid_classes }}">
             {% for area in site.data.about.research_focus.areas %}
             <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-center mb-4">
@@ -100,7 +108,9 @@ description: {{ site.data.about.hero.tagline }}
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900">{{ area.title }}</h3>
                 </div>
+                {% if area.description %}
                 <p class="text-gray-700 mb-4">{{ area.description }}</p>
+                {% endif %}
                 {% if area.selected_works %}
                 <div class="text-sm text-gray-700">
                     <div class="font-semibold mb-1">Selected works:</div>
