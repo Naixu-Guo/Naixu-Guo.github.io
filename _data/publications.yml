@@ -9,7 +9,7 @@
   image: "/figure/lindff.pdf"
 - title: "Accelerating Inference for Multilayer Neural Networks with Quantum Computers"
   authors: "Arthur G. Rattew, Po-Wei Huang, **Naixu Guo**, Lirandë Pira, Patrick Rebentrost"
-  journal: "arXiv:2510.07195, 2025"
+  journal: "International Conference on Learning Representations (**ICLR**), 2026"
   link: "https://arxiv.org/abs/2510.07195"
   talks: "QTML 2025"
   pdf_link: "#"
