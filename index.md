@@ -8,14 +8,10 @@ description: "Naixu Guo — Quantum algorithms, structured learning, and scienti
 <section class="hero home-hero">
     <div class="container">
         <div class="hero-stage relative overflow-hidden" id="hero-stage">
-            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+            <canvas id="hero-canvas" class="hero-stage__canvas" aria-hidden="true"></canvas>
+            <div class="hero-stage__diagram" aria-hidden="true"></div>
             <div class="hero-stage__content">
                 <div class="hero-grid">
-                    <div class="hero-media">
-                        <div class="hero-media__frame">
-                            <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="Naixu Guo" class="hero-portrait">
-                        </div>
-                    </div>
                     <div class="hero-content">
                         <p class="hero-kicker">{{ site.data.about.hero.kicker }}</p>
                         <h1 class="hero-name">{{ site.data.about.hero.name_en }}</h1>
@@ -25,11 +21,48 @@ description: "Naixu Guo — Quantum algorithms, structured learning, and scienti
                         <p class="hero-statement">
                             <span>{{ site.data.about.hero.statement }}</span>
                         </p>
-                        <div class="hero-actions">
-                            <a href="{{ '/research/' | relative_url }}" class="button-link">Research</a>
-                            <a href="{{ '/publications/' | relative_url }}" class="button-link">Publications</a>
-                            <a href="{{ '/cv/' | relative_url }}" class="button-link">CV</a>
+                        <div class="hero-credentials">
+                            <div class="meta-chip meta-chip--hero">
+                                <span>Role</span>
+                                <strong>{{ site.data.cv.personal_info.title }}</strong>
+                            </div>
+                            <div class="meta-chip meta-chip--hero">
+                                <span>Affiliation</span>
+                                <strong>{{ site.data.cv.personal_info.institution }}</strong>
+                            </div>
+                            <div class="meta-chip meta-chip--hero">
+                                <span>Focus</span>
+                                <strong>{{ site.data.cv.profile.research_keywords }}</strong>
+                            </div>
                         </div>
+                        <div class="hero-actions">
+                            <a href="{{ '/research/' | relative_url }}" class="button-link button-link--primary">Research</a>
+                            <a href="{{ '/publications/' | relative_url }}" class="button-link button-link--secondary">Publications</a>
+                            <a href="{{ '/cv/' | relative_url }}" class="button-link button-link--ghost">CV</a>
+                        </div>
+                    </div>
+                    <div class="hero-media">
+                        <div class="hero-media__frame">
+                            <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="Portrait of Naixu Guo" class="hero-portrait">
+                        </div>
+                        <div class="hero-media__caption">
+                            <p class="hero-media__role">{{ site.data.cv.personal_info.title }}</p>
+                            <p class="hero-media__institution">{{ site.data.cv.personal_info.institution }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-ledger" aria-label="Research profile summary">
+                    <div class="hero-ledger__item">
+                        <span>Current base</span>
+                        <strong>{{ site.data.cv.personal_info.location }}</strong>
+                    </div>
+                    <div class="hero-ledger__item">
+                        <span>Research vision</span>
+                        <strong>{{ site.data.research.vision_definition.lead }} {{ site.data.research.vision_definition.focus }}</strong>
+                    </div>
+                    <div class="hero-ledger__item">
+                        <span>Recent emphasis</span>
+                        <strong>Quantum algorithms, structured learning, AI for science</strong>
                     </div>
                 </div>
             </div>

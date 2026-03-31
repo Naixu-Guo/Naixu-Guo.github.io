@@ -9,30 +9,53 @@
     enabled: true,
     physicalModel: "hybrid",
     maxDpr: 1.75,
-    baseCurveCount: 6,
-    baseParticleCount: 60,
+    baseCurveCount: 5,
+    baseParticleCount: 46,
     baseNodeCount: 5,
-    curveSteps: 160,
-    anchorStiffness: 0.0034,
-    linkStiffness: 0.0018,
-    corridorStiffness: 0.001,
+    curveSteps: 132,
+    anchorStiffness: 0.0031,
+    linkStiffness: 0.00145,
+    corridorStiffness: 0.00082,
     damping: 0.93,
     nodeRepulsion: 6400,
     centerPull: 0.00045,
-    gravityStrength: 940,
-    tangentStrength: 0.18,
+    gravityStrength: 760,
+    tangentStrength: 0.14,
     particleDrag: 0.986,
-    pointerParallax: 24,
-    touchDriftRadius: 0.42,
+    pointerParallax: 18,
+    touchDriftRadius: 0.28,
     maxNodeSpeed: 1.8,
     maxParticleSpeed: 2.6
   };
-  const PALETTE = [
-    [89, 226, 255],
-    [113, 98, 255],
-    [255, 79, 207]
-  ];
   const mediaListeners = [];
+
+  function readCssVariable(name, fallback) {
+    const value = window.getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return value || fallback;
+  }
+
+  function hexToRgb(hex) {
+    const value = hex.replace("#", "").trim();
+    if (value.length === 3) {
+      return [
+        parseInt(value.charAt(0) + value.charAt(0), 16),
+        parseInt(value.charAt(1) + value.charAt(1), 16),
+        parseInt(value.charAt(2) + value.charAt(2), 16)
+      ];
+    }
+
+    return [
+      parseInt(value.slice(0, 2), 16),
+      parseInt(value.slice(2, 4), 16),
+      parseInt(value.slice(4, 6), 16)
+    ];
+  }
+
+  const PALETTE = [
+    hexToRgb(readCssVariable("--hero-curve1", "#88c2d8")),
+    hexToRgb(readCssVariable("--hero-curve2", "#9aa3ff")),
+    hexToRgb(readCssVariable("--hero-curve3", "#d4cdff"))
+  ];
 
   function clamp(value, min, max) {
     return Math.min(max, Math.max(min, value));
@@ -253,8 +276,8 @@
           y: random(0, this.height),
           vx: random(-0.18, 0.18),
           vy: random(-0.18, 0.18),
-          radius: random(1.2, 3.8),
-          alpha: random(0.22, 0.56),
+          radius: random(0.95, 2.8),
+          alpha: random(0.16, 0.42),
           palette: index % PALETTE.length,
           seed: Math.random(),
           orbitWeight: random(0.55, 1.25),
@@ -272,15 +295,15 @@
       for (let index = 0; index < count; index += 1) {
         curves.push({
           phase: random(0, TAU),
-          turns: random(1.5, 3.4),
-          speed: random(0.045, 0.12),
-          spiralMix: random(0.52, 0.86),
-          lissajousX: random(0.16, 0.34),
-          lissajousY: random(0.18, 0.36),
+          turns: random(1.4, 3.1),
+          speed: random(0.036, 0.085),
+          spiralMix: random(0.48, 0.78),
+          lissajousX: random(0.12, 0.26),
+          lissajousY: random(0.14, 0.3),
           freqX: 2 + (index % 3),
           freqY: 3 + ((index + 1) % 4),
-          alpha: random(0.11, 0.22),
-          lineWidth: random(0.9, 1.9),
+          alpha: random(0.075, 0.16),
+          lineWidth: random(0.8, 1.5),
           parallax: random(0.22, 0.54),
           paletteOffset: index % PALETTE.length
         });
@@ -455,9 +478,9 @@
         const node = this.nodes[index];
         const next = this.nodes[(index + 1) % this.nodes.length];
         const gradient = ctx.createLinearGradient(node.x, node.y, next.x, next.y);
-        gradient.addColorStop(0, rgba(node.palette, 0.22));
-        gradient.addColorStop(0.5, rgba((node.palette + 1) % PALETTE.length, 0.14));
-        gradient.addColorStop(1, rgba(next.palette, 0.18));
+        gradient.addColorStop(0, rgba(node.palette, 0.13));
+        gradient.addColorStop(0.5, rgba((node.palette + 1) % PALETTE.length, 0.08));
+        gradient.addColorStop(1, rgba(next.palette, 0.12));
         ctx.strokeStyle = gradient;
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
@@ -535,15 +558,15 @@
       for (let index = 0; index < this.nodes.length; index += 1) {
         const node = this.nodes[index];
         const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, this.metrics.glowRadius);
-        glow.addColorStop(0, rgba(node.palette, 0.58));
-        glow.addColorStop(0.45, rgba((node.palette + 1) % PALETTE.length, 0.18));
+        glow.addColorStop(0, rgba(node.palette, 0.4));
+        glow.addColorStop(0.45, rgba((node.palette + 1) % PALETTE.length, 0.12));
         glow.addColorStop(1, rgba(node.palette, 0));
         ctx.fillStyle = glow;
         ctx.beginPath();
         ctx.arc(node.x, node.y, this.metrics.glowRadius, 0, TAU);
         ctx.fill();
 
-        ctx.fillStyle = rgba(node.palette, 0.72);
+        ctx.fillStyle = rgba(node.palette, 0.5);
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, TAU);
         ctx.fill();
@@ -558,10 +581,10 @@
 
       for (let index = 0; index < this.particles.length; index += 1) {
         const particle = this.particles[index];
-        const radius = particle.radius * 3.8;
+        const radius = particle.radius * 3.15;
         const gradient = ctx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, radius);
-        gradient.addColorStop(0, rgba(particle.palette, clamp(particle.alpha + 0.3, 0, 0.95)));
-        gradient.addColorStop(0.36, rgba((particle.palette + 1) % PALETTE.length, particle.alpha));
+        gradient.addColorStop(0, rgba(particle.palette, clamp(particle.alpha + 0.22, 0, 0.8)));
+        gradient.addColorStop(0.36, rgba((particle.palette + 1) % PALETTE.length, particle.alpha * 0.82));
         gradient.addColorStop(1, rgba((particle.palette + 2) % PALETTE.length, 0));
         ctx.fillStyle = gradient;
         ctx.beginPath();
@@ -585,8 +608,8 @@
         this.height * 0.44,
         Math.max(this.width, this.height) * 0.68
       );
-      ambient.addColorStop(0, rgba(0, 0.08));
-      ambient.addColorStop(0.45, rgba(1, 0.05));
+      ambient.addColorStop(0, rgba(0, 0.05));
+      ambient.addColorStop(0.45, rgba(1, 0.03));
       ambient.addColorStop(1, "rgba(10, 15, 41, 0)");
       ctx.fillStyle = ambient;
       ctx.fillRect(0, 0, this.width, this.height);
@@ -622,7 +645,16 @@
     const canvas = document.getElementById("hero-canvas");
     const options = Object.assign({}, DEFAULTS, window.HERO_BG_CONFIG || {});
 
-    if (!stage || !canvas || !options.enabled) {
+    if (!stage) {
+      return;
+    }
+
+    if (!canvas) {
+      stage.classList.remove("hero-stage--static");
+      return;
+    }
+
+    if (!options.enabled) {
       if (stage) {
         stage.classList.add("hero-stage--static");
       }
