@@ -1,12 +1,11 @@
 main:
-  - title: "About"
-    url: /about/
+  - title: "Home"
+    url: /
   - title: "Research"
     url: /research/
   - title: "Publications"
     url: /publications/
   - title: "CV"
     url: /cv/
-  - title: "Mini Library"
-    url: /mini_lib/
-
+  - title: "Library"
+    url: /library/

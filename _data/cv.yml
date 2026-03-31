@@ -1,13 +1,23 @@
 title: "Curriculum Vitae"
 subtitle: "Academic and professional background"
+intro: "A concise overview of research training, academic appointments, awards, and professional service."
 
 personal_info:
   name: "Naixu Guo"
   title: "Ph.D. student in Computer Science (Quantum Information)"
-  institution: "National University of Singapore"
-  email: "naixug@u.nus.edu"
+  institution: "Centre for Quantum Technologies, National University of Singapore"
   phone: ""
   location: "Singapore"
+
+profile:
+  summary: "Researcher working on quantum algorithms, AI for science, and quantum machine learning, with a focus on dynamics, learnability, and algorithmic structure."
+  research_keywords: "Quantum algorithms · AI for science · quantum machine learning"
+  pdf_note: "Use the print action to generate a clean PDF version of this CV."
+  links:
+    - label: "Scholar"
+      url: "https://scholar.google.com/citations?user=r2I_WtAAAAAJ&hl=en"
+    - label: "Homepage"
+      url: "/"
 
 sections:
   - title: "Education"
@@ -15,7 +25,7 @@ sections:
       - title: "Ph.D. in Computer Science (Quantum Information)"
         institution: "National University of Singapore"
         duration: "2022 - 2026 (expected)"
-        details: "Advisor: Patrick Rebentrost and Miklos Santha"
+        details: "Advisors: Patrick Rebentrost and Miklos Santha"
       - title: "M.E. in Electrical Engineering"
         institution: "Osaka University"
         duration: "2020 - 2022"
@@ -89,4 +99,3 @@ sections:
         institution: "QIP 2023/2024, TQC 2023/2024, QCTIP 2024, AQIS 2025, QCE 2025"
         duration: ""
         details: ""
-

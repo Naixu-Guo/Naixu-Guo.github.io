@@ -2,77 +2,82 @@
 layout: default
 title: "Research"
 permalink: /research/
+description: "Research directions — quantum algorithms, AI for science, and quantum machine learning."
 ---
 
-<!-- Header -->
-<section class="py-12 px-8 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-        <a href="/" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
-            <i class="fas fa-arrow-left mr-2"></i>
-            Back to Home
-        </a>
-        
-        <h1 class="text-4xl font-serif font-bold text-gray-900 mb-4">
-            {{ site.data.research.title }}
-        </h1>
-        <p class="text-xl text-gray-700 max-w-3xl">
-            {{ site.data.research.subtitle }}
-        </p>
-    </div>
-</section>
-
-<!-- Research Areas -->
-<section class="py-12 px-8 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research Areas</h2>
-        
-        <div class="space-y-12">
-            {% for area in site.data.research.research_areas %}
-            <div class="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
-                            {% if area.icon == "dna" %}
-                                <i class="fas fa-dna text-2xl text-pink-600"></i>
-                            {% elsif area.icon == "brain" %}
-                                <i class="fas fa-brain text-2xl text-orange-600"></i>
-                            {% elsif area.icon == "cogs" %}
-                                <i class="fas fa-cogs text-2xl text-purple-600"></i>
-                            {% else %}
-                                <i class="fas fa-flask text-2xl text-blue-600"></i>
-                            {% endif %}
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900">{{ area.title }}</h3>
-                    </div>
-                    
-                    <div class="prose prose-lg text-gray-700 leading-relaxed">
-                        {{ area.description | markdownify }}
-                    </div>
-
-                    {% if area.image %}
-                    {% assign figure_width_class = area.image_width | default: "max-w-3xl" %}
-                    {% assign figure_aspect_class = area.image_aspect | default: "aspect-[3/2]" %}
-                    <figure class="mt-8 {{ figure_width_class }} w-full mx-auto">
-                        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm {{ figure_aspect_class }}">
-                            <img src="{{ area.image | relative_url }}"
-                                 alt="{{ area.image_alt | default: area.title }}"
-                                 class="w-full h-full object-cover"
-                                 loading="lazy" />
-                        </div>
-                        {% if area.image_caption %}
-                        <figcaption class="text-sm text-gray-600 text-center mt-3">
-                            {{ area.image_caption }}
-                        </figcaption>
-                        {% endif %}
-                    </figure>
-                    {% endif %}
-                </div>
+<section class="page-intro">
+    <div class="container">
+        <div class="page-intro__grid">
+            <div class="page-intro__meta">
+                <p class="page-kicker">Research</p>
             </div>
-            {% endfor %}
+            <div class="page-intro__content">
+                <h1 class="page-title">{{ site.data.research.title }}</h1>
+                <p class="page-lead">{{ site.data.research.subtitle }}</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Include Tailwind CSS -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<section class="field-section">
+    <div class="container">
+        <div class="section-shell section-shell--vision">
+            <div class="section-heading">
+                <p class="section-kicker">{{ site.data.research.vision_title }}</p>
+            </div>
+            <div class="section-content">
+                {% include vision-system.html page=true %}
+                <p class="research-intro">{{ site.data.research.intro }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="field-section field-section--last">
+    <div class="container">
+        <div class="research-map">
+            {% for area in site.data.research.research_areas %}
+            <article class="agenda-cluster agenda-cluster--{{ forloop.index }}">
+                <div class="agenda-cluster__rail">
+                    <div class="agenda-cluster__number">{{ area.number }}</div>
+                    <h2 class="agenda-cluster__title">{{ area.title }}</h2>
+                    <p class="agenda-cluster__summary">{{ area.summary }}</p>
+                </div>
+                <div class="agenda-cluster__content">
+                    <div class="agenda-field">
+                        <span>Conceptual Summary</span>
+                        <p>{{ area.page_summary }}</p>
+                    </div>
+                    <div class="agenda-field">
+                        <span>Keywords</span>
+                        <p>{{ area.keywords }}</p>
+                    </div>
+                    <div class="agenda-field">
+                        <span>Current Structure</span>
+                        <ul class="agenda-list">
+                            {% for thread in area.threads %}
+                            <li>{{ thread }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% if area.representative or area.representative2 %}
+                    <div class="agenda-field">
+                        <span>Representative Work</span>
+                        <div class="agenda-links">
+                            {% if area.representative %}
+                            <a href="{{ area.representative.link }}" class="agenda-link" target="_blank" rel="noopener noreferrer">{{ area.representative.title }}</a>
+                            <p class="agenda-link__venue">{{ area.representative.venue }}</p>
+                            {% endif %}
+                            {% if area.representative2 %}
+                            <a href="{{ area.representative2.link }}" class="agenda-link" target="_blank" rel="noopener noreferrer">{{ area.representative2.title }}</a>
+                            <p class="agenda-link__venue">{{ area.representative2.venue }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,8 +1,8 @@
-# Jekyll Configuration for Naixu Guo's Academic Website
-title: "Naixu Guo - Academic Homepage"
-description: "PhD Student and Rising Star Researcher - Academic Homepage showcasing cutting-edge research and publications"
+# Jekyll configuration
+title: "Naixu Guo"
+description: "Quantum algorithms, structured learning, and scientific discovery."
 author: "Naixu Guo"
-email: "your.email@example.com"
+email: "naixug@u.nus.edu"
 url: "https://naixu-guo.github.io"
 baseurl: ""
 

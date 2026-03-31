@@ -1,0 +1,24 @@
+{% assign focus_words = site.data.research.vision_definition.focus | split: ' ' %}
+{% assign focus_prefix = focus_words | slice: 0, 2 | join: ' ' %}
+{% assign focus_terminal = focus_words | last %}
+<div class="vision-system{% if include.page %} vision-system--page{% endif %}">
+    <div class="vision-system__intro">
+        <h2 class="vision-definition{% if include.page %} vision-definition--page{% endif %}">
+            <span>{{ site.data.research.vision_definition.lead }}</span>
+            <span>{{ focus_prefix }}</span>
+            <span>{{ focus_terminal }}</span>
+        </h2>
+    </div>
+    <div class="vision-process">
+        <p class="vision-bridge">{{ site.data.research.vision_bridge }}</p>
+        <div class="vision-flow{% if include.page %} vision-flow--page{% endif %}">
+            {% for item in site.data.research.vision_flow %}
+            {% assign vision_index = forloop.index | plus: 100 | slice: 1, 2 %}
+            <div class="vision-flow__node vision-flow__node--{{ forloop.index }}">
+                <span class="vision-flow__index">{{ vision_index }}</span>
+                <p class="vision-flow__term">{{ item }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

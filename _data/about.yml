@@ -2,43 +2,25 @@ hero:
   name_en: "Naixu Guo"
   name_zh: "郭乃绪"
   avatar: "/photo.jpg"
-  role: "Researcher in Quantum Computing and AI for Science"
-  affiliation: "National University of Singapore | Centre for Quantum Technologies | Quantum World"
-  tagline: "Meow"
-  summary: "I am a fourth-year PhD student at CQT, advised by [Patrick Rebentrost](https://scholar.google.com/citations?user=XWHSBmUAAAAJ&hl=en) and Miklos Santha.
-            Previously, I graduated from Kyoto University and Osaka University, under the supervision of Keisuke Fujii and Kosuke Mitarai.
-            To know more about quantum machine learning, welcome to read our [book](https://arxiv.org/abs/2502.01146).
-
-
-            **I am on the job market this year, and actively looking for postdoc positions and other opportunities.**
-            "
-  # cta_primary:
-  #   label: "View Research"
-  #   url: "/research"
-  # cta_secondary:
-  #   label: "Publications"
-  #   url: "/publications"
-  # contact_email: "naixug@u.nus.edu"
+  kicker: "Structured Dynamics"
+  tagline: "Quantum algorithms, structured learning, and scientific discovery."
+  statement: "I work on the algorithmic foundations of quantum-enhanced intelligence."
   socials:
     scholar: "https://scholar.google.com/citations?user=r2I_WtAAAAAJ&hl=en"
     x: "https://x.com/gnx_kns"
     linkedin: "https://www.linkedin.com/in/naixu-guo-a0567626a/"
 
-research_focus:
-  title: "Research Focus"
-  intro: "Explore the principles of nature to pioneer transformative algorithms and new paradigms of intelligence for accelerating scientific discovery."
-  areas:
-    - icon: "book-open"
-      title: "Quantum simulation and algorithm"
-    - icon: "cogs"
-      title: "Artificial Intelligence (AI) for Science"
-news:
-  source: "site.data.news"
-  limit: 5
+selected_works:
+  - title: "Quantum Transformer"
+    mapping: "neural systems × quantum structure"
+    link: "https://arxiv.org/abs/2402.16714"
+  - title: "Fast-forwardable Lindbladians"
+    mapping: "open-system dynamics × phase estimation"
+    link: "https://arxiv.org/abs/2510.06759"
+  - title: "Accelerating Inference for Multilayer Networks"
+    mapping: "scientific modeling × quantum acceleration"
+    link: "https://arxiv.org/abs/2510.07195"
 
 contact:
   enabled: true
-  title: "Get in Touch"
-  message: "I'm always interested in discussing research collaborations, opportunities, or just having a chat about quantum computing and AI."
-  email: "naixug@u.nus.edu"
-  cv_url: "/cv"
+  message: "I’m happy to connect about research collaborations, talks, and postdoctoral opportunities in quantum computing and AI for science."

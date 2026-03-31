@@ -1,16 +1,51 @@
-- content: "[02/2026] I started a research internship at A*STAR Institute of High Performance Computing, hosted by Yunlong Xiao."
-- content: "[1/2026] Our work [Accelerating Inference for Multilayer Neural Networks with Quantum Computers](https://arxiv.org/abs/2510.07195) has been accepted at ICLR 2026."
-- content: "[12/2025] I gave outreach talk about the limits of classical computation and quantum advantage at Quantum Fall Fest 2025 in Singapore."
-- content: "[11/2025] Our work [Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759) has been accepted at QIP 2026."
-- content: "[10/2025] I gave invited taks on Quantum algorithms for linear differential equation and phase estimation via Lindbladians at Institute for Quantum Computing and Oxford University."
-- content: "[10/2025] Our new works [Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759), [Accelerating Inference for Multilayer Neural Networks with Quantum Computers](https://arxiv.org/abs/2510.07195) haven been out on arXiv."
-- content: "[08/2025] Our paper [Online Learning of Pure States is as Hard as Mixed States](https://arxiv.org/abs/2502.00823) has been accepted by NeurIPS 2025."
-- content: "[08/2025] Our paper [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) has been accepted by Physical Review Letters."
-- content: "[08/2025] I started my visit to Xanadu, University of Toronto, and University of Waterloo."
-- content: "[08/2025] I have received the [research excellence scholarship](https://www.sandboxaq.com/company/scholarships) from Sandbox AQ."
-- content: "[08/2025] Our paper [Quantum linear algebra is all you need for Transformer architectures](https://arxiv.org/abs/2402.16714) has been presented as a plenary talk at AQIS 2025 by Patrick."
-- content: "[06/2025] Our paper [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) has been accepted for a talk at AQIS 2025."
-- content: "[05/2025] I gave a talk on work [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at Joint CQT-MCQST workshop."
-- content: "[04/2025] I gave a invited talk on work [Quantum linear algebra is all you need for Transformer architectures](https://arxiv.org/abs/2402.16714) at Nanyang Technological University, hosted by Mile Gu."
-- content: "[04/2025] I gave a invited talk on work [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at Centre for Quantum Technologies, NUS."
-- content: "[03/2025] I gave a invited talk on work [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at University of Latvia, hosted by Andris Ambainis."
+- date: "Feb 2026"
+  content: "Started a research internship at A*STAR Institute of High Performance Computing, hosted by Yunlong Xiao."
+
+- date: "Jan 2026"
+  content: "Our work [Accelerating Inference for Multilayer Neural Networks with Quantum Computers](https://arxiv.org/abs/2510.07195) accepted at **ICLR 2026**."
+  venue: "ICLR"
+
+- date: "Dec 2025"
+  content: "Gave an outreach talk on the limits of classical computation and quantum advantage at Quantum Fall Fest 2025 in Singapore."
+
+- date: "Nov 2025"
+  content: "Our work [Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759) accepted at **QIP 2026**."
+  venue: "QIP"
+
+- date: "Oct 2025"
+  content: "Invited talks on quantum algorithms for linear differential equations and phase estimation via Lindbladians at Institute for Quantum Computing and Oxford University."
+
+- date: "Oct 2025"
+  content: "New preprints: [Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759) and [Accelerating Inference for Multilayer Neural Networks](https://arxiv.org/abs/2510.07195)."
+
+- date: "Aug 2025"
+  content: "Our paper [Online Learning of Pure States is as Hard as Mixed States](https://arxiv.org/abs/2502.00823) accepted at **NeurIPS 2025**."
+  venue: "NeurIPS"
+
+- date: "Aug 2025"
+  content: "Our paper [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) accepted at **Physical Review Letters**."
+  venue: "PRL"
+
+- date: "Aug 2025"
+  content: "Started visit to Xanadu, University of Toronto, and University of Waterloo."
+
+- date: "Aug 2025"
+  content: "Received the [research excellence scholarship](https://www.sandboxaq.com/company/scholarships) from Sandbox AQ."
+
+- date: "Aug 2025"
+  content: "Our paper [Quantum linear algebra is all you need for Transformer architectures](https://arxiv.org/abs/2402.16714) presented as a plenary talk at AQIS 2025."
+
+- date: "Jun 2025"
+  content: "Our paper [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) accepted for a talk at AQIS 2025."
+
+- date: "May 2025"
+  content: "Talk on [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at Joint CQT-MCQST workshop."
+
+- date: "Apr 2025"
+  content: "Invited talk on [Quantum linear algebra is all you need for Transformer architectures](https://arxiv.org/abs/2402.16714) at Nanyang Technological University, hosted by Mile Gu."
+
+- date: "Apr 2025"
+  content: "Invited talk on [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at Centre for Quantum Technologies, NUS."
+
+- date: "Mar 2025"
+  content: "Invited talk on [Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at University of Latvia, hosted by Andris Ambainis."
