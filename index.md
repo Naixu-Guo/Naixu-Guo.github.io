@@ -7,25 +7,30 @@ description: "Naixu Guo — Quantum algorithms, structured learning, and scienti
 
 <section class="hero home-hero">
     <div class="container">
-        <div class="hero-grid">
-            <div class="hero-media">
-                <div class="hero-media__frame">
-                    <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="Naixu Guo" class="hero-portrait">
-                </div>
-            </div>
-            <div class="hero-content">
-                <p class="hero-kicker">{{ site.data.about.hero.kicker }}</p>
-                <h1 class="hero-name">{{ site.data.about.hero.name_en }}</h1>
-                <p class="hero-tagline">
-                    <span>{{ site.data.about.hero.tagline }}</span>
-                </p>
-                <p class="hero-statement">
-                    <span>{{ site.data.about.hero.statement }}</span>
-                </p>
-                <div class="hero-actions">
-                    <a href="{{ '/research/' | relative_url }}" class="button-link">Research</a>
-                    <a href="{{ '/publications/' | relative_url }}" class="button-link">Publications</a>
-                    <a href="{{ '/cv/' | relative_url }}" class="button-link">CV</a>
+        <div class="hero-stage relative overflow-hidden" id="hero-stage">
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+            <div class="hero-stage__content">
+                <div class="hero-grid">
+                    <div class="hero-media">
+                        <div class="hero-media__frame">
+                            <img src="{{ site.data.about.hero.avatar | relative_url }}" alt="Naixu Guo" class="hero-portrait">
+                        </div>
+                    </div>
+                    <div class="hero-content">
+                        <p class="hero-kicker">{{ site.data.about.hero.kicker }}</p>
+                        <h1 class="hero-name">{{ site.data.about.hero.name_en }}</h1>
+                        <p class="hero-tagline">
+                            <span>{{ site.data.about.hero.tagline }}</span>
+                        </p>
+                        <p class="hero-statement">
+                            <span>{{ site.data.about.hero.statement }}</span>
+                        </p>
+                        <div class="hero-actions">
+                            <a href="{{ '/research/' | relative_url }}" class="button-link">Research</a>
+                            <a href="{{ '/publications/' | relative_url }}" class="button-link">Publications</a>
+                            <a href="{{ '/cv/' | relative_url }}" class="button-link">CV</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

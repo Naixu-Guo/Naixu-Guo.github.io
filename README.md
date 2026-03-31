@@ -79,6 +79,34 @@ Edit `_data/mini_lib.yml` to update your resource library:
 2. Start the server: `bundle exec jekyll serve --livereload`
 3. View at: http://127.0.0.1:4000/
 
+## Hero Background Animation
+
+The homepage hero now uses a dedicated canvas background:
+
+- `assets/js/hero-bg.js` renders the animated curves, particles, and physics system
+- `assets/css/hero-bg.css` defines the palette, hero container styling, and reduced-motion behavior
+- `assets/img/hero-bg-fallback.png` is used when `prefers-reduced-motion` is enabled
+
+The animation reads an optional `window.HERO_BG_CONFIG` object before `assets/js/hero-bg.js` loads.
+
+Disable the animation entirely:
+
+```html
+<script>
+  window.HERO_BG_CONFIG = { enabled: false };
+</script>
+```
+
+Switch between physical models:
+
+```html
+<script>
+  window.HERO_BG_CONFIG = { physicalModel: "spring" };
+</script>
+```
+
+Supported models are `"spring"`, `"gravity"`, and `"hybrid"` (the default). You can also adjust the default constants directly near the top of `assets/js/hero-bg.js`.
+
 ## File Structure
 
 - `_data/` - All content in YAML format
@@ -92,4 +120,3 @@ Edit `_data/mini_lib.yml` to update your resource library:
 - **Fast**: Changes appear immediately with live reload
 - **Organized**: All content is in one place
 - **Maintainable**: Easy to add new items or modify existing ones
-
