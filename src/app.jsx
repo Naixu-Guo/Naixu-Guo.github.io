@@ -1,6 +1,14 @@
 /* global React, ReactDOM, SITE, Home, Research, Publications, CVPage, Library, useReveal */
 const { useState, useEffect } = React;
 
+const DATA_FILES = [
+  "src/data/home.js",
+  "src/data/publications.js",
+  "src/data/research.js",
+  "src/data/cv.js",
+  "src/data/library.js",
+];
+
 const ROUTES = [
   { path: "/",             label: "Home",         Component: () => null },
   { path: "/research",     label: "Research",     Component: () => null },
@@ -43,8 +51,8 @@ function Nav({ route, navigate, theme, toggleTheme }) {
       <div className="container">
         <div className="nav__inner">
           <a href="#/" className="nav__brand" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
-            <span>Naixu Guo</span>
-            <span className="nav__brand-zh">郭乃绪</span>
+            <span>{SITE.name}</span>
+            <span className="nav__brand-zh">{SITE.nameZh}</span>
           </a>
           <ul className="nav__links">
             {ROUTES.map((r) => (
@@ -74,7 +82,7 @@ function Footer() {
       <div className="container">
         <div className="footer__inner">
           <div>
-            <strong>Naixu Guo · 郭乃绪</strong>
+            <strong>{SITE.name} · {SITE.nameZh}</strong>
             <span style={{ display: "block", marginTop: 4 }}>{SITE.personal.institution}</span>
           </div>
           <div>
@@ -89,11 +97,60 @@ function Footer() {
 function App() {
   const [route, setRoute] = useState(parseRoute());
   const [theme, setTheme] = useState(() => localStorage.getItem("ng-theme") || "dark");
+  const [, setDataVersion] = useState(0);
 
   useEffect(() => {
     const onHash = () => setRoute(parseRoute());
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  useEffect(() => {
+    const host = window.location.hostname;
+    if (host !== "127.0.0.1" && host !== "localhost") return undefined;
+
+    let cancelled = false;
+    const lastSource = new Map();
+
+    const refreshData = async (force) => {
+      try {
+        const responses = await Promise.all(
+          DATA_FILES.map(async (path) => {
+            const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
+            if (!response.ok) return null;
+            return { path, source: await response.text() };
+          })
+        );
+
+        if (cancelled) return;
+
+        const changed = responses.filter((entry) => (
+          entry && (force || lastSource.get(entry.path) !== entry.source)
+        ));
+
+        if (!changed.length) return;
+
+        changed.forEach(({ path, source }) => {
+          lastSource.set(path, source);
+          new Function(source)();
+        });
+
+        setDataVersion((version) => version + 1);
+      } catch (error) {
+        console.warn("Failed to refresh local data files.", error);
+      }
+    };
+
+    refreshData(true);
+    const intervalId = window.setInterval(() => { refreshData(false); }, 1500);
+    const onFocus = () => { refreshData(false); };
+    window.addEventListener("focus", onFocus);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(intervalId);
+      window.removeEventListener("focus", onFocus);
+    };
   }, []);
 
   useEffect(() => {

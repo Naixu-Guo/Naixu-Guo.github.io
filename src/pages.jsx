@@ -20,12 +20,13 @@ function PageIntro({ kicker, title, lead }) {
 function Research() {
   useEffectSub(() => { window.scrollTo({ top: 0, behavior: "auto" }); }, []);
   const r = RESEARCH;
+  const page = r.page || {};
   return (
     <React.Fragment>
       <section className="section section--first reveal">
         <div className="container">
           <div className="section__head">
-            <div className="section__kicker">Research / Vision</div>
+            <div className="section__kicker">{page.kicker || "Research / Vision"}</div>
             <div>
               <h1 className="vision">
                 {r.vision.lead}<br />
@@ -40,7 +41,7 @@ function Research() {
       <section className="section reveal">
         <div className="container">
           <div className="section__head section__head--compact">
-            <div className="section__kicker">Themes</div>
+            <div className="section__kicker">{page.themesKicker || "Themes"}</div>
             <div></div>
           </div>
           <div className="agenda">
@@ -52,7 +53,17 @@ function Research() {
                 </div>
                 <div className="agenda__body">
                   <p className="agenda__desc">{area.pageSummary}</p>
-                  <div className="agenda__field-label">Representative Work</div>
+                  {area.threads && area.threads.length > 0 && (
+                    <React.Fragment>
+                      <div className="agenda__field-label">{page.threadsLabel || "Research Threads"}</div>
+                      <ul className="agenda__threads">
+                        {area.threads.map((thread, j) => (
+                          <li key={j}>{thread}</li>
+                        ))}
+                      </ul>
+                    </React.Fragment>
+                  )}
+                  <div className="agenda__field-label">{page.representativeLabel || "Representative Work"}</div>
                   <div className="direction__reps" style={{ borderTop: 0, paddingTop: 0 }}>
                     {area.representative.map((rep, j) => (
                       <div className="direction__rep" key={j}>
@@ -190,7 +201,7 @@ function Library() {
       <section className="section reveal">
         <div className="container">
           <div className="lib">
-            {window.LIBRARY.categories.map((cat, i) => (
+            {LIBRARY.categories.map((cat, i) => (
               <section className="lib-cat" key={i}>
                 <div className="lib-cat__head">
                   <p className="lib-cat__num">{String(i + 1).padStart(2, "0")}</p>

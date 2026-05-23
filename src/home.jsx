@@ -1,4 +1,4 @@
-/* global React, SITE, NEWS, Dynamics, renderInline */
+/* global React, SITE, NEWS, renderInline */
 const { useEffect } = React;
 
 function Home({ navigate }) {
@@ -17,15 +17,15 @@ function Home({ navigate }) {
 
           <div className="hero__grid">
             <div className="hero__left">
-              <h1 className="hero__name">Naixu <em>Guo</em></h1>
-              <p className="hero__zh">郭 乃 绪</p>
+              <h1 className="hero__name">{SITE.heroName.primary} <em>{SITE.heroName.accent}</em></h1>
+              <p className="hero__zh">{SITE.heroName.zh}</p>
               <p className="hero__tagline">{SITE.hero.tagline}</p>
 
               <dl className="hero__meta">
                 <dt>Role</dt>
                 <dd><strong>{SITE.personal.role}</strong></dd>
                 <dt>Affiliation</dt>
-                <dd>{SITE.personal.institution}<br />Advised by Patrick Rebentrost &amp; Miklos Santha.</dd>
+                <dd>{SITE.personal.institution}<br />Advised by {SITE.personal.advisors}.</dd>
                 <dt>Ask me about</dt>
                 <dd>{SITE.personal.focus}</dd>
               </dl>
@@ -40,7 +40,7 @@ function Home({ navigate }) {
 
             <div className="hero__media">
               <div className="hero__portrait-wrap">
-                <img className="hero__portrait" src="photo.jpg" alt="Portrait of Naixu Guo" />
+                <img className="hero__portrait" src="photo.jpg" alt={`Portrait of ${SITE.name}`} />
               </div>
             </div>
           </div>

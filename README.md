@@ -1,122 +1,50 @@
-# Naixu Guo's Academic Website
+# Naixu Guo Homepage
 
-This is a simplified Jekyll website where all content is managed through simple YAML files.
+This repo now contains only the current standalone homepage app. It is a small React-in-the-browser SPA served from `index.html` with page-specific content stored in `src/data/`.
 
-## How to Update Content
+## Edit Content
 
-### 1. News (Homepage)
-Edit `_data/news.yml` to update the recent news on the homepage:
+- Homepage identity and news: `src/data/home.js`
+- Publications: `src/data/publications.js`
+- Research page: `src/data/research.js`
+- CV page: `src/data/cv.js`
+- Library page: `src/data/library.js`
+- Homepage section layout and labels: `src/home.jsx`
+- Secondary page layout (`Research`, `Publications`, `CV`, `Library`): `src/pages.jsx`
+- Navigation, routing, theme toggle, and footer: `src/app.jsx`
+- Site styling: `assets/style.css`
+- Portrait image: `photo.jpg`
+- Publication figures used by the live site: `figure/previews/`
 
-```yaml
-- date: "Jan 2025"
-  text: "Your news item here"
-- date: "Dec 2024"
-  text: "Another news item"
+## Run Locally
+
+Serve the repo root with any static file server. For example:
+
+```bash
+python3 -m http.server 4173
 ```
 
-### 2. Publications
-Edit `_data/publications.yml` to update your publications:
+Then open `http://127.0.0.1:4173/`.
 
-```yaml
-- title: "Paper Title"
-  authors: "Your Name, Co-author Name"
-  venue: "Journal/Conference Name, Year"
-  excerpt: "Brief description of the paper"
-  date: 2024-01-01
-  link: "https://paper-link.com"
-  pdf_link: "files/paper.pdf"
-  code_link: "https://github.com/code"
-  media_link: "https://media-link.com"
+## Current Structure
+
+```text
+index.html
+assets/style.css
+src/
+  app.jsx
+  home.jsx
+  pages.jsx
+  utils.jsx
+  data/
+    cv.js
+    home.js
+    library.js
+    publications.js
+    research.js
+figure/
+  previews/
+photo.jpg
+favicon.ico
+robots.txt
 ```
-
-### 3. Research Areas
-Edit `_data/research.yml` to update your research interests:
-
-```yaml
-- title: "Research Area Name"
-  description: "Description of your research"
-  keywords: ["keyword1", "keyword2"]
-  status: "active"  # or "planning"
-```
-
-### 4. CV
-Edit `_data/cv.yml` to update your CV information:
-
-```yaml
-education:
-  - degree: "Degree Name"
-    institution: "Institution Name"
-    year: "Year"
-    description: "Description"
-
-experience:
-  - position: "Position Title"
-    institution: "Institution"
-    year: "Year"
-    description: "Description"
-
-skills:
-  technical: ["Skill1", "Skill2"]
-  quantum: ["Quantum Skill1", "Quantum Skill2"]
-  languages: ["Language1", "Language2"]
-```
-
-### 5. Mini Library
-Edit `_data/mini_lib.yml` to update your resource library:
-
-```yaml
-- title: "Resource Title"
-  type: "book"  # or "paper", "tutorial", "review"
-  author: "Author Name"
-  year: "Year"
-  description: "Description"
-  link: "https://resource-link.com"
-```
-
-## Running the Website
-
-1. Install dependencies: `bundle install`
-2. Start the server: `bundle exec jekyll serve --livereload`
-3. View at: http://127.0.0.1:4000/
-
-## Hero Background Animation
-
-The homepage hero now uses a dedicated canvas background:
-
-- `assets/js/hero-bg.js` renders the animated curves, particles, and physics system
-- `assets/css/hero-bg.css` defines the palette, hero container styling, and reduced-motion behavior
-- `assets/img/hero-bg-fallback.png` is used when `prefers-reduced-motion` is enabled
-
-The animation reads an optional `window.HERO_BG_CONFIG` object before `assets/js/hero-bg.js` loads.
-
-Disable the animation entirely:
-
-```html
-<script>
-  window.HERO_BG_CONFIG = { enabled: false };
-</script>
-```
-
-Switch between physical models:
-
-```html
-<script>
-  window.HERO_BG_CONFIG = { physicalModel: "spring" };
-</script>
-```
-
-Supported models are `"spring"`, `"gravity"`, and `"hybrid"` (the default). You can also adjust the default constants directly near the top of `assets/js/hero-bg.js`.
-
-## File Structure
-
-- `_data/` - All content in YAML format
-- `_pages/` - Page templates that read from YAML files
-- `assets/` - CSS, JavaScript, and images
-- `_layouts/` - Jekyll layout templates
-
-## Benefits of This System
-
-- **Simple**: Just edit YAML files, no HTML knowledge needed
-- **Fast**: Changes appear immediately with live reload
-- **Organized**: All content is in one place
-- **Maintainable**: Easy to add new items or modify existing ones
