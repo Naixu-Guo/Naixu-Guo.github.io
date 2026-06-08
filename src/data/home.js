@@ -27,7 +27,8 @@ window.SITE = {
 };
 
 window.NEWS = [
-  { date: "May 2026", content: "Give an [invited talk](https://www.linkedin.com/feed/update/urn:li:activity:7462363229818720256/) at A*STAR Institute of High Performance Computing." },
+  { date: "June 2026", content: "Our new work [Quantum enhanced rare event discovery and sampling](https://arxiv.org/abs/2606.06316) is out on arxiv." },
+  { date: "May 2026", content: "Gave an [invited talk](https://www.linkedin.com/feed/update/urn:li:activity:7462363229818720256/) at A*STAR Institute of High Performance Computing." },
   { date: "Feb 2026", content: "Started a 2-month research internship at A*STAR Institute of High Performance Computing, hosted by Yunlong Xiao." },
   { date: "Jan 2026", content: 'Our work [Accelerating Inference for Multilayer Neural Networks with Quantum Computers](https://arxiv.org/abs/2510.07195) accepted at **ICLR 2026**.', venue: "ICLR" },
   { date: "Dec 2025", content: "Gave an outreach talk on the limits of classical computation and quantum advantage at Quantum Fall Fest 2025 in Singapore." },
