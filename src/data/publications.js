@@ -1,5 +1,25 @@
 window.PUBLICATIONS = [
   {
+    title: "Near-Optimal Learning of Local Lindbladians",
+    authors: "Itai Arad, Zhili Chen, **Naixu Guo**, Patrick Rebentrost, Zhan Yu (alphabetical order)",
+    journal: "arXiv:2606.20535, 2026",
+    year: 2026,
+    category: "preprint",
+    figure: "figure/previews/LocalLindbladianLearning.svg",
+    summary: "Develops a near-optimal protocol for learning local Lindbladians from finite-time channel probes, with matching lower bounds for dynamics access and total evolution time.",
+    link: "https://arxiv.org/abs/2606.20535",
+  },
+  {
+    title: "Quantum enhanced rare event discovery and sampling",
+    authors: "**Naixu Guo**, Po-Wei Huang, Qisheng Wang, Jayne Thompson, Patrick Rebentrost, Mile Gu, Chengran Yang",
+    journal: "arXiv:2606.06316, 2026",
+    year: 2026,
+    category: "preprint",
+    figure: "figure/previews/RareEventSampling.png",
+    summary: "Introduces a quantum algorithm for discovering and sampling rare events without knowing them in advance, achieving optimal quantum scaling with the rarity threshold.",
+    link: "https://arxiv.org/abs/2606.06316",
+  },
+  {
     title: "Fast-forwardable Lindbladians imply quantum phase estimation",
     authors: "Zhong-Xia Shang, **Naixu Guo** (co-first author), Patrick Rebentrost, Alán Aspuru-Guzik, Tongyang Li, Qi Zhao",
     journal: "Annual Quantum Information Processing Conference (**QIP**), 2026; arXiv:2510.06759, 2025",

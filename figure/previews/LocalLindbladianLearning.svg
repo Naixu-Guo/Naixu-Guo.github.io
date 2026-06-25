@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Near-optimal local Lindbladian learning schematic</title>
+  <desc id="desc">Workflow from product probes through unknown local dynamics to Pauli measurements, PTM snapshots, derivative estimation, and coefficient recovery.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#435466"/>
+    </marker>
+    <linearGradient id="matrixFade" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#89c2d9"/>
+      <stop offset="1" stop-color="#a7c957"/>
+    </linearGradient>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .panel { fill: #eef3f7; stroke: #d5dee8; stroke-width: 1.5; }
+      .stage { fill: #ffffff; stroke: #8fa1b2; stroke-width: 2; }
+      .accent { fill: #e9f4ef; stroke: #79a88a; stroke-width: 2; }
+      .text { fill: #24313d; font-family: Inter, Helvetica, Arial, sans-serif; }
+      .label { font-size: 28px; font-weight: 650; }
+      .small { font-size: 19px; font-weight: 500; }
+      .mono { font-size: 21px; font-family: "SFMono-Regular", Menlo, Consolas, monospace; }
+      .metric { font-size: 18px; font-family: "SFMono-Regular", Menlo, Consolas, monospace; }
+      .line { stroke: #435466; stroke-width: 3.2; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #6e8192; stroke-width: 2.2; fill: none; }
+      .qubit { fill: #ffffff; stroke: #435466; stroke-width: 2.4; }
+      .dot { fill: #4f8db3; }
+      .measure { fill: #f4d06f; stroke: #b2872e; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="520" rx="0"/>
+
+  <text class="text label" x="56" y="62">Near-optimal local Lindbladian learning</text>
+  <text class="text small" x="56" y="96">short-time channel probes -> PTM generator -> local coefficients</text>
+
+  <rect class="panel" x="44" y="124" width="1112" height="350" rx="28"/>
+
+  <g transform="translate(74 164)">
+    <rect class="stage" x="0" y="0" width="188" height="118" rx="20"/>
+    <text class="text small" x="27" y="34">product probes</text>
+    <circle class="qubit" cx="45" cy="74" r="15"/>
+    <circle class="qubit" cx="88" cy="74" r="15"/>
+    <circle class="qubit" cx="131" cy="74" r="15"/>
+    <text class="text mono" x="37" y="82">X</text>
+    <text class="text mono" x="80" y="82">Y</text>
+    <text class="text mono" x="123" y="82">Z</text>
+
+    <path class="line" d="M 202 59 H 294"/>
+
+    <rect class="accent" x="308" y="0" width="198" height="118" rx="20"/>
+    <text class="text small" x="344" y="34">unknown</text>
+    <text class="text small" x="325" y="64">local dynamics</text>
+    <text class="text mono" x="369" y="98">exp(tL)</text>
+
+    <path class="line" d="M 520 59 H 612"/>
+
+    <rect class="stage" x="626" y="0" width="200" height="118" rx="20"/>
+    <text class="text small" x="656" y="34">Pauli</text>
+    <text class="text small" x="640" y="64">measurements</text>
+    <rect class="measure" x="672" y="80" width="28" height="22" rx="5"/>
+    <rect class="measure" x="711" y="80" width="28" height="22" rx="5"/>
+    <rect class="measure" x="750" y="80" width="28" height="22" rx="5"/>
+
+    <path class="line" d="M 840 59 H 932"/>
+
+    <rect class="stage" x="946" y="0" width="118" height="118" rx="20"/>
+    <text class="text small" x="981" y="36">shots</text>
+    <g transform="translate(981 54)">
+      <rect x="0" y="0" width="12" height="48" rx="3" fill="#89c2d9"/>
+      <rect x="22" y="13" width="12" height="35" rx="3" fill="#f28482"/>
+      <rect x="44" y="25" width="12" height="23" rx="3" fill="#84a98c"/>
+    </g>
+  </g>
+
+  <path class="line" d="M 606 292 V 338"/>
+
+  <g transform="translate(116 338)">
+    <rect class="stage" x="0" y="0" width="220" height="96" rx="18"/>
+    <text class="text small" x="28" y="35">PTM snapshots</text>
+    <text class="text mono" x="68" y="68">R(t_j)</text>
+
+    <path class="line" d="M 236 48 H 336"/>
+
+    <rect class="stage" x="352" y="0" width="222" height="96" rx="18"/>
+    <text class="text small" x="382" y="35">endpoint</text>
+    <text class="text small" x="376" y="64">derivative rule</text>
+
+    <path class="line" d="M 590 48 H 690"/>
+
+    <rect class="stage" x="706" y="0" width="238" height="96" rx="18"/>
+    <text class="text small" x="736" y="35">thresholded</text>
+    <text class="text small" x="728" y="64">Fourier inversion</text>
+
+    <path class="line" d="M 960 48 H 1010"/>
+  </g>
+
+  <g transform="translate(1058 342)">
+    <rect class="accent" x="0" y="0" width="70" height="88" rx="14"/>
+    <rect x="16" y="17" width="38" height="54" fill="#fff" stroke="#526173" stroke-width="2"/>
+    <rect x="20" y="21" width="8" height="8" fill="url(#matrixFade)"/>
+    <rect x="32" y="34" width="8" height="8" fill="url(#matrixFade)"/>
+    <rect x="44" y="50" width="8" height="8" fill="url(#matrixFade)"/>
+  </g>
+
+  <text class="text small" x="960" y="456">local coefficients</text>
+
+  <g transform="translate(852 138)">
+    <rect x="0" y="0" width="248" height="70" rx="18" fill="#fff7e8" stroke="#dfbd78" stroke-width="1.8"/>
+    <text class="text metric" x="22" y="29">uses: O~(L^2/eps^2)</text>
+    <text class="text metric" x="22" y="55">time: O~(L/eps^2)</text>
+  </g>
+
+  <g transform="translate(470 162)">
+    <path class="thin" d="M 0 142 C 50 122 96 122 150 142"/>
+    <circle class="dot" cx="0" cy="142" r="6"/>
+    <circle class="dot" cx="76" cy="126" r="6"/>
+    <circle class="dot" cx="150" cy="142" r="6"/>
+  </g>
+</svg>
