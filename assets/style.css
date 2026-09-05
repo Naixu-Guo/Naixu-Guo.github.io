@@ -17,6 +17,7 @@
   --accent: #2b5c93;
   --motif: #5b78a0;
   --glow: #6f9fd8;
+  --warm: #b8946a;
   --wash: rgba(214, 228, 245, 0.55);
   --selection: #dfe9f5;
 
@@ -38,6 +39,7 @@
   --accent: #8fb5e3;
   --motif: #7f9bbd;
   --glow: #9dc2f0;
+  --warm: #c9a97e;
   --wash: rgba(56, 82, 120, 0.22);
   --selection: #1f2d40;
 }
@@ -54,6 +56,7 @@
     --accent: #8fb5e3;
     --motif: #7f9bbd;
     --glow: #9dc2f0;
+    --warm: #c9a97e;
     --wash: rgba(56, 82, 120, 0.22);
     --selection: #1f2d40;
   }
@@ -179,10 +182,12 @@ a:hover { text-decoration-color: currentColor; }
 
 .hero {
   position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   grid-template-areas:
     "statement portrait"
+    "zh portrait"
     "lead portrait"
     "who portrait";
   column-gap: var(--col-gap);
@@ -196,18 +201,25 @@ a:hover { text-decoration-color: currentColor; }
   right: -18%;
   bottom: 0;
   left: 28%;
-  z-index: 0;
+  z-index: -2;
   background: radial-gradient(ellipse 48% 44% at 66% 36%, var(--wash), transparent 72%);
   pointer-events: none;
 }
 .hero__statement {
   grid-area: statement;
-  font-size: clamp(32px, 3.9vw, 50px);
-  line-height: 1.1;
-  letter-spacing: -0.024em;
-  max-width: 15.5em;
-  margin-bottom: 32px;
+  font-size: clamp(30px, 3.5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  max-width: 17em;
+  margin-bottom: 14px;
   text-wrap: balance;
+}
+.hero__zh {
+  grid-area: zh;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  margin-bottom: 30px;
 }
 .hero__lead { grid-area: lead; max-width: 34em; margin-bottom: 40px; }
 .hero__lead p { font-size: clamp(17px, 1.35vw, 19.5px); line-height: 1.55; text-wrap: pretty; }
@@ -237,16 +249,16 @@ a:hover { text-decoration-color: currentColor; }
 /* The lattice sits behind the portrait and fades into the field. */
 .hero__field {
   position: absolute;
-  top: -8px;
-  right: -48px;
-  z-index: 0;
-  width: min(60%, 680px);
+  top: -16px;
+  right: -64px;
+  z-index: -1;
+  width: min(66%, 760px);
   height: auto;
   color: var(--motif);
-  opacity: 0.6;
+  opacity: 0.62;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse 58% 60% at 62% 44%, #000 22%, transparent 100%);
-  mask-image: radial-gradient(ellipse 58% 60% at 62% 44%, #000 22%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 62% at 58% 46%, #000 24%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 62% at 58% 46%, #000 24%, transparent 100%);
 }
 
 /* ---------- home: directions ---------- */
@@ -448,7 +460,7 @@ a:hover { text-decoration-color: currentColor; }
 
 @media (max-width: 1024px) {
   .hero { grid-template-columns: minmax(0, 1fr) 220px; }
-  .hero__field { width: 56%; right: -32px; }
+  .hero__field { width: 62%; right: -40px; }
   .cols { grid-template-columns: minmax(0, 3fr) minmax(0, 8fr); }
   .direction { grid-template-columns: minmax(0, 3fr) minmax(0, 8fr); }
   .motif { width: min(100%, 180px); }
@@ -475,6 +487,7 @@ a:hover { text-decoration-color: currentColor; }
     grid-template-columns: 84px minmax(0, 1fr);
     grid-template-areas:
       "statement statement"
+      "zh zh"
       "lead lead"
       "portrait who";
     column-gap: 18px;
@@ -484,7 +497,8 @@ a:hover { text-decoration-color: currentColor; }
   .hero__lead { margin-bottom: 32px; }
   .hero__portrait { width: 84px; }
   .hero__portrait img { aspect-ratio: 1; object-position: 50% 22%; }
-  .hero__field { display: none; }
+  .hero__field,
+  .hero::before { display: none; }
   .hero__who { font-size: 15px; }
   .direction-item h3 { font-size: 19px; }
   .stream li { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; font-size: 15.5px; }

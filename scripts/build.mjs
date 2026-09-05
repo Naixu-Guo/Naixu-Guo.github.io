@@ -107,30 +107,49 @@ function glowNode(x, y, id, { halo = 16, core = 2.2 } = {}) {
   return `<circle cx="${x}" cy="${y}" r="${halo}" fill="url(#${id})"/><circle cx="${x}" cy="${y}" r="${core}" fill="currentColor"/>`;
 }
 
-/** The homepage field: structure that thickens from left to right, a few luminous sites, one faint circle. */
-function heroField({ cols = 17, rows = 11, step = 40, seed = 5, pad = 8 } = {}) {
+/** The homepage field: scattered points on the left settle into a lattice on the right,
+ *  through a luminous centre. Thought becoming structure; the two intelligences meeting. */
+function heroField({ cols = 19, rows = 11, step = 40, seed = 5, pad = 12 } = {}) {
   const rand = rng(seed);
   const width = pad * 2 + (cols - 1) * step;
   const height = pad * 2 + (rows - 1) * step;
-  const at = (c, r) => [pad + c * step, pad + r * step];
-  const density = (c) => 0.08 + 0.92 * Math.pow(c / (cols - 1), 1.6);
+  const sites = [];
+  for (let r = 0; r < rows; r += 1) {
+    sites.push([]);
+    for (let c = 0; c < cols; c += 1) {
+      const t = c / (cols - 1);
+      const jitter = step * 0.55 * Math.pow(1 - t, 1.6);
+      const present = rand() < 0.22 + 0.78 * Math.pow(t, 1.1);
+      const x = pad + c * step + (rand() - 0.5) * 2 * jitter;
+      const y = pad + r * step + (rand() - 0.5) * 2 * jitter;
+      sites[r].push({ x: f(x), y: f(y), t, present });
+    }
+  }
   let lines = "";
   let dots = "";
   for (let r = 0; r < rows; r += 1) {
     for (let c = 0; c < cols; c += 1) {
-      const [x, y] = at(c, r);
-      const d = density(c);
-      if (rand() < d) dots += `<circle cx="${x}" cy="${y}" r="1.4" fill-opacity="${f(0.35 + 0.55 * d)}"/>`;
-      if (c + 1 < cols && rand() < d * 0.75) lines += `<line x1="${x}" y1="${y}" x2="${x + step}" y2="${y}" stroke-opacity="${f(0.25 + 0.45 * d)}"/>`;
-      if (r + 1 < rows && rand() < d * 0.75) lines += `<line x1="${x}" y1="${y}" x2="${x}" y2="${y + step}" stroke-opacity="${f(0.25 + 0.45 * d)}"/>`;
+      const site = sites[r][c];
+      if (!site.present) continue;
+      dots += `<circle cx="${site.x}" cy="${site.y}" r="1.4" fill-opacity="${f(0.35 + 0.55 * site.t)}"/>`;
+      for (const next of [sites[r][c + 1], sites[r + 1]?.[c]]) {
+        if (!next?.present) continue;
+        if (rand() < 0.3 + 0.55 * site.t) lines += `<line x1="${site.x}" y1="${site.y}" x2="${next.x}" y2="${next.y}" stroke-opacity="${f(0.2 + 0.45 * site.t)}"/>`;
+      }
     }
   }
-  const glows = [[9, 4], [12, 7], [14, 3], [11, 9], [15, 6], [7, 6]]
-    .map(([c, r]) => glowNode(...at(c, r), "hero-glow", { halo: 22, core: 2 }))
+  const cx = pad + 8 * step;
+  const cy = pad + 5 * step;
+  const rings = [1.6, 3.1, 4.7]
+    .map((k, i) => `<circle cx="${cx}" cy="${cy}" r="${step * k}" fill="none" stroke="currentColor" stroke-width="0.7" stroke-opacity="${[0.32, 0.22, 0.13][i]}"/>`)
     .join("");
-  const [ox, oy] = at(11, 5);
-  const circle = `<circle cx="${ox}" cy="${oy}" r="${step * 4.5}" fill="none" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.28"/><circle cx="${ox}" cy="${oy}" r="${step * 2.2}" fill="none" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.2"/>`;
-  const inner = `${glowDefs("hero-glow")}${circle}<g stroke="currentColor" stroke-width="0.8" fill="none">${lines}</g><g fill="currentColor">${dots}</g>${glows}`;
+  const axis = `<line x1="${cx}" y1="${cy - step * 3.6}" x2="${cx}" y2="${cy + step * 3.6}" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.2"/>`;
+  const warm = [cy - step * 3.6, cy + step * 3.6].map((y) => `<circle cx="${cx}" cy="${y}" r="2" style="fill:var(--warm)" fill-opacity="0.85"/>`).join("");
+  const centre = glowNode(cx, cy, "hero-glow", { halo: 40, core: 2.6 });
+  const glows = [[12, 3], [15, 7], [17, 2], [14, 9]]
+    .map(([c, r]) => glowNode(sites[r][c].x, sites[r][c].y, "hero-glow", { halo: 20, core: 1.8 }))
+    .join("");
+  const inner = `${glowDefs("hero-glow")}${rings}${axis}<g stroke="currentColor" stroke-width="0.8" fill="none">${lines}</g><g fill="currentColor">${dots}</g>${centre}${glows}${warm}`;
   return svgWrap(width, height, inner, "hero__field");
 }
 
@@ -396,7 +415,8 @@ function homePage() {
 
   const body = `
     <section class="wrap hero">
-      <h1 class="hero__statement">${escapeHtml(SITE.hero.statement)}</h1>
+      <h1 class="hero__statement">${escapeHtml(SITE.hero.question)}</h1>
+      <p class="hero__zh" lang="zh">${escapeHtml(SITE.hero.questionZh)}</p>
       <div class="hero__lead">${SITE.hero.lead.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div>
       <div class="hero__who">
         <p class="hero__name">${escapeHtml(SITE.name)} <span lang="zh">${escapeHtml(SITE.nameZh)}</span></p>

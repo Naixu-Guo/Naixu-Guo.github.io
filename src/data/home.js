@@ -20,10 +20,12 @@ window.SITE = {
   ],
 
   hero: {
-    statement: "Open quantum dynamics as a resource for computation, and as a target for learning.",
+    // The question the program answers, in English and in the original.
+    question: "If intelligence becomes as cheap and available as water and electricity, where does science go?",
+    questionZh: "倘若智能如水电一样便宜、易得，科学将何去何从？",
     lead: [
-      "I design quantum algorithms in which dissipation does useful work: Lindbladian evolution that solves differential equations, estimates phases, and discovers rare events. I prove what a learner with limited access to a quantum system can recover, and at what cost.",
-      "Alongside this, I study when quantum linear algebra speeds up the models machine learning actually uses, and I am building AI tools that make scientific reasoning verifiable.",
+      "My work treats that question as concrete. Open quantum dynamics is a resource for computation and a target for learning: I design quantum algorithms in which dissipation does useful work, solving differential equations, estimating phases, and discovering rare events, and I prove what a learner with limited access to a quantum system can recover, and at what cost.",
+      "Alongside this, I study when quantum linear algebra speeds up the models machine learning actually uses, and I am building AI tools that make scientific reasoning verifiable, so that cheap intelligence can be trusted.",
     ],
   },
 
