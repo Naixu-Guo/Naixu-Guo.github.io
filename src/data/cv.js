@@ -1,40 +1,42 @@
+// Curriculum vitae. Each item: { date, title, org, detail?, link? }.
 window.CV = {
   sections: [
     {
       title: "Education",
       items: [
-        { title: "Ph.D. in Computer Science (Quantum Information)", institution: "National University of Singapore", duration: "2022 — 2026 (expected)", details: "Advisors: Patrick Rebentrost and Miklos Santha" },
-        { title: "M.E. in Electrical Engineering", institution: "Osaka University", duration: "2020 — 2022", details: "Advisor: Keisuke Fujii" },
-        { title: "B.E. in Applied Physics", institution: "Kyoto University", duration: "2016 — 2020", details: "Advisor: Takayuki Miyadera" },
+        { date: "2022 — 2026", title: "PhD in Computer Science (Quantum Information)", org: "National University of Singapore", detail: "Advisors: Patrick Rebentrost and Miklos Santha. Expected 2026." },
+        { date: "2020 — 2022", title: "MEng in Electrical Engineering", org: "Osaka University", detail: "Advisor: Keisuke Fujii" },
+        { date: "2016 — 2020", title: "BEng in Applied Physics", org: "Kyoto University", detail: "Advisor: Takayuki Miyadera" },
       ],
     },
     {
-      title: "Honors, Awards & Fellowships",
+      title: "Awards and fellowships",
       items: [
-        { title: "Research Excellence Scholarship", institution: "Sandbox AQ", duration: "2025" },
-        { title: "CQT Young Researcher Career Development Grant", institution: "Centre for Quantum Technologies", duration: "2025" },
-        { title: "Distinguished Scholarship Award", institution: "National University of Singapore", duration: "2022" },
-        { title: "Hirose International Scholarship", institution: "Hirose Foundation", duration: "2017 — 2022" },
-        { title: "Monbukagakusho Honors Scholarship", institution: "MEXT, Japan", duration: "2016 — 2017" },
+        { date: "2025", title: "Research Excellence Scholarship", org: "SandboxAQ" },
+        { date: "2025", title: "Young Researcher Career Development Grant", org: "Centre for Quantum Technologies" },
+        { date: "2022", title: "Distinguished Scholarship Award", org: "National University of Singapore" },
+        { date: "2017 — 2022", title: "Hirose International Scholarship", org: "Hirose Foundation" },
+        { date: "2016 — 2017", title: "Monbukagakusho Honors Scholarship", org: "MEXT, Japan" },
       ],
     },
     {
-      title: "Academic Visits & Research Experience",
+      title: "Research visits and experience",
       items: [
-        { title: "University of Toronto", institution: "Host: Alán Aspuru-Guzik", duration: "Aug — Sep 2025" },
-        { title: "Peking University & Tsinghua University", institution: "Host: Dong An & Ziwen Liu", duration: "Feb 2025" },
-        { title: "HKUST (Guangzhou)", institution: "Host: Xin Wang", duration: "Dec 2024" },
-        { title: "RWTH Aachen & Free University of Berlin", institution: "Host: Mario Berta & Jens Eisert", duration: "Jun — Jul 2024" },
-        { title: "Nagoya University", institution: "Host: François Le Gall", duration: "Jul 2021 — Mar 2022" },
-        { title: "Kyoto University", institution: "Host: Keisuke Fujii", duration: "Mar — Jul 2019" },
+        { date: "2026", title: "A*STAR Institute of High Performance Computing", org: "Research intern, hosted by Yunlong Xiao", detail: "Two-month internship, from February 2026." },
+        { date: "Aug — Sep 2025", title: "University of Toronto", org: "Hosted by Alán Aspuru-Guzik", detail: "Also visited Xanadu and the University of Waterloo." },
+        { date: "Feb 2025", title: "Peking University and Tsinghua University", org: "Hosted by Dong An and Ziwen Liu" },
+        { date: "Dec 2024", title: "HKUST (Guangzhou)", org: "Hosted by Xin Wang" },
+        { date: "Jun — Jul 2024", title: "RWTH Aachen and Free University of Berlin", org: "Hosted by Mario Berta and Jens Eisert" },
+        { date: "Jul 2021 — Mar 2022", title: "Nagoya University", org: "Hosted by François Le Gall" },
+        { date: "Mar — Jul 2019", title: "Kyoto University", org: "Hosted by Keisuke Fujii" },
       ],
     },
     {
-      title: "Professional Service",
+      title: "Service",
       items: [
-        { title: "Program Committee", institution: "Joint CQT–MCQST workshop" },
-        { title: "Reviewer (Journals)", institution: "ACM Computing Surveys, Physical Review Letters, PRX Quantum, Physical Review Research, Quantum, Quantum Science and Technology, Quantum Machine Intelligence"},
-        { title: "Reviewer (Conferences)", institution: "QIP 2023/2024/2026, TQC 2023/2024/2026, QCTIP 2024, AQIS 2025, QCE 2025" },
+        { date: "", title: "Program committee", org: "Joint CQT–MCQST workshop" },
+        { date: "", title: "Journal reviewing", org: "ACM Computing Surveys, Physical Review Letters, PRX Quantum, Physical Review Research, Quantum, Quantum Science and Technology, Quantum Machine Intelligence" },
+        { date: "", title: "Conference reviewing", org: "QIP 2023, 2024, 2026; TQC 2023, 2024, 2026; QCTIP 2024; AQIS 2025; QCE 2025" },
       ],
     },
   ],

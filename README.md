@@ -1,50 +1,49 @@
-# Naixu Guo Homepage
+# Naixu Guo — homepage
 
-This repo now contains only the current standalone homepage app. It is a small React-in-the-browser SPA served from `index.html` with page-specific content stored in `src/data/`.
+A dependency-free static academic site. A small Node script reads the content in `src/data/` and generates every page.
 
-## Edit Content
+## Update the site
 
-- Homepage identity and news: `src/data/home.js`
-- Publications: `src/data/publications.js`
-- Research page: `src/data/research.js`
-- CV page: `src/data/cv.js`
-- Library page: `src/data/library.js`
-- Homepage section layout and labels: `src/home.jsx`
-- Secondary page layout (`Research`, `Publications`, `CV`, `Library`): `src/pages.jsx`
-- Navigation, routing, theme toggle, and footer: `src/app.jsx`
-- Site styling: `assets/style.css`
-- Portrait image: `photo.jpg`
-- Publication figures used by the live site: `figure/previews/`
+Edit the relevant content file:
 
-## Run Locally
+- Identity, hero text, links, and the activity stream: `src/data/home.js`
+- Publications: `src/data/publications.js` (`selected: true` gives a paper its summary and a larger title on the publications page)
+- Research program: `src/data/research.js` (each result references a publication by exact title)
+- CV: `src/data/cv.js`
+- Library: `src/data/library.js`
 
-Serve the repo root with any static file server. For example:
+Then run:
 
 ```bash
-python3 -m http.server 4173
+npm run update
 ```
 
-Then open `http://127.0.0.1:4173/`.
+This rebuilds the HTML and checks links, headings, and local assets. Generated HTML is committed because GitHub Pages serves it directly.
 
-## Current Structure
+## Preview locally
+
+```bash
+npm run preview
+```
+
+Open <http://127.0.0.1:4173/>.
+
+## Files
 
 ```text
-index.html
-assets/style.css
-src/
-  app.jsx
-  home.jsx
-  pages.jsx
-  utils.jsx
-  data/
-    cv.js
-    home.js
-    library.js
-    publications.js
-    research.js
-figure/
-  previews/
-photo.jpg
-favicon.ico
-robots.txt
+index.html, research/, publications/, cv/, library/   generated pages
+404.html, sitemap.xml, robots.txt                     generated
+mini_lib/                                             redirect to /library/
+assets/style.css                                      the one stylesheet
+assets/site.js                                        theme toggle and print button
+assets/portrait-*.jpg                                 portrait
+scripts/build.mjs                                     templates and the small SVG figures
+scripts/check.mjs                                     post-build checks
+src/data/*.js                                         content
 ```
+
+Do not edit generated HTML by hand. Change `src/data/`, `scripts/build.mjs`, `assets/style.css`, or `assets/site.js`, then run `npm run update`.
+
+## Design notes
+
+One typeface (Hanken Grotesk), a cool near-white ground with a faint light behind the hero, hairline rules, and a handful of thin-line figures drawn from the research (a dissipative flow, a lattice with probed sites, a polynomial step, an evidence graph), each with one luminous node. The homepage field thickens from sparse structure on the left to a dense lattice on the right. Hierarchy comes from scale, weight, and spacing rather than containers or labels. Light and dark themes are designed separately and share the same structure.
