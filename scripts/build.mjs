@@ -361,12 +361,16 @@ function layout({ active, body, meta, noindex = false, schema = "", bodyClass = 
   <meta property="og:title" content="${escapeHtml(meta.title)}">
   <meta property="og:description" content="${escapeHtml(meta.description)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${baseUrl}/assets/portrait-800.jpg">
-  <meta property="og:image:alt" content="Portrait of ${escapeHtml(SITE.name)}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="${baseUrl}/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${escapeHtml(SITE.hero.question)} ${escapeHtml(SITE.name)}, ${escapeHtml(SITE.institutionShort)}.">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafbfc">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1215">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">

@@ -37,12 +37,14 @@ mini_lib/                                             redirect to /library/
 assets/style.css                                      the one stylesheet
 assets/site.js                                        theme toggle and print button
 assets/portrait-*.jpg                                 portrait
+assets/mark.svg, favicon.ico, assets/apple-touch-icon.png   the mark (ring and dot) as tab and home-screen icons
+assets/social-card.png                                image shown when a page is shared (1200×630)
 scripts/build.mjs                                     templates and the small SVG figures
 scripts/check.mjs                                     post-build checks
 src/data/*.js                                         content
 ```
 
-Do not edit generated HTML by hand. Change `src/data/`, `scripts/build.mjs`, `assets/style.css`, or `assets/site.js`, then run `npm run update`.
+Do not edit generated HTML by hand. Change `src/data/`, `scripts/build.mjs`, `assets/style.css`, or `assets/site.js`, then run `npm run update`. The share card and icons are rendered images; if the hero question or the mark changes, re-render them (they are not rebuilt by `npm run update`).
 
 ## Design notes
 
