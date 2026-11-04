@@ -30,6 +30,8 @@ The two main interests are Quantum Computing and Agents for Science. The quantum
 
 ## Brand Commitments
 
+- 2026-11-04 homepage density correction: What I’m working on has too much text. Remove the repeating lead and second paragraph per topic; each of the two equal commitments gets one concrete short paragraph and two resource links. Keep topic-title Research links, a one-sentence supporting QIQCOP note and let’s talk. Preserve the quantum/AI balance, tentative goals and full publication/research records.
+
 - 2026-11-04 contact correction: use the author’s Gmail and show Email instead of a full address on Home and CV. Avoid a plain address in rendered source or Person structured data. Keep contact convenient through a deliberate click and readable no-JavaScript fallback; do not claim complete spam prevention. The human/agent content source must remain straightforward to update.
 
 - 2026-11-04 repeated-information correction: Research opens with one h1, one concise summary paragraph, then direction navigation. Remove the generic topic-list sentence and separate Toward QuantumAGI heading; both duplicated adjacent information. Shorten the summary without strengthening its tentative ambition. This supersedes the immediately preceding stacked introduction.

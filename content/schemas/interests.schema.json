@@ -62,7 +62,7 @@
           "homeSummary": {
             "type": "string",
             "minLength": 1,
-            "description": "Short introduction displayed in the homepage agenda; detailed drafts remain in source."
+            "description": "One concise paragraph for the homepage topic. Include concrete current work without a second context paragraph; detailed drafts remain in description."
           },
           "homeTitle": {
             "type": "string",
@@ -72,11 +72,6 @@
           "showOnHome": {
             "type": "boolean",
             "description": "Whether this topic is featured on Home. Defaults to true; other drafts remain in source."
-          },
-          "homeContext": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Concrete existing work that supports the homepage ambition. Keep achievements separate from goals."
           },
           "researchHref": {
             "type": "string",
@@ -93,11 +88,6 @@
           "links"
         ]
       }
-    },
-    "homeLead": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Homepage research aim. Use an ambition, not an unverified achievement."
     },
     "perspective": {
       "type": "object",

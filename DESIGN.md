@@ -321,3 +321,7 @@ Default Light is preserved before first paint even with legacy Game storage. New
 ## Contact privacy (2026-11-04)
 
 Home and CV use a small underlined Email button with the existing link typography,44px minimum target and visible focus. It opens the configured Gmail recipient only after activation. No full address or mailto is in generated markup or Person JSON-LD. The button is hidden until its listener is installed; no-JavaScript visitors get an [at]/[dot] spelling. Public content stores separate local/domain parts, with corresponding local-editor fields. Encoding is simple scraping resistance, not encryption or a spam guarantee. Academic content and other contact links remain unchanged.
+
+## Concise homepage agenda (2026-11-04)
+
+What I’m working on now goes directly from its heading to two equal topics. Each has one concrete short paragraph and two resource links; topic titles still lead to Research. The generic lead and separate evidence/context paragraphs were removed. QIQCOP is one supporting sentence, followed by a short let’s talk invitation. Body typography is unchanged at17px/1.75 (16px on phones); content is reduced rather than shrinking text. Links now follow the paragraph with16px margin; obsolete lead/context/evidence spacing is removed. Detailed research descriptions, diagrams and all publications remain.

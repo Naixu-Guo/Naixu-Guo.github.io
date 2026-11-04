@@ -13,10 +13,6 @@
       "description": "My theoretical work connects quantum linear algebra, open-system dynamics and learning. I want to understand which structures make an algorithm useful, and what limited measurements can tell us about quantum systems.",
       "links": [
         {
-          "label": "Research overview",
-          "href": "/research/"
-        },
-        {
           "label": "Dissipative algorithms",
           "href": "https://arxiv.org/abs/2410.19628"
         },
@@ -25,10 +21,9 @@
           "href": "https://arxiv.org/abs/2606.20535"
         }
       ],
-      "homeSummary": "I develop quantum algorithms and study what can be learned about quantum systems. I want to turn physical structure into computational resources, and understand the limits of quantum learning and computation.",
+      "homeSummary": "I develop dissipative algorithms and quantum linear algebra methods, and study how efficiently we can learn quantum dynamics from limited data.",
       "homeTitle": "Quantum computing & learning",
       "showOnHome": true,
-      "homeContext": "My current work includes dissipative algorithms, quantum linear algebra and learning local quantum dynamics.",
       "researchHref": "/research/#quantum-learning"
     },
     {
@@ -50,7 +45,6 @@
       "homeSummary": "Quantum algorithms are shaped by the representations and classical computations around them. I want AI to search across these choices and invent new methods, starting with quantum simulation and linear algebra.",
       "homeTitle": "Inventing algorithms with AI",
       "showOnHome": false,
-      "homeContext": "My work on Lindbladian algorithms and learning quantum dynamics provides the theoretical starting point.",
       "researchHref": "/research/#quantum-learning"
     },
     {
@@ -61,10 +55,6 @@
       "description": "I’m interested in agents that choose what to investigate, use scientific tools and learn from unsuccessful attempts. Quantum-Harbor and QIQCBench are a starting point: agents work in virtual quantum-engineering laboratories, their actions are recorded, and their conclusions are verified independently.",
       "links": [
         {
-          "label": "Paper (arXiv:2609.17439)",
-          "href": "https://arxiv.org/abs/2609.17439"
-        },
-        {
           "label": "Quantum-Harbor",
           "href": "https://github.com/GaugeForge/Quantum-Harbor"
         },
@@ -73,14 +63,12 @@
           "href": "https://gauge-forge.com/qiqc"
         }
       ],
-      "homeSummary": "I’m building toward agents that can invent methods and pursue open scientific questions. One direction is classical–quantum co-design: searching for mathematical representations, classical algorithms and quantum implementations together.",
+      "homeSummary": "I’m building toward agents that invent methods and pursue scientific questions, starting with classical–quantum co-design and quantum-engineering environments.",
       "homeTitle": "AI for scientific discovery",
       "showOnHome": true,
-      "homeContext": "Quantum-Harbor and QIQCBench provide virtual quantum laboratories where agents carry out investigations and their results are independently checked.",
       "researchHref": "/research/#agents-for-science"
     }
   ],
-  "homeLead": "Quantum computing and AI are both central to my research. I develop quantum algorithms and learning methods, and build toward AI systems that can invent methods and pursue scientific questions.",
   "perspective": {
     "title": "Toward QuantumAGI",
     "text": "I’m interested in QuantumAGI as a long-term possibility: how quantum systems could contribute to general intelligence, and how AI could change the way we develop and use quantum computation."
@@ -89,6 +77,6 @@
   "community": {
     "title": "QIQCOP",
     "href": "https://qiqc-op.com/",
-    "text": "I’m exploring new ways to collaborate and contribute to the research community through QIQCOP: sharing open problems in quantum information and computation, exchanging ideas, and finding people to work with."
+    "text": "Through QIQCOP, I’m exploring new ways to share open problems and collaborate."
   }
 }

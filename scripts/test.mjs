@@ -243,7 +243,7 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   assert.match(html,/id="current-interests"/);
   assert.doesNotMatch(html,/ink-space-nav|ink-hero-index|A few questions I’d like to work on/);
   assert.equal(html.split(text(INTERESTS.heading)).length - 1, 1);
-  if (INTERESTS.homeLead) assert.ok(html.includes(text(INTERESTS.homeLead)));
+  assert.doesNotMatch(html, /home-current__lead|home-current__context|home-current__evidence/);
   if (INTERESTS.community) {
     const communityParagraph = html.match(/<p class="home-community">(.*?)<\/p>/s)?.[1];
     assert.ok(communityParagraph, 'community work is a supporting paragraph, not a peer topic heading');
@@ -256,7 +256,7 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   assert.equal((html.match(/class="home-current__topic"/g) || []).length, featuredTopics.length);
   for(const topic of featuredTopics) {
     assert.ok(html.includes(text(topic.homeSummary || topic.description)), `Missing homepage topic: ${topic.id}`);
-    if(topic.homeContext) assert.ok(html.includes(text(topic.homeContext)));
+
     assert.ok(html.includes(`href="${topic.researchHref || "/research/"}"`));
     assert.ok(html.includes(`id="${topic.id}"`));
   }

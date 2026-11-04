@@ -1,7 +1,6 @@
 /* Two equal research commitments and a collaboration invitation. */
 .home-current { padding-block:64px 0; scroll-margin-top:calc(var(--head-h,72px) + 24px); }
 .home-current h2 { margin:0 0 20px; color:var(--text); font:400 44px/1.15 var(--display); letter-spacing:-.02em; }
-.home-current__lead { margin:0 0 40px; max-width:72ch; color:var(--text-2); font-size:18px; line-height:1.7; text-wrap:pretty; }
 .home-current__topics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:80px; row-gap:40px; }
 .home-current__topic { scroll-margin-top:calc(var(--head-h,72px) + 24px); display:flex; flex-direction:column; min-width:0; padding-top:28px; border-top:1px solid var(--line-strong); }
 .home-current__topic h3 { margin:0 0 20px; color:var(--text); font:400 34px/1.2 var(--display); letter-spacing:-.015em; }
@@ -10,9 +9,7 @@
 .home-current__topic h3 a:hover svg { transform:translateX(3px); }
 .home-current__topic h3 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:6px; }
 .home-current__topic p { max-width:62ch; margin:0; color:var(--text-2); font-size:17px; line-height:1.75; }
-.home-current__evidence { margin-top:0; padding-top:24px; }
-.home-current__topic p.home-current__context { font-size:15px; line-height:1.7; }
-.home-current__links { display:flex; flex-wrap:wrap; gap:0 22px; margin-top:10px; }
+.home-current__links { display:flex; flex-wrap:wrap; gap:0 22px; margin-top:16px; }
 .home-current__links:empty { display:none; }
 .home-current__links a { display:inline-flex; align-items:center; min-height:44px; color:var(--accent); font-size:14px; text-underline-offset:4px; }
 .home-current__invitation { margin:24px 0 0; color:var(--text-2); font-size:16px; line-height:1.75; }
@@ -23,12 +20,10 @@
 @media(max-width:760px) {
  .home-current { padding-block:40px 0; }
  .home-current h2 { font-size:36px; }
- .home-current__lead { margin-bottom:28px; font-size:16px; }
  .home-current__topics { grid-template-columns:1fr; gap:28px; }
  .home-current__topic { padding-top:24px; }
  .home-current__topic h3 { min-height:0; font-size:30px; margin-bottom:16px; }
  .home-current__topic p { font-size:16px; }
- .home-current__evidence { padding-top:18px; }
  .home-community { margin-top:24px; }
 }
 @media(prefers-reduced-motion:reduce) { .home-current__topic h3 svg { transition:none; } }

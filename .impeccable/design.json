@@ -2056,17 +2056,16 @@
       "referenceScope": "Independent research agenda, concrete activity and intellectual ownership; no borrowed biography or capability claims.",
       "copyStatus": "Author confirms Quantum and AI are both core; QuantumAGI is a possible long-term ambition. The reciprocal explanation remains editorial wording, not a confirmed architecture or capability.",
       "fields": [
-        "homeLead",
         "topics[].homeTitle",
         "topics[].homeSummary",
-        "topics[].homeContext",
         "topics[].showOnHome",
         "perspective",
         "contactLabel"
       ],
       "perspectiveLayout": "Research h1, one summary paragraph from perspective.text, then direction navigation. No generic scope sentence or second heading; perspective.title is metadata. Garamond22px/1.5 (20px phone); Game uses Hanken18px/1.75 (16px phone). No extra margin, box or rule,72ch body limit. Home retains let’s talk.",
       "verification": ".impeccable/review/appearance-refinement/validation.md",
-      "browserQA": "Unavailable: local browser access disabled in Work settings."
+      "browserQA": "Unavailable: local browser access disabled in Work settings.",
+      "summaryLayout": "One short paragraph and two resource links per featured topic; no generic lead or separate context paragraph. One-sentence supporting QIQCOP note and let’s talk invitation. Body typography unchanged."
     },
     "appearanceRefinement": {
       "date": "2026-11-04",
