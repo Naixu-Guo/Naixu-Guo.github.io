@@ -128,4 +128,4 @@ See DESIGN.md’s matching section. Shared header/menu replaces theme-specific d
 
 ## Post-publication corrections (2026-11-04)
 
-Home retains What I’m working on, its two commitments, supporting QIQCOP paragraph and let’s talk invitation. Toward QuantumAGI moves unchanged to the end of Research, after the three concrete directions. The old homepage reflection remains source-only. Light is the explicit default; legacy ng-theme choices are ignored, and new manual choices are saved as ng-appearance. No typography, artwork or academic wording changes beyond the relocated perspective’s existing style.
+Home retains What I’m working on, its two commitments, supporting QIQCOP paragraph and let’s talk invitation. Toward QuantumAGI moves unchanged into the Research opening summary, after the current-work overview and before topic navigation. The author corrected the earlier bottom placement. The old homepage reflection remains source-only. Light is the explicit default; legacy ng-theme choices are ignored, and new manual choices are saved as ng-appearance. No typography, artwork or academic wording changes beyond the relocated perspective’s existing style.

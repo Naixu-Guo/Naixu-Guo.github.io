@@ -206,7 +206,9 @@ test("Research curates themes; Publications retains every paper; home avoids rep
       assert.ok(!html.includes(text(copy)), 'The long-term perspective belongs on Research');
       assert.equal(research.split(text(copy)).length - 1, 1);
     }
-    assert.ok(research.indexOf('id="quantumagi"') > research.lastIndexOf('class="research-feature"'));
+    const introduction = research.match(/<section class="wrap page-head">(.*?)<nav class="page-head__nav"/s)?.[1];
+    assert.ok(introduction?.includes('id="quantumagi"'), 'The outlook introduces Research before its topic navigation');
+    assert.ok(research.indexOf('id="quantumagi"') < research.indexOf('class="research-feature"'));
   }
   assert.match(html, /class="home-current__invitation"/);
   assert.ok(html.includes(`<a href="#contact">${text(INTERESTS.contactLabel)}</a>`));

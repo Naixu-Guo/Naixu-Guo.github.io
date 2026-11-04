@@ -9,16 +9,16 @@
 .research-feature__sources { display:flex; flex-wrap:wrap; align-items:center; gap:8px 28px; margin:12px 0 0; color:var(--text-2); font-size:14px; }
 .research-feature__sources > span { margin-right:auto; }
 .research-feature__sources a { display:inline-flex; align-items:center; min-height:44px; color:var(--accent); text-underline-offset:5px; }
-/* A quieter closing perspective, after the three concrete research directions. */
-.research-perspective { padding-block:40px 48px; border-top:1px solid var(--line); scroll-margin-top:calc(var(--head-h,72px) + 24px); }
-.research-perspective h2 { margin:0 0 18px; color:var(--text); font:400 28px/1.2 var(--display); }
+/* Research opens with current work, then its long-term guiding question. */
+.research-perspective { width:100%; margin-top:24px; scroll-margin-top:calc(var(--head-h,72px) + 24px); }
+.research-perspective h2 { margin:0 0 12px; color:var(--text); font:400 26px/1.2 var(--display); }
 .research-perspective p { max-width:72ch; margin:0; color:var(--text-2); font:400 18px/1.75 var(--font); text-wrap:pretty; }
-:is([data-theme="ink"],[data-theme="black"]) .research-perspective p { font:400 24px/1.5 var(--display); }
+:is([data-theme="ink"],[data-theme="black"]) .research-perspective p { font:400 22px/1.5 var(--display); }
 @media(max-width:760px) {
- .research-perspective { padding-block:28px 32px; }
- .research-perspective h2 { font-size:26px; }
+ .research-perspective { margin-top:20px; }
+ .research-perspective h2 { font-size:24px; }
  .research-perspective p { font-size:16px; }
- :is([data-theme="ink"],[data-theme="black"]) .research-perspective p { font-size:22px; }
+ :is([data-theme="ink"],[data-theme="black"]) .research-perspective p { font-size:20px; }
 }
 .research-diagram { max-width:1040px; margin-inline:auto; padding:0 0 20px; }
 .diagram-heading h3 { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
