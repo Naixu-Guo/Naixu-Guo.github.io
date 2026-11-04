@@ -141,3 +141,7 @@ Home and CV display an Email button, using the author-requested Gmail. It retain
 ## Homepage reading load (2026-11-04)
 
 The author questions the agenda’s text volume. Current structure is heading, two equal topics with one concise paragraph and two links each, one QIQCOP supporting sentence, and let’s talk. No generic lead or second context paragraph. Fonts stay readable; the reduction is editorial. Full Research/Publications remain intact.
+
+## Topic alignment (2026-11-04)
+
+Keep the concise two-topic agenda. The quantum paragraph adds its established interest in fundamental computation/learning limits. Desktop titles, paragraph starts and resource rows share content-sized subgrid tracks; phones stack independent rows. Do not rely on equal word counts, hard-coded heights or forced breaks for alignment.

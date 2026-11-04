@@ -21,7 +21,7 @@
           "href": "https://arxiv.org/abs/2606.20535"
         }
       ],
-      "homeSummary": "I develop dissipative algorithms and quantum linear algebra methods, and study how efficiently we can learn quantum dynamics from limited data.",
+      "homeSummary": "I develop dissipative algorithms and quantum linear algebra methods, and study how efficiently we can learn quantum dynamics from limited data. I also explore the fundamental limits of quantum computation and learning.",
       "homeTitle": "Quantum computing & learning",
       "showOnHome": true,
       "researchHref": "/research/#quantum-learning"

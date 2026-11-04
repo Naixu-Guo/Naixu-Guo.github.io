@@ -325,3 +325,7 @@ Home and CV use a small underlined Email button with the existing link typograph
 ## Concise homepage agenda (2026-11-04)
 
 What I’m working on now goes directly from its heading to two equal topics. Each has one concrete short paragraph and two resource links; topic titles still lead to Research. The generic lead and separate evidence/context paragraphs were removed. QIQCOP is one supporting sentence, followed by a short let’s talk invitation. Body typography is unchanged at17px/1.75 (16px on phones); content is reduced rather than shrinking text. Links now follow the paragraph with16px margin; obsolete lead/context/evidence spacing is removed. Detailed research descriptions, diagrams and all publications remain.
+
+## Homepage topic alignment (2026-11-04)
+
+The author requests aligned columns and a little more quantum-side copy. Its single paragraph now also mentions fundamental limits of quantum computation and learning, an existing research interest. Above760px, articles share three content-sized subgrid rows for heading, description and resources; margin20px below headings and16px above links preserve the current rhythm. The fallback is an auto/1fr/auto article grid. No fixed text heights, manual line breaks or spacer elements. Below761px topics use independent auto rows and the existing28px section gap. All three appearances share this stylesheet; body type, links and artwork are unchanged.

@@ -30,6 +30,8 @@ The two main interests are Quantum Computing and Agents for Science. The quantum
 
 ## Brand Commitments
 
+- 2026-11-04 alignment correction: align the two homepage topics' headings, paragraph starts and resource rows. The author permits slightly more text on the quantum side; include its existing interest in fundamental computation/learning limits. Keep one paragraph per topic and use content-sized shared rows, not forced line breaks or fixed heights. Phone topics remain independently stacked.
+
 - 2026-11-04 homepage density correction: What I’m working on has too much text. Remove the repeating lead and second paragraph per topic; each of the two equal commitments gets one concrete short paragraph and two resource links. Keep topic-title Research links, a one-sentence supporting QIQCOP note and let’s talk. Preserve the quantum/AI balance, tentative goals and full publication/research records.
 
 - 2026-11-04 contact correction: use the author’s Gmail and show Email instead of a full address on Home and CV. Avoid a plain address in rendered source or Person structured data. Keep contact convenient through a deliberate click and readable no-JavaScript fallback; do not claim complete spam prevention. The human/agent content source must remain straightforward to update.
