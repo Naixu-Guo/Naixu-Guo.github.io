@@ -15,7 +15,6 @@ export function homeInterests({ INTERESTS, escapeHtml: e, ext }) {
       <div class="home-current__evidence">${topic.homeContext ? `<p class="home-current__context">${e(topic.homeContext)}</p>` : ''}<div class="home-current__links">${topic.links.map(link).join('')}</div></div>
     </article>`).join('')}</div>
     ${community ? `<p class="home-community">${communityCopy}</p>` : ''}
-    ${INTERESTS.perspective ? `<section class="home-perspective" aria-labelledby="home-perspective-title"><h3 id="home-perspective-title">${e(INTERESTS.perspective.title)}</h3><p>${e(INTERESTS.perspective.text)}</p></section>` : ''}
     <p class="home-current__invitation">If one of these overlaps with your interests, <a href="#contact">${e(INTERESTS.contactLabel || "let’s talk")}</a>.</p>
   </section>`;
 }

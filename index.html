@@ -28,9 +28,9 @@
   <link rel="stylesheet" href="/assets/game.css?v=95e7ce9d9fa7" data-game-theme media="not all">
   <link rel="stylesheet" href="/assets/appearance.css?v=93db229592b4">
   <script type="application/json" id="appearance-config">[{"id":"ink","name":"Light","color":"#f2f6f5","stylesheet":"ink"},{"id":"black","name":"Dark","color":"#0b141b","stylesheet":"ink"},{"id":"dark","name":"Game","color":"#101010","stylesheet":"base"}]</script>
-  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-theme");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
+  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-appearance");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Naixu Guo","alternateName":"郭乃绪","url":"https://naixu-guo.github.io/","email":"mailto:naixug@u.nus.edu","jobTitle":"Quantum-information researcher","alumniOf":{"@type":"Organization","name":"Centre for Quantum Technologies, National University of Singapore"},"knowsAbout":["Quantum computing","Agents for science","Quantum algorithms","Quantum learning theory","Quantum machine learning","Open quantum systems"],"sameAs":["https://scholar.google.com/citations?user=r2I_WtAAAAAJ","https://arxiv.org/a/guo_n_2","https://github.com/Naixu-Guo","https://www.linkedin.com/in/naixu-guo-a0567626a/"]}</script>
-  <script src="/assets/site.js?v=eafc98038ca2" defer></script>
+  <script src="/assets/site.js?v=d851d85979ba" defer></script>
   <script src="/assets/ink-explorer.js?v=8489d33ff7ad" defer></script>
 </head>
 <body class="is-home">
@@ -82,7 +82,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="/assets/home-interests.css?v=db5068404a62">
+    <link rel="stylesheet" href="/assets/home-interests.css?v=b787569e9651">
     <section class="wrap home-current" id="current-interests" aria-labelledby="current-interests-title">
     <h2 id="current-interests-title">What I’m working on</h2>
     <p class="home-current__lead">Quantum computing and AI are both central to my research. I develop quantum algorithms and learning methods, and build toward AI systems that can invent methods and pursue scientific questions.</p>
@@ -96,7 +96,6 @@
       <div class="home-current__evidence"><p class="home-current__context">Quantum-Harbor and QIQCBench provide virtual quantum laboratories where agents carry out investigations and their results are independently checked.</p><div class="home-current__links"><a href="https://arxiv.org/abs/2609.17439" target="_blank" rel="noopener noreferrer">Paper (arXiv:2609.17439)</a><a href="https://github.com/GaugeForge/Quantum-Harbor" target="_blank" rel="noopener noreferrer">Quantum-Harbor</a><a href="https://gauge-forge.com/qiqc" target="_blank" rel="noopener noreferrer">QIQCBench</a></div></div>
     </article></div>
     <p class="home-community">I’m exploring new ways to collaborate and contribute to the research community through <a href="https://qiqc-op.com/" target="_blank" rel="noopener noreferrer">QIQCOP</a>: sharing open problems in quantum information and computation, exchanging ideas, and finding people to work with.</p>
-    <section class="home-perspective" aria-labelledby="home-perspective-title"><h3 id="home-perspective-title">Toward QuantumAGI</h3><p>One long-term possibility I want to explore is QuantumAGI: bringing quantum computation and general intelligence together. I want to understand what quantum systems could contribute to intelligence, and how increasingly capable AI could change the way we develop and use quantum computation.</p></section>
     <p class="home-current__invitation">If one of these overlaps with your interests, <a href="#contact">let’s talk</a>.</p>
   </section>
     <div class="home-personal">
@@ -118,7 +117,6 @@
           <ol class="home-news__list"><li><span class="news-date">Oct 2026</span><p>New paper: <a href="https://arxiv.org/abs/2610.38049" target="_blank" rel="noopener noreferrer">Perspective on AI and quantum open-source software</a>.</p></li><li><span class="news-date">Oct 2026</span><p>Successfully defended my PhD thesis at the National University of Singapore on 7 October.</p></li><li><span class="news-date">Sep 2026</span><p><a href="https://arxiv.org/abs/2606.20535" target="_blank" rel="noopener noreferrer">Near-Optimal Learning of Local Lindbladians</a> accepted at <strong>SODA 2027</strong>.</p></li><li><span class="news-date">Sep 2026</span><p>Invited talk at <a href="https://news.nus.edu.sg/when-quantum-meets-ai-nus-brings-together-international-experts-to-turn-frontier-technologies-into-real-world-solutions/" target="_blank" rel="noopener noreferrer">IntelligenceX 2026</a>, National University of Singapore.</p></li><li><span class="news-date">Sep 2026</span><p>New paper: <a href="https://arxiv.org/abs/2609.17439" target="_blank" rel="noopener noreferrer">Evaluating Verified Autonomy in Quantum Engineering</a> (Quantum-Harbor and QIQCBench).</p></li></ol>
         </section>
       </div>
-
     </div>
 
     </main>

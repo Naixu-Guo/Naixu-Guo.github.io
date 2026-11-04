@@ -343,7 +343,7 @@ function layout({ active, body, meta, noindex = false, schema = "", bodyClass = 
   <link rel="stylesheet" href="${assetUrls["game.css"]}" data-game-theme media="not all">
   <link rel="stylesheet" href="${assetUrls["appearance.css"]}">
   <script type="application/json" id="appearance-config">${JSON.stringify(APPEARANCES).replaceAll("<", "\\u003c")}</script>
-  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-theme");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
+  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-appearance");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
   ${schema}
   <script src="${assetUrls["site.js"]}" defer></script>
   ${["home", "research"].includes(active) ? `<script src="${assetUrls["ink-explorer.js"]}" defer></script>` : ""}
@@ -422,7 +422,6 @@ function homePage() {
           <ol class="home-news__list">${NEWS.slice(0, POLICY.homeNewsLimit).map(item => `<li><span class="news-date">${escapeHtml(item.dateLabel)}</span><p>${renderInline(item.content)}</p></li>`).join("")}</ol>
         </section>
       </div>
-      ${!INTERESTS.perspective ? `<aside class="wrap home-question" aria-label="A wider question"><p>${escapeHtml(SITE.hero.questionLead)}</p><blockquote>${escapeHtml(SITE.hero.question)}</blockquote></aside>` : ""}
     </div>
 
     `;
@@ -457,6 +456,7 @@ function researchPage() {
     </section>
     <link rel="stylesheet" href="${assetUrls['research-diagrams.css']}">
     <div class="wrap research-body">${directions}
+      ${INTERESTS.perspective ? `<section class="research-perspective" id="quantumagi" aria-labelledby="quantumagi-title"><h2 id="quantumagi-title">${escapeHtml(INTERESTS.perspective.title)}</h2><p>${escapeHtml(INTERESTS.perspective.text)}</p></section>` : ''}
       <p class="research-close"><a href="/publications/">All publications &amp; preprints</a></p>
     </div>
     <script type="module" src="${assetUrls['research-diagrams.js']}" data-scene-module="${assetUrls['research-scenes.js']}"></script>`;

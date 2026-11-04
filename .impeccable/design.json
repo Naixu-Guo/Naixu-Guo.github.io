@@ -2064,7 +2064,7 @@
         "perspective",
         "contactLabel"
       ],
-      "perspectiveLayout": "Within agenda, after Quantum/AI, before About/news. Heading28px (26px phone), Garamond24px/1.5 (22px phone); Game uses Hanken18px/1.75 (16px phone). 40px top margin/32px padding, 28px/24px phone.",
+      "perspectiveLayout": "At the end of Research after the three illustrated directions. Heading28px (26px phone), Garamond24px/1.5 (22px phone); Game uses Hanken18px/1.75 (16px phone). Top rule;40px/48px vertical padding,28px/32px phone;72ch body limit. Home retains the let’s talk invitation.",
       "verification": ".impeccable/review/appearance-refinement/validation.md",
       "browserQA": "Unavailable: local browser access disabled in Work settings."
     },
@@ -2260,7 +2260,7 @@
     "rules": [
       {
         "name": "The Selected Appearance Rule",
-        "body": "Light, Dark and Game are the three valid choices. Preserve explicit choices across routes and tabs; absent, invalid, removed `normal` and removed `light` preferences fall back to Light. `assets/appearances.json` is the shared manifest for names, IDs, browser color and stylesheet selection.",
+        "body": "Light, Dark and Game are the three valid choices. Default to white Light. Ignore legacy ng-theme preferences; preserve new explicit ng-appearance choices across routes and tabs. Absent, invalid and retired preferences fall back to Light. `assets/appearances.json` is the shared manifest for names, IDs, browser color and stylesheet selection.",
         "section": "colors"
       },
       {

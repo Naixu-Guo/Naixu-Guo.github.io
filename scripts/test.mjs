@@ -9,7 +9,7 @@ const controller = await readFile(new URL("../assets/site.js", import.meta.url),
 const bootstrap = html.match(/<script>(\{const legacy=.*?)<\/script>/s)[1];
 const appearanceConfig = html.match(/<script type="application\/json" id="appearance-config">(.*?)<\/script>/s)[1];
 
-function environment({ saved = null, blocked = false, reduced = false, motion = null } = {}) {
+function environment({ saved = null, legacySaved = null, blocked = false, reduced = false, motion = null } = {}) {
   const styles = {};
   const root = { dataset: {}, style: { setProperty(k,v) { styles[k]=v; }, removeProperty(k) { delete styles[k]; } } };
   const elements = { "[data-ink-theme]": {media:""}, "[data-game-theme]": {media:""} };
@@ -19,7 +19,7 @@ function environment({ saved = null, blocked = false, reduced = false, motion = 
   elements["[data-motion-toggle]"] = button;
   const documentEvents = {}, windowEvents = {}, mediaEvents = {};
   const reducedMedia = { matches: reduced, addEventListener(k,fn) {mediaEvents[k]=fn;} };
-  const values = new Map([["ng-theme",saved],["ng-motion",motion]]);
+  const values = new Map([["ng-appearance",saved],["ng-theme",legacySaved],["ng-motion",motion]]);
   const context = vm.createContext({
     document: { documentElement:root, getElementById(id) {return id === "appearance-config" ? {textContent:appearanceConfig} : null;}, querySelector(s) {return s.includes("meta[") ? meta : elements[s] ?? null;}, querySelectorAll(s) {return s.includes("meta[") ? [meta] : [];}, addEventListener(k,fn) {documentEvents[k]=fn;} },
     window: {addEventListener(k,fn) {windowEvents[k]=fn;}},
@@ -46,6 +46,21 @@ test("theme bootstrap preserves saved choices and falls back safely",()=>{
   assert.equal(env.root.dataset.theme,"ink");
 });
 
+test("every route opens in Light despite a legacy Game preference", async () => {
+  for (const route of ["index.html", "research/index.html", "publications/index.html", "library/index.html", "cv/index.html", "404.html"]) {
+    const source = await readFile(new URL(`../${route}`, import.meta.url), "utf8");
+    const start = source.match(/<script>(\{const legacy=.*?)<\/script>/s)[1];
+    const env = environment({legacySaved: "dark"});
+    vm.runInContext(start, env.context);
+    assert.equal(env.root.dataset.theme, "ink", `${route}: first paint must be Light`);
+    assert.equal(env.elements["[data-game-theme]"].media, "not all");
+    vm.runInContext(controller, env.context);
+    env.windowEvents.storage({key:"ng-theme", newValue:"dark"});
+    assert.equal(env.root.dataset.theme, "ink", `${route}: old tabs cannot restore Game`);
+    assert.equal(env.values.get("ng-appearance"), null, "only an explicit choice should be saved");
+  }
+});
+
 test("motion is opt-in, bounded, persistent, and overridden by reduced motion",()=>{
   const env=environment();vm.runInContext(bootstrap,env.context);vm.runInContext(controller,env.context);
   assert.equal(env.root.dataset.motion,"off");
@@ -60,13 +75,13 @@ test("motion is opt-in, bounded, persistent, and overridden by reduced motion",(
 
 test("cross-tab appearance changes preserve current choices and retire P3 safely",()=>{
   const env=environment();vm.runInContext(bootstrap,env.context);vm.runInContext(controller,env.context);
-  env.windowEvents.storage({key:"ng-theme",newValue:"dark"});
+  env.windowEvents.storage({key:"ng-appearance",newValue:"dark"});
   assert.equal(env.root.dataset.theme,"dark");assert.equal(env.elements["[data-ink-theme]"].media,"not all");
   assert.equal(env.elements["[data-game-theme]"].media,"all");
-  env.windowEvents.storage({key:"ng-theme",newValue:"black"});
+  env.windowEvents.storage({key:"ng-appearance",newValue:"black"});
   assert.equal(env.root.dataset.theme,"black");assert.equal(env.elements["[data-ink-theme]"].media,"all");
   assert.equal(env.elements["[data-game-theme]"].media,"not all");
-  env.windowEvents.storage({key:"ng-theme",newValue:"light"});
+  env.windowEvents.storage({key:"ng-appearance",newValue:"light"});
   assert.equal(env.root.dataset.theme,"ink");assert.equal(env.elements["[data-ink-theme]"].media,"all");
   env.windowEvents.storage({key:null,newValue:null});assert.equal(env.root.dataset.theme,"ink");
 });
@@ -109,7 +124,7 @@ test("appearance picker selects themes, restores focus and cooperates with mobil
   picker.emit("keydown", {target: radios[2], key: "Enter"});
   assert.equal(env.root.dataset.theme, "dark");
   assert.equal(env.elements["[data-game-theme]"].media, "all");
-  assert.equal(env.values.get("ng-theme"), "dark");
+  assert.equal(env.values.get("ng-appearance"), "dark");
   assert.equal(labelText.textContent, "Game");
   assert.equal(options.hidden, true);
   assert.equal(focused, trigger);
@@ -185,9 +200,16 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   assert.doesNotMatch(html, /class="profile-menu"|class="profile__description"/);
   assert.equal((html.match(/>Google Scholar<\/a>/g) || []).length, 1);
   assert.equal((html.match(/>GitHub<\/a>/g) || []).length, 1);
-  const closingText = INTERESTS.perspective?.text || SITE.hero.question;
-  assert.equal(html.split(text(closingText)).length - 1, 1);
-  if (INTERESTS.perspective) assert.ok(!html.includes(text(SITE.hero.question)), 'Do not repeat the old reflection beside the current perspective');
+  assert.ok(!html.includes(text(SITE.hero.question)), 'Do not restore the retired homepage reflection');
+  if (INTERESTS.perspective) {
+    for (const copy of [INTERESTS.perspective.title, INTERESTS.perspective.text]) {
+      assert.ok(!html.includes(text(copy)), 'The long-term perspective belongs on Research');
+      assert.equal(research.split(text(copy)).length - 1, 1);
+    }
+    assert.ok(research.indexOf('id="quantumagi"') > research.lastIndexOf('class="research-feature"'));
+  }
+  assert.match(html, /class="home-current__invitation"/);
+  assert.ok(html.includes(`<a href="#contact">${text(INTERESTS.contactLabel)}</a>`));
   assert.equal((html.match(/<span class="news-date">/g) || []).length, Math.min(5, NEWS.length));
   assert.ok(NEWS.length > 5, "Historic news remains in source");
   assert.ok(html.includes(text(SITE.biography)));
@@ -201,7 +223,7 @@ test("Research curates themes; Publications retains every paper; home avoids rep
     assert.equal(communityParagraph.replace(/<[^>]*>/g, ''), text(INTERESTS.community.text));
     assert.equal(html.split(`href="${text(INTERESTS.community.href)}"`).length - 1, 1, 'community project is not repeated among topic links');
     assert.ok(html.indexOf('class="home-community"') > html.indexOf('class="home-current__topics"'));
-    assert.ok(html.indexOf('class="home-community"') < html.indexOf('class="home-perspective"'));
+    assert.ok(html.indexOf('class="home-community"') < html.indexOf('class="home-current__invitation"'));
   }
   const featuredTopics = INTERESTS.topics.filter(topic => topic.showOnHome !== false);
   assert.equal((html.match(/class="home-current__topic"/g) || []).length, featuredTopics.length);

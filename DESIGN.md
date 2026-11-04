@@ -149,7 +149,7 @@ White uses `ink-bg`, `ink-surface` and `ink-paper` for the canvas and controls; 
 
 Unprefixed tokens record the Game base and `dark-*` its dark reading palette. Retired P3/Classic palettes are not active design tokens.
 
-**The Selected Appearance Rule.** Light, Dark and Game are the three valid choices. Preserve explicit choices across routes and tabs; absent, invalid, removed `normal` and removed `light` preferences fall back to Light. `assets/appearances.json` is the shared manifest for names, IDs, browser color and stylesheet selection.
+**The Selected Appearance Rule.** Light, Dark and Game are the three valid choices. The white Light appearance is the author-requested default. Preserve new explicit `ng-appearance` choices across routes and tabs; ignore legacy `ng-theme` preferences so an old dark/Game value cannot override the default. Absent, invalid and retired values fall back to Light. `assets/appearances.json` is the shared manifest for names, IDs, browser color and stylesheet selection.
 
 ## Typography
 
@@ -311,3 +311,9 @@ Icon palette follow-up: the user requests a more attractive color choice. The im
 
 
 G contour follow-up (2026-11-04): the author asks to improve the G itself. Retain ink/gold and the tile. The new contour opens the counter, reduces the loop weight and finishes the crossbar with a shallow diagonal. The smaller dragon terminal has curved horns and a curved eye cutout. Compared the prior design against two geometry studies at128/32/16px, then selected the flowing loop (middle study). Final180px and16px exports reviewed; no user aesthetic acceptance inferred. Evidence: `.impeccable/review/g-refinement/validation.md`.
+
+## Post-publication corrections (2026-11-04)
+
+Toward QuantumAGI now closes Research after the three illustrated directions, with its exact title and prose still sourced from `INTERESTS.perspective`. It uses a fine top rule,40px/48px vertical padding,28px heading and24px/1.5 Garamond body in Light/Dark (18px Hanken in Game), constrained to72ch. Phones use28px/32px padding,26px heading and22px/16px body. Home keeps its two commitments, QIQCOP supporting paragraph and let’s talk invitation; neither the perspective nor the retired generic reflection is rendered there.
+
+Default Light is preserved before first paint even with legacy Game storage. New explicit theme choices use `ng-appearance`; legacy `ng-theme` storage events are ignored. This supersedes earlier persistence and homepage-horizon placement notes.

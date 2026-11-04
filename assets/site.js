@@ -6,6 +6,7 @@ const themeOptions = picker?.querySelector(".theme-picker__options");
 const inkTheme = document.querySelector("[data-ink-theme]");
 const gameTheme = document.querySelector("[data-game-theme]");
 // The build embeds this same manifest before first paint on every route.
+// Legacy ng-theme values are not restored: older dark preferences meant Game.
 const appearances = JSON.parse(document.getElementById("appearance-config").textContent);
 const validTheme = (theme) => appearances.find(appearance => appearance.id === theme) || appearances[0];
 
@@ -20,7 +21,7 @@ function setTheme(theme, persist = true) {
   });
   if (persist) {
     try {
-      localStorage.setItem("ng-theme", theme);
+      localStorage.setItem("ng-appearance", theme);
     } catch {
       /* storage unavailable */
     }
@@ -91,7 +92,7 @@ if (picker && themeTrigger && themeOptions) {
 document.querySelector("[data-print]")?.addEventListener("click", () => window.print());
 
 window.addEventListener("storage", (event) => {
-  if (event.key !== "ng-theme" && event.key !== null) return;
+  if (event.key !== "ng-appearance" && event.key !== null) return;
   setTheme(event.newValue, false);
 });
 

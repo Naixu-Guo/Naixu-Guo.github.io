@@ -125,3 +125,7 @@ The author considers QIQCOP’s placement good but says it cannot stand beside t
 ## Latest correction: Dark figures and Game consistency (2026-11-04)
 
 See DESIGN.md’s matching section. Shared header/menu replaces theme-specific duplicate navigation. Game retains cutout name, one portrait and the two focus lines, with one research entrance; repeated description and institution caption are removed. Career details remain in About, with five news items and the unchanged agenda. Game reading pages share shell/head geometry and expose the full publication figures/summaries. The appearance picker is a compact horizontal palette/type preview with native radios. Dark publication figures receive pale mats; light-lettered transparent diagrams use schema-backed slate surfaces. Original figures are unchanged. This is implementation, not user aesthetic acceptance. Browser remains disabled.
+
+## Post-publication corrections (2026-11-04)
+
+Home retains What I’m working on, its two commitments, supporting QIQCOP paragraph and let’s talk invitation. Toward QuantumAGI moves unchanged to the end of Research, after the three concrete directions. The old homepage reflection remains source-only. Light is the explicit default; legacy ng-theme choices are ignored, and new manual choices are saved as ng-appearance. No typography, artwork or academic wording changes beyond the relocated perspective’s existing style.
