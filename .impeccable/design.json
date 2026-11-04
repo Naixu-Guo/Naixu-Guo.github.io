@@ -2064,7 +2064,7 @@
         "perspective",
         "contactLabel"
       ],
-      "perspectiveLayout": "Inside the Research opening summary: current-work overview, long-term QuantumAGI perspective, then topic navigation and illustrations. Heading26px (24px phone), Garamond22px/1.5 (20px phone); Game uses Hanken18px/1.75 (16px phone). 24px top margin (20px phone), no box or rule,72ch body limit. Home retains the let’s talk invitation.",
+      "perspectiveLayout": "Research h1, one summary paragraph from perspective.text, then direction navigation. No generic scope sentence or second heading; perspective.title is metadata. Garamond22px/1.5 (20px phone); Game uses Hanken18px/1.75 (16px phone). No extra margin, box or rule,72ch body limit. Home retains let’s talk.",
       "verification": ".impeccable/review/appearance-refinement/validation.md",
       "browserQA": "Unavailable: local browser access disabled in Work settings."
     },

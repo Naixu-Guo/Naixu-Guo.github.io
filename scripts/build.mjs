@@ -452,8 +452,7 @@ function researchPage() {
     <link rel="stylesheet" href="${assetUrls['research-diagrams.css']}">
     <section class="wrap page-head">
       <h1>Research</h1>
-      <p>Quantum algorithms, learning from physical systems, and agents for science.</p>
-      ${INTERESTS.perspective ? `<section class="research-perspective" id="quantumagi" aria-labelledby="quantumagi-title"><h2 id="quantumagi-title">${escapeHtml(INTERESTS.perspective.title)}</h2><p>${escapeHtml(INTERESTS.perspective.text)}</p></section>` : ''}
+      ${INTERESTS.perspective ? `<p class="research-summary" id="quantumagi">${escapeHtml(INTERESTS.perspective.text)}</p>` : ''}
       <nav class="page-head__nav" aria-label="Research directions">${RESEARCH.directions.map(direction => `<a href="#${escapeHtml(direction.id)}">${escapeHtml(direction.title)}</a>`).join('')}</nav>
     </section>
     <div class="wrap research-body">${directions}

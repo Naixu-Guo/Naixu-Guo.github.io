@@ -116,7 +116,7 @@
         "title",
         "text"
       ],
-      "description": "Author’s view of scientific AI, shown once below the homepage biography/news."
+      "description": "Long-term research outlook. Text is the single Research opening summary; title remains editorial metadata and is not rendered as a second heading."
     },
     "contactLabel": {
       "type": "string",

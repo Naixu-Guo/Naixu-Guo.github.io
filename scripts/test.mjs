@@ -202,12 +202,12 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   assert.equal((html.match(/>GitHub<\/a>/g) || []).length, 1);
   assert.ok(!html.includes(text(SITE.hero.question)), 'Do not restore the retired homepage reflection');
   if (INTERESTS.perspective) {
-    for (const copy of [INTERESTS.perspective.title, INTERESTS.perspective.text]) {
-      assert.ok(!html.includes(text(copy)), 'The long-term perspective belongs on Research');
-      assert.equal(research.split(text(copy)).length - 1, 1);
-    }
+    assert.ok(!html.includes(text(INTERESTS.perspective.text)), 'The long-term perspective belongs on Research');
+    assert.equal(research.split(text(INTERESTS.perspective.text)).length - 1, 1);
     const introduction = research.match(/<section class="wrap page-head">(.*?)<nav class="page-head__nav"/s)?.[1];
     assert.ok(introduction?.includes('id="quantumagi"'), 'The outlook introduces Research before its topic navigation');
+    assert.equal((introduction.match(/<p\b/g) || []).length, 1, 'Research needs one introduction, not stacked summaries');
+    assert.doesNotMatch(introduction, /<h2|Toward QuantumAGI|Quantum algorithms, learning from physical systems/);
     assert.ok(research.indexOf('id="quantumagi"') < research.indexOf('class="research-feature"'));
   }
   assert.match(html, /class="home-current__invitation"/);

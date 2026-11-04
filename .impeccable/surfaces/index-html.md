@@ -129,3 +129,7 @@ See DESIGN.md’s matching section. Shared header/menu replaces theme-specific d
 ## Post-publication corrections (2026-11-04)
 
 Home retains What I’m working on, its two commitments, supporting QIQCOP paragraph and let’s talk invitation. Toward QuantumAGI moves unchanged into the Research opening summary, after the current-work overview and before topic navigation. The author corrected the earlier bottom placement. The old homepage reflection remains source-only. Light is the explicit default; legacy ng-theme choices are ignored, and new manual choices are saved as ng-appearance. No typography, artwork or academic wording changes beyond the relocated perspective’s existing style.
+
+## Research introduction deduplication (2026-11-04)
+
+The user rejects the stacked scope sentence, Toward QuantumAGI heading and paragraph. Current Research header is one h1, one concise summary paragraph, then direction navigation. Render perspective.text only; perspective.title is metadata. The paragraph preserves the tentative long-term QuantumAGI ambition. This supersedes the previous recommendation to prepend a current-work overview. No duplicated topic list or second introductory heading.
