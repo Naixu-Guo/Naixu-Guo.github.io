@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-10-new-preprints-fast-forwardable-lindbladians-imply-quantum-phase-esti",
+  "date": "2025-10",
+  "order": 14,
+  "content": "New papers: [Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759) and [Accelerating Inference for Multilayer Neural Networks](https://arxiv.org/abs/2510.07195).",
+  "publicationIds": [
+    "arxiv-2510-06759",
+    "arxiv-2510-07195"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2510.06759"
+    },
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2510.07195"
+    }
+  ]
+}

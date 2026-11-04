@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-08-quantum-linear-algebra-is-all-you-need-for-transformer-architectures",
+  "date": "2025-08",
+  "order": 19,
+  "content": "[Quantum linear algebra is all you need for Transformer architectures](https://arxiv.org/abs/2402.16714) presented by Patrick Rebentrost as a plenary talk at AQIS 2025.",
+  "publicationIds": [
+    "arxiv-2402-16714"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2402.16714"
+    }
+  ]
+}

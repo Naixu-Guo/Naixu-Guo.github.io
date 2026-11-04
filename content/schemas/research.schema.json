@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "research content, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "statement": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "homeFrame": {
+      "type": "string"
+    },
+    "homeInterests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "project": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "question"
+        ]
+      }
+    },
+    "directions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "motif": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "visuals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                },
+                "publicationId": {
+                  "type": "string"
+                },
+                "demoLink": {
+                  "type": "string",
+                  "pattern": "^https://"
+                }
+              },
+              "required": [
+                "label",
+                "alt",
+                "publicationId"
+              ]
+            }
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "publicationId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim",
+                "detail",
+                "publicationId"
+              ]
+            }
+          },
+          "outlook": {
+            "type": "string"
+          },
+          "related": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "note"
+              ]
+            }
+          },
+          "legacyId": {
+            "type": "string"
+          },
+          "visualSummary": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "question",
+          "motif",
+          "summary",
+          "visuals",
+          "body",
+          "results",
+          "outlook",
+          "related"
+        ]
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "statement",
+    "intro",
+    "homeFrame",
+    "homeInterests",
+    "directions"
+  ]
+}

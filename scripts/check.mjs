@@ -8,6 +8,7 @@ const pages = [
   "publications/index.html",
   "cv/index.html",
   "library/index.html",
+  "about/index.html",
   "404.html",
 ];
 

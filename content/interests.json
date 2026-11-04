@@ -1,0 +1,94 @@
+{
+  "$schema": "./schemas/interests.schema.json",
+  "schemaVersion": 1,
+  "heading": "What I’m working on",
+  "lede": "Three questions I’m actively thinking about. Each is open to collaboration.",
+  "introduction": "If you’d like to work together on any of these questions,",
+  "topics": [
+    {
+      "id": "quantum-algorithms-learning",
+      "label": "Quantum algorithms & learning",
+      "title": "Quantum algorithms and learning",
+      "question": "Where does a quantum advantage survive the cost of getting data in and answers out?",
+      "description": "My theoretical work connects quantum linear algebra, open-system dynamics and learning. I want to understand which structures make an algorithm useful, and what limited measurements can tell us about quantum systems.",
+      "links": [
+        {
+          "label": "Research overview",
+          "href": "/research/"
+        },
+        {
+          "label": "Dissipative algorithms",
+          "href": "https://arxiv.org/abs/2410.19628"
+        },
+        {
+          "label": "Learning local dynamics",
+          "href": "https://arxiv.org/abs/2606.20535"
+        }
+      ],
+      "homeSummary": "I develop quantum algorithms and study what can be learned about quantum systems. I want to turn physical structure into computational resources, and understand the limits of quantum learning and computation.",
+      "homeTitle": "Quantum computing & learning",
+      "showOnHome": true,
+      "homeContext": "My current work includes dissipative algorithms, quantum linear algebra and learning local quantum dynamics.",
+      "researchHref": "/research/#quantum-learning"
+    },
+    {
+      "id": "ai-quantum-design",
+      "label": "AI-assisted algorithm design",
+      "title": "AI-assisted classical–quantum co-design",
+      "question": "Can we reduce quantum costs by redesigning the classical work around them?",
+      "description": "I’m exploring how AI can help choose problem representations, classical preprocessing and quantum implementations together. My starting points are quantum simulation and matrix operations, with costs counted across the full computation.",
+      "links": [
+        {
+          "label": "Quantum algorithms",
+          "href": "/research/#quantum-learning"
+        },
+        {
+          "label": "Learning quantum dynamics",
+          "href": "/research/#system-learning"
+        }
+      ],
+      "homeSummary": "Quantum algorithms are shaped by the representations and classical computations around them. I want AI to search across these choices and invent new methods, starting with quantum simulation and linear algebra.",
+      "homeTitle": "Inventing algorithms with AI",
+      "showOnHome": false,
+      "homeContext": "My work on Lindbladian algorithms and learning quantum dynamics provides the theoretical starting point.",
+      "researchHref": "/research/#quantum-learning"
+    },
+    {
+      "id": "scientific-agents",
+      "label": "Scientific agents",
+      "title": "Scientific agents with checkable results",
+      "question": "How do we turn an agent’s promising idea into a result another researcher can check?",
+      "description": "I’m interested in agents that choose what to investigate, use scientific tools and learn from unsuccessful attempts. Quantum-Harbor and QIQCBench are a starting point: agents work in virtual quantum-engineering laboratories, their actions are recorded, and their conclusions are verified independently.",
+      "links": [
+        {
+          "label": "Paper (arXiv:2609.17439)",
+          "href": "https://arxiv.org/abs/2609.17439"
+        },
+        {
+          "label": "Quantum-Harbor",
+          "href": "https://github.com/GaugeForge/Quantum-Harbor"
+        },
+        {
+          "label": "QIQCBench",
+          "href": "https://gauge-forge.com/qiqc"
+        }
+      ],
+      "homeSummary": "I’m building toward agents that can invent methods and pursue open scientific questions. One direction is classical–quantum co-design: searching for mathematical representations, classical algorithms and quantum implementations together.",
+      "homeTitle": "AI for scientific discovery",
+      "showOnHome": true,
+      "homeContext": "Quantum-Harbor and QIQCBench provide virtual quantum laboratories where agents carry out investigations and their results are independently checked.",
+      "researchHref": "/research/#agents-for-science"
+    }
+  ],
+  "homeLead": "Quantum computing and AI are both central to my research. I develop quantum algorithms and learning methods, and build toward AI systems that can invent methods and pursue scientific questions.",
+  "perspective": {
+    "title": "Toward QuantumAGI",
+    "text": "One long-term possibility I want to explore is QuantumAGI: bringing quantum computation and general intelligence together. I want to understand what quantum systems could contribute to intelligence, and how increasingly capable AI could change the way we develop and use quantum computation."
+  },
+  "contactLabel": "let’s talk",
+  "community": {
+    "title": "QIQCOP",
+    "href": "https://qiqc-op.com/",
+    "text": "I’m exploring new ways to collaborate and contribute to the research community through QIQCOP: sharing open problems in quantum information and computation, exchanging ideas, and finding people to work with."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-07-visited-kaoru-mizuta-s-group-at-osaka-university-s-center-for-quantu",
+  "date": "2026-07",
+  "order": 5,
+  "content": "Visited [Kaoru Mizuta’s group](https://k-mizuta.github.io/member.html) at Osaka University’s Center for Quantum Information and Quantum Biology.",
+  "publicationIds": [],
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://k-mizuta.github.io/member.html"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-08-research-visit-to-xanadu-the-university-of-toronto-and-the-universit",
+  "date": "2025-08",
+  "order": 17,
+  "content": "Research visit to Xanadu, the University of Toronto, and the University of Waterloo.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "author",
+      "note": "Preserved from the author’s existing website and records."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2309-09235",
+  "order": 6,
+  "title": "Provable learning of quantum states with graphical models",
+  "authors": "Liming Zhao, **Naixu Guo**, Ming-Xing Luo, Patrick Rebentrost",
+  "venue": "Physical Review Research 8, 013109",
+  "short": "PRR 2026",
+  "year": 2026,
+  "category": "journal",
+  "arxiv": "2309.09235",
+  "figure": "/figure/previews/RBMlearn.png",
+  "journalLink": "https://journals.aps.org/prresearch/abstract/10.1103/1355-xvpx",
+  "summary": "Restricted Boltzmann-machine structure yields provable learning procedures for a class of quantum states, with exponentially fewer samples than naive tomography.",
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2309.09235"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://journals.aps.org/prresearch/abstract/10.1103/1355-xvpx"
+    }
+  ]
+}

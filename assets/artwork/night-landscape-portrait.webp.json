@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: compositing. Edit the supplied painting into a TALL PORTRAIT PHONE WALLPAPER, aspect ratio9:16, 1536x2688. Not square or horizontal. Keep the exact same soft Chinese painted style, dark indigo, same silver benevolent dragon with CLOSED mouth, same seated dark-haired scholar facing the lake in dark clothes, same pavilion/lantern/branches and one small moon. Preserve brush character without increasing detail or adding synthetic texture. This is a responsive framing variant of this same scene, not a redesign.\n\nAdapt to a tall frame: dragon head in the upper-right at x65%,y17%, body curving near the top. Pavilion along lower-left; seated person's head at x28%,y58%, seated body and table entirely above y75%. The person's complete silhouette and the dragon's head must be comfortably INSIDE x20–78% of the portrait frame; keep margin around both. Quiet dark mountains/lake in the middle y30–48% for HTML reading copy. Calm continuous lake, lower rocks and atmospheric mountain/water layers extend to the bottom edge. The person must not move to the very bottom, and the dragon must not fill the middle. Retain the single geography, moonlight and warm lantern scale. No text, letters, UI, panels, frame, collage, empty canvas, solid-color area, gradient fade-out, extra person/dragon, particles or glossy CGI. Full scenic artwork all the way to every edge. Main requirement: portrait9:16 with BOTH subjects visible, not a square crop.",
+  "createdAt": "2026-10-31T18:04:52.561Z",
+  "origin": "Built-in ImageGen portrait composition edit derived from night-landscape-balanced, itself an edit of the original landscape. Original wide artwork retained. WebP q98 without resizing or sharpening.",
+  "source": "image_gen output: exec-5eb5ab96-d12d-4507-acc1-060c07e87585.png",
+  "editTarget": "assets/artwork/night-landscape-balanced.webp",
+  "generationMode": "built-in image_gen",
+  "generatedDimensions": [
+    940,
+    1672
+  ]
+}

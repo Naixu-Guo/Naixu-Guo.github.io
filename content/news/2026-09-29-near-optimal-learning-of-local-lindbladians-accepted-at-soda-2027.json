@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-09-29-near-optimal-learning-of-local-lindbladians-accepted-at-soda-2027",
+  "date": "2026-09-29",
+  "order": 2,
+  "content": "[Near-Optimal Learning of Local Lindbladians](https://arxiv.org/abs/2606.20535) accepted at **SODA 2027**.",
+  "publicationIds": [
+    "arxiv-2606-20535"
+  ],
+  "verification": "author-confirmed",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2606.20535"
+    }
+  ]
+}

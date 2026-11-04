@@ -1,0 +1,22 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2606-06316",
+  "order": 3,
+  "title": "Quantum enhanced rare event discovery and sampling",
+  "authors": "**Naixu Guo**, Po-Wei Huang, Qisheng Wang, Jayne Thompson, Patrick Rebentrost, Mile Gu, Chengran Yang",
+  "venue": "arXiv preprint",
+  "short": "arXiv 2026",
+  "year": 2026,
+  "category": "preprint",
+  "arxiv": "2606.06316",
+  "figure": "/figure/previews/RareEventSampling.png",
+  "summary": "A quantum algorithm that discovers and samples rare events without knowing them in advance, with optimal quantum scaling in the rarity threshold.",
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2606.06316"
+    }
+  ]
+}

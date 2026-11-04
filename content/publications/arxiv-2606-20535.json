@@ -1,0 +1,27 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2606-20535",
+  "order": 2,
+  "title": "Near-Optimal Learning of Local Lindbladians",
+  "authors": "Itai Arad, Zhili Chen, **Naixu Guo**, Patrick Rebentrost, Zhan Yu (alphabetical order)",
+  "venue": "ACM-SIAM Symposium on Discrete Algorithms (SODA 2027), accepted",
+  "short": "SODA 2027, accepted",
+  "year": 2027,
+  "category": "conference",
+  "arxiv": "2606.20535",
+  "figure": "/figure/previews/LocalLindbladianLearning.svg",
+  "summary": "A near-optimal protocol for learning local Lindbladians from finite-time channel probes, with matching lower bounds on channel uses and total evolution time.",
+  "selected": true,
+  "verification": "author-confirmed",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2606.20535"
+    },
+    {
+      "kind": "author",
+      "note": "SODA 2027 acceptance confirmed by the author."
+    }
+  ]
+}

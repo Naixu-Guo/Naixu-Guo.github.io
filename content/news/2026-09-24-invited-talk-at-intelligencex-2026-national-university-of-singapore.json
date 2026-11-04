@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-09-24-invited-talk-at-intelligencex-2026-national-university-of-singapore",
+  "date": "2026-09-24",
+  "order": 3,
+  "content": "Invited talk at [IntelligenceX 2026](https://news.nus.edu.sg/when-quantum-meets-ai-nus-brings-together-international-experts-to-turn-frontier-technologies-into-real-world-solutions/), National University of Singapore.",
+  "publicationIds": [],
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://news.nus.edu.sg/when-quantum-meets-ai-nus-brings-together-international-experts-to-turn-frontier-technologies-into-real-world-solutions/"
+    }
+  ]
+}

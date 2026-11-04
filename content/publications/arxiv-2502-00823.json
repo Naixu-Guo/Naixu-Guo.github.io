@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2502-00823",
+  "order": 8,
+  "title": "Online Learning of Pure States is as Hard as Mixed States",
+  "authors": "Maxime Meyer, Soumik Adhikary, **Naixu Guo**, Patrick Rebentrost",
+  "venue": "Neural Information Processing Systems (NeurIPS) 2025",
+  "short": "NeurIPS 2025",
+  "year": 2025,
+  "category": "conference",
+  "arxiv": "2502.00823",
+  "figure": "/figure/previews/onlinelearning.png",
+  "summary": "Online learning of pure quantum states can be as hard as learning mixed states: the two settings have the same regret scaling under ℓ1 loss.",
+  "selected": true,
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2502.00823"
+    }
+  ]
+}

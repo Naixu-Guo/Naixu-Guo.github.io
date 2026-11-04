@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-08-online-learning-of-pure-states-is-as-hard-as-mixed-states-accepted-a",
+  "date": "2025-08",
+  "order": 15,
+  "content": "[Online Learning of Pure States is as Hard as Mixed States](https://arxiv.org/abs/2502.00823) accepted at **NeurIPS 2025**.",
+  "publicationIds": [
+    "arxiv-2502-00823"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2502.00823"
+    }
+  ]
+}

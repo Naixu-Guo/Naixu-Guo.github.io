@@ -1,0 +1,31 @@
+{
+  "type": "original-animated-scientific-illustrations",
+  "implementation": "assets/research-scenes.js",
+  "date": "2026-11-04",
+  "brief": "Three cohesive original axonometric scenes: a virtual research workbench and independent check; engineered dissipative quantum computation; local measurements revealing quantum dynamics. Short captions remain live HTML outside the SVG.",
+  "limits": "Conceptual illustrations, not physical equipment claims, measured data or reported performance. The dissipative cascade is an analogy; algorithms including Lindbladian ODE solvers can read out an evolved state rather than a steady state. Curves, populations and inferred coupling widths are explanatory marks.",
+  "references": [
+    {
+      "scene": "agents",
+      "source": "https://arxiv.org/abs/2609.17439",
+      "basis": "Agents choose tools and investigations; separate checks evaluate the proposed conclusions."
+    },
+    {
+      "scene": "quantum",
+      "source": "https://arxiv.org/abs/2410.19628",
+      "basis": "Non-diagonal density-matrix encoding embeds a linear differential equation in Lindbladian evolution."
+    },
+    {
+      "scene": "learning",
+      "source": "https://arxiv.org/abs/2606.20535",
+      "basis": "Finite-time local observations are used to estimate Hamiltonian and dissipative coefficients."
+    }
+  ],
+  "supersededArtworkArchive": ".impeccable/review/opus-research/before/",
+  "creator": {
+    "tool": "Claude Code",
+    "model": "claude-opus-5-5",
+    "requestedEffort": "max"
+  },
+  "artDirectionReference": "https://yuxuan-du.github.io/sites/project.html"
+}

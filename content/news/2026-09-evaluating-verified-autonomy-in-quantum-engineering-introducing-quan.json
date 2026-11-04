@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-09-evaluating-verified-autonomy-in-quantum-engineering-introducing-quan",
+  "date": "2026-09",
+  "order": 4,
+  "content": "New paper: [Evaluating Verified Autonomy in Quantum Engineering](https://arxiv.org/abs/2609.17439) (Quantum-Harbor and QIQCBench).",
+  "publicationIds": [
+    "arxiv-2609-17439"
+  ],
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2609.17439"
+    }
+  ]
+}

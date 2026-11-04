@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "news content, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+    },
+    "verification": {
+      "enum": [
+        "inherited",
+        "source-checked",
+        "author-confirmed"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "arxiv",
+              "publisher",
+              "web",
+              "social",
+              "author"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "url"
+            ]
+          },
+          {
+            "required": [
+              "note"
+            ]
+          }
+        ]
+      }
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$"
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publicationIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "date",
+    "content",
+    "verification",
+    "sources"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "prompt": "Use case: precise-object-edit. Make a SMALL local correction to the supplied existing Chinese night-landscape painting, preserving its native framing and all characters. The dragon must still feel embedded in the MOUNTAINS AND SKY, emerging among mist, not pasted into open empty sky. Preserve the dragon exactly in its present position, with the mountain peaks immediately below and behind its neck/body, and the cloud formations surrounding it. Preserve the seated scholar, pavilion, lantern, moon, shoreline, water and foreground exactly in their current positions. Do NOT separate the dragon from the mountains; do NOT create a large blank central sky or valley. The only edit is to the overly repetitive tiny ridges in the MIDDLE band of the painting, below the dragon's framing peaks and above the distant shoreline: consolidate a few repeated miniature ridges into 2–3 broader, irregular, overlapping mountain masses, reducing mountain density by only about20percent. Keep the overall mountainous character and layers of depth; make the scale and spacing less mechanically repeated. Retain a substantial high mountain rising toward the dragon on the right. Mist follows the terrain naturally. Preserve the original midnight-blue palette, soft painted detail, brush texture and relative brightness. No new objects, no increased detail, no sharper scales, no CGI, no particles, no new glow, no words or UI. This is a restrained terrain correction, NOT a recomposition and NOT a simplification into open lake/empty sky.\nPreserve tall9:16 framing.",
+  "origin": "Built-in ImageGen restrained terrain edit; preserve dragon within mountain and cloud layers. No resizing or sharpening; WebP q98.",
+  "source": "image_gen output: exec-202d5c74-d48c-4f41-bc8b-01148d2a5984.png",
+  "editTarget": "assets/artwork/night-landscape-portrait.webp",
+  "generationMode": "built-in image_gen",
+  "generatedDimensions": [
+    940,
+    1672
+  ]
+}

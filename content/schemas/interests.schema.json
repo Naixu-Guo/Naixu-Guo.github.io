@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "interests content, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "heading": {
+      "type": "string"
+    },
+    "lede": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "string"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ]
+            }
+          },
+          "homeSummary": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Short introduction displayed in the homepage agenda; detailed drafts remain in source."
+          },
+          "homeTitle": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Homepage topic title; the stable topic ID remains unchanged."
+          },
+          "showOnHome": {
+            "type": "boolean",
+            "description": "Whether this topic is featured on Home. Defaults to true; other drafts remain in source."
+          },
+          "homeContext": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Concrete existing work that supports the homepage ambition. Keep achievements separate from goals."
+          },
+          "researchHref": {
+            "type": "string",
+            "pattern": "^/research/(#[a-z0-9-]+)?$",
+            "description": "The illustrated Research direction linked by the homepage topic title."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "title",
+          "question",
+          "description",
+          "links"
+        ]
+      }
+    },
+    "homeLead": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Homepage research aim. Use an ambition, not an unverified achievement."
+    },
+    "perspective": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "text"
+      ],
+      "description": "Author’s view of scientific AI, shown once below the homepage biography/news."
+    },
+    "contactLabel": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Collaboration link wording in the homepage agenda."
+    },
+    "community": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Community project shown once within What I’m working on, after the two research commitments.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "href",
+        "text"
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "heading",
+    "lede",
+    "introduction",
+    "topics"
+  ]
+}

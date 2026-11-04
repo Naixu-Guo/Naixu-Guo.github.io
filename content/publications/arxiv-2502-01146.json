@@ -1,0 +1,31 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2502-01146",
+  "order": 7,
+  "title": "A Gentle Introduction to Quantum Machine Learning",
+  "formerTitle": "Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers",
+  "authors": "Yuxuan Du, Xinbiao Wang, **Naixu Guo**, Zhan Yu, Yang Qian, Kaining Zhang, Min-Hsiu Hsieh, Patrick Rebentrost, Dacheng Tao",
+  "venue": "Springer Singapore",
+  "short": "Springer 2025",
+  "year": 2025,
+  "category": "book",
+  "arxiv": "2502.01146",
+  "media": {
+    "label": "Book",
+    "href": "https://link.springer.com/book/10.1007/978-981-95-1284-3"
+  },
+  "figure": "/figure/previews/qmltutorial.png",
+  "summary": "The main models, algorithms, and implementation assumptions of quantum machine learning, written for readers with a machine-learning background.",
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2502.01146"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://link.springer.com/book/10.1007/978-981-95-1284-3"
+    }
+  ]
+}

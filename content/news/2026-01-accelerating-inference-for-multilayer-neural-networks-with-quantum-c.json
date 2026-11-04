@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-01-accelerating-inference-for-multilayer-neural-networks-with-quantum-c",
+  "date": "2026-01",
+  "order": 10,
+  "content": "[Accelerating Inference for Multilayer Neural Networks with Quantum Computers](https://arxiv.org/abs/2510.07195) accepted at **ICLR 2026**.",
+  "publicationIds": [
+    "arxiv-2510-07195"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2510.07195"
+    }
+  ]
+}

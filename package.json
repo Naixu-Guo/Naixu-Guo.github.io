@@ -4,8 +4,19 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs",
+    "check": "node scripts/content-cli.mjs check && node scripts/check.mjs",
+    "test": "node --test scripts/test.mjs scripts/content.test.mjs",
     "update": "npm run build && npm run check",
-    "preview": "python3 -m http.server 4173 --bind 127.0.0.1"
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "content": "node scripts/content-cli.mjs",
+    "content:edit": "node scripts/content-server.mjs",
+    "verify": "npm run build && npm run check && npm test"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "ajv": "^8.20.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

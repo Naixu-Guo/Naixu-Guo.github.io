@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-10-invited-talks-on-quantum-algorithms-for-linear-differential-equation",
+  "date": "2025-10",
+  "order": 13,
+  "content": "Invited talks on quantum algorithms for linear differential equations and phase estimation via Lindbladians at the Institute for Quantum Computing and the University of Oxford.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "author",
+      "note": "Preserved from the author’s existing website and records."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-12-outreach-talk-on-the-limits-of-classical-computation-and-quantum-adv",
+  "date": "2025-12",
+  "order": 11,
+  "content": "Outreach talk on the limits of classical computation and quantum advantage at Quantum Fall Fest 2025, Singapore.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "author",
+      "note": "Preserved from the author’s existing website and records."
+    }
+  ]
+}

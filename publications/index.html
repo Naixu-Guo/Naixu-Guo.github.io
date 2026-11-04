@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="ink">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,81 +14,117 @@
   <meta property="og:image" content="https://naixu-guo.github.io/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="If intelligence becomes as cheap and available as water and electricity, where does science go? Naixu Guo, Centre for Quantum Technologies, NUS.">
+  <meta property="og:image:alt" content="Naixu Guo: Quantum Computing and Agents for Science Centre for Quantum Technologies, NUS.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafbfc">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1215">
-  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
-  <link rel="stylesheet" href="/assets/style.css">
-  <script>try{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const t=localStorage.getItem("ng-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+  <meta name="theme-color" content="#f2f6f5">
+  <link rel="icon" href="/favicon.ico?v=5493c744d0bf" type="image/x-icon" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/favicon-32.png?v=780e4218e52a" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/mark.svg?v=9d7327ad7804" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=038dbee3afbf" sizes="180x180">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/eb-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css?v=1c836a0dcb22">
+  <link rel="stylesheet" href="/assets/ink.css?v=f6bc94675fa7" data-ink-theme>
+  <link rel="stylesheet" href="/assets/game.css?v=95e7ce9d9fa7" data-game-theme media="not all">
+  <link rel="stylesheet" href="/assets/appearance.css?v=93db229592b4">
+  <script type="application/json" id="appearance-config">[{"id":"ink","name":"Light","color":"#f2f6f5","stylesheet":"ink"},{"id":"black","name":"Dark","color":"#0b141b","stylesheet":"ink"},{"id":"dark","name":"Game","color":"#101010","stylesheet":"base"}]</script>
+  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-theme");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
 
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js?v=eafc98038ca2" defer></script>
+
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-head">
     <div class="wrap site-head__row">
-      <a class="site-name" href="/">Naixu Guo</a>
-      <nav class="site-nav" aria-label="Primary"><a href="/research/">Research</a><a href="/publications/" aria-current="page">Publications</a><a href="/cv/">CV</a><a href="/library/">Library</a></nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg></button>
+      <a class="site-name" href="/">Naixu Guo<span class="ink-only ink-name-zh" lang="zh">郭乃绪</span></a>
+      <nav class="ink-nav" aria-label="Primary"><a href="/research/">Research</a><a href="/publications/" aria-current="page">Publications</a><a href="/library/">Library</a><a href="/cv/">CV</a><a href="/#contact">Contact</a></nav>
+      <button class="ink-only ink-motion" type="button" data-motion-toggle aria-pressed="false" hidden>Motion off</button>
+      <div class="theme-picker" data-theme-picker hidden>
+        <button class="theme-picker__trigger" type="button" aria-label="Appearance: Light" title="Appearance: Light" aria-expanded="false" aria-controls="appearance-options">
+          <svg class="appearance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
+          <span class="visually-hidden" data-theme-name>Light</span>
+        </button>
+        <fieldset class="theme-picker__options" id="appearance-options" hidden>
+          <legend class="visually-hidden">Website appearance</legend>
+          <label><input class="visually-hidden" type="radio" name="theme" value="ink" checked><span><span class="theme-picker__swatch theme-picker__swatch--ink" aria-hidden="true">Aa</span><span class="theme-picker__label">Light</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label><label><input class="visually-hidden" type="radio" name="theme" value="black"><span><span class="theme-picker__swatch theme-picker__swatch--black" aria-hidden="true">Aa</span><span class="theme-picker__label">Dark</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label><label><input class="visually-hidden" type="radio" name="theme" value="dark"><span><span class="theme-picker__swatch theme-picker__swatch--dark" aria-hidden="true">Aa</span><span class="theme-picker__label">Game</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label>
+        </fieldset>
+      </div>
+      <details class="ink-menu"><summary><svg class="ink-menu-lines" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="ink-menu-close-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>Menu</summary><nav aria-label="Mobile navigation"><a href="/research/">Research<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/publications/" aria-current="page">Publications<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/library/">Library<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/cv/">CV<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/#contact">Contact<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></nav></details>
     </div>
   </header>
   <main id="content">
     <section class="wrap page-head">
       <h1>Publications</h1>
-      <p>Papers and preprints, newest first. The record is also kept on <a href="https://arxiv.org/a/guo_n_2" target="_blank" rel="noopener noreferrer">arXiv</a> and <a href="https://scholar.google.com/citations?user=r2I_WtAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
+      <p>Papers and preprints. Also on <a href="https://arxiv.org/a/guo_n_2" target="_blank" rel="noopener noreferrer">arXiv</a> and <a href="https://scholar.google.com/citations?user=r2I_WtAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
+      <nav class="page-head__nav" aria-label="Publication years"><a href="#year-2027">2027</a><a href="#year-2026">2026</a><a href="#year-2025">2025</a><a href="#year-2024">2024</a><a href="#year-2023">2023</a></nav>
     </section>
     <section class="wrap">
 
+      <section class="pub-year" aria-labelledby="year-2027">
+        <h2 id="year-2027">2027</h2>
+        <ol class="pubs">
+
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/LocalLindbladianLearning.svg" target="_blank" rel="noopener noreferrer" aria-label="View figure for Near-Optimal Learning of Local Lindbladians"><img src="/figure/previews/LocalLindbladianLearning.svg" alt="Figure from Near-Optimal Learning of Local Lindbladians" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2606.20535" target="_blank" rel="noopener noreferrer">Near-Optimal Learning of Local Lindbladians</a></h3>
+
+            <p class="pub__authors">Itai Arad, Zhili Chen, <strong>Naixu Guo</strong>, Patrick Rebentrost, Zhan Yu (alphabetical order)</p>
+            <p class="pub__venue">ACM-SIAM Symposium on Discrete Algorithms (SODA 2027), accepted</p>
+            <p class="pub__note">A near-optimal protocol for learning local Lindbladians from finite-time channel probes, with matching lower bounds on channel uses and total evolution time.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2606.20535" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
+          </li>
+        </ol>
+      </section>
       <section class="pub-year" aria-labelledby="year-2026">
         <h2 id="year-2026">2026</h2>
         <ol class="pubs">
 
-          <li class="pub pub--selected">
-            <h3><a href="https://arxiv.org/abs/2606.20535" target="_blank" rel="noopener noreferrer">Near-Optimal Learning of Local Lindbladians</a></h3>
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/assets/research/quantum-software-verification.svg" target="_blank" rel="noopener noreferrer" aria-label="View figure for Perspective on AI and quantum open-source software"><img src="/assets/research/quantum-software-verification.svg" alt="Figure from Perspective on AI and quantum open-source software" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2610.38049" target="_blank" rel="noopener noreferrer">Perspective on AI and quantum open-source software</a></h3>
 
-            <p class="pub__authors">Itai Arad, Zhili Chen, <strong>Naixu Guo</strong>, Patrick Rebentrost, Zhan Yu (alphabetical order)</p>
+            <p class="pub__authors">Changhao Li, Bradley A. Chase, Veena Vijayakumar, Mathys Rennela, Alessandro Cosentino, <strong>Naixu Guo</strong>, Sebastian Hassinger, Farrokh Labib, Seun Omonije, Patrick Rebentrost, Vincent Russo, Nathan Shammah, William J. Zeng, Ben Castanon</p>
             <p class="pub__venue">arXiv preprint, 2026</p>
-            <p class="pub__note">A near-optimal protocol for learning local Lindbladians from finite-time channel probes, with matching lower bounds on channel uses and total evolution time.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2606.20535" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__note">Verification practices and contribution standards for AI-assisted quantum open-source software, informed by public repositories and community surveys.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2610.38049" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub">
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="slate" href="/assets/research/quantum-harbor-framework.webp" target="_blank" rel="noopener noreferrer" aria-label="View figure for Evaluating Verified Autonomy in Quantum Engineering"><img src="/assets/research/quantum-harbor-framework.webp" alt="Figure from Evaluating Verified Autonomy in Quantum Engineering" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2609.17439" target="_blank" rel="noopener noreferrer">Evaluating Verified Autonomy in Quantum Engineering</a></h3>
+
+            <p class="pub__authors"><strong>Naixu Guo</strong>, Changhao Li, Siyu Cheng, Qicheng Tang, Binzhao Luo, Bikun Li, Yuxuan Du, Shihao Ru, Jiaqi Cai</p>
+            <p class="pub__venue">arXiv preprint, 2026</p>
+            <p class="pub__note">Quantum-Harbor provides a virtual laboratory for agent-operated quantum engineering; QIQCBench evaluates agents through recorded actions and independently verified conclusions.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2609.17439" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
+          </li>
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/RareEventSampling.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Quantum enhanced rare event discovery and sampling"><img src="/figure/previews/RareEventSampling.png" alt="Figure from Quantum enhanced rare event discovery and sampling" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2606.06316" target="_blank" rel="noopener noreferrer">Quantum enhanced rare event discovery and sampling</a></h3>
 
             <p class="pub__authors"><strong>Naixu Guo</strong>, Po-Wei Huang, Qisheng Wang, Jayne Thompson, Patrick Rebentrost, Mile Gu, Chengran Yang</p>
             <p class="pub__venue">arXiv preprint, 2026</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2606.06316" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__note">A quantum algorithm that discovers and samples rare events without knowing them in advance, with optimal quantum scaling in the rarity threshold.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2606.06316" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub pub--selected">
-            <h3><a href="https://arxiv.org/abs/2510.06759" target="_blank" rel="noopener noreferrer">Fast-forwardable Lindbladians imply quantum phase estimation</a></h3>
-
-            <p class="pub__authors">Zhong-Xia Shang, <strong>Naixu Guo</strong> (co-first author), Patrick Rebentrost, Alán Aspuru-Guzik, Tongyang Li, Qi Zhao</p>
-            <p class="pub__venue">Quantum Information Processing (QIP) 2026</p>
-            <p class="pub__note">Fast-forwardable Lindbladian dynamics can implement quantum phase estimation at the Heisenberg limit, connecting open-system simulation to a standard algorithmic primitive.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2510.06759" target="_blank" rel="noopener noreferrer">arXiv</a></p>
-          </li>
-          <li class="pub pub--selected">
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/QMultiNN.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Accelerating Inference for Multilayer Neural Networks with Quantum Computers"><img src="/figure/previews/QMultiNN.png" alt="Figure from Accelerating Inference for Multilayer Neural Networks with Quantum Computers" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2510.07195" target="_blank" rel="noopener noreferrer">Accelerating Inference for Multilayer Neural Networks with Quantum Computers</a></h3>
 
             <p class="pub__authors">Arthur G. Rattew, Po-Wei Huang, <strong>Naixu Guo</strong>, Lirandë Pira, Patrick Rebentrost</p>
             <p class="pub__venue">International Conference on Learning Representations (ICLR) 2026</p>
             <p class="pub__note">A quantum inference method for multilayer neural networks, with an analysis of when it improves on classical evaluation.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2510.07195" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2510.07195" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub">
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/RBMlearn.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Provable learning of quantum states with graphical models"><img src="/figure/previews/RBMlearn.png" alt="Figure from Provable learning of quantum states with graphical models" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2309.09235" target="_blank" rel="noopener noreferrer">Provable learning of quantum states with graphical models</a></h3>
 
             <p class="pub__authors">Liming Zhao, <strong>Naixu Guo</strong>, Ming-Xing Luo, Patrick Rebentrost</p>
             <p class="pub__venue">Physical Review Research 8, 013109, 2026</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2309.09235" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://journals.aps.org/prresearch/abstract/10.1103/1355-xvpx" target="_blank" rel="noopener noreferrer">Journal</a></p>
+            <p class="pub__note">Restricted Boltzmann-machine structure yields provable learning procedures for a class of quantum states, with exponentially fewer samples than naive tomography.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2309.09235" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
         </ol>
       </section>
@@ -96,29 +132,41 @@
         <h2 id="year-2025">2025</h2>
         <ol class="pubs">
 
-          <li class="pub">
-            <h3><a href="https://arxiv.org/abs/2502.01146" target="_blank" rel="noopener noreferrer">Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers</a></h3>
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/lindff.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Fast-forwardable Lindbladians imply quantum phase estimation"><img src="/figure/previews/lindff.png" alt="Figure from Fast-forwardable Lindbladians imply quantum phase estimation" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2510.06759" target="_blank" rel="noopener noreferrer">Fast-forwardable Lindbladians imply quantum phase estimation</a></h3>
 
-            <p class="pub__authors">Yuxuan Du, Xinbiao Wang, <strong>Naixu Guo</strong>, Zhan Yu, Yang Qian, Kaining Zhang, Min-Hsiu Hsieh, Patrick Rebentrost, Dacheng Tao</p>
-            <p class="pub__venue">Springer Nature, 2025</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2502.01146" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__authors">Zhong-Xia Shang, <strong>Naixu Guo</strong> (co-first author), Patrick Rebentrost, Alán Aspuru-Guzik, Tongyang Li, Qi Zhao</p>
+            <p class="pub__venue">arXiv preprint (2025); contributed talk at QIP 2026</p>
+            <p class="pub__note">Fast-forwardable Lindbladian dynamics can implement quantum phase estimation at the Heisenberg limit, connecting open-system simulation to a standard algorithmic primitive.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2510.06759" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub pub--selected">
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/qmltutorial.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for A Gentle Introduction to Quantum Machine Learning"><img src="/figure/previews/qmltutorial.png" alt="Figure from A Gentle Introduction to Quantum Machine Learning" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2502.01146" target="_blank" rel="noopener noreferrer">A Gentle Introduction to Quantum Machine Learning</a></h3>
+            <p class="pub__former">Earlier title: Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers</p>
+            <p class="pub__authors">Yuxuan Du, Xinbiao Wang, <strong>Naixu Guo</strong>, Zhan Yu, Yang Qian, Kaining Zhang, Min-Hsiu Hsieh, Patrick Rebentrost, Dacheng Tao</p>
+            <p class="pub__venue">Springer Singapore, 2025</p>
+            <p class="pub__note">The main models, algorithms, and implementation assumptions of quantum machine learning, written for readers with a machine-learning background.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2502.01146" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://link.springer.com/book/10.1007/978-981-95-1284-3" target="_blank" rel="noopener noreferrer">Book</a></p></div>
+          </li>
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/onlinelearning.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Online Learning of Pure States is as Hard as Mixed States"><img src="/figure/previews/onlinelearning.png" alt="Figure from Online Learning of Pure States is as Hard as Mixed States" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2502.00823" target="_blank" rel="noopener noreferrer">Online Learning of Pure States is as Hard as Mixed States</a></h3>
 
             <p class="pub__authors">Maxime Meyer, Soumik Adhikary, <strong>Naixu Guo</strong>, Patrick Rebentrost</p>
             <p class="pub__venue">Neural Information Processing Systems (NeurIPS) 2025</p>
             <p class="pub__note">Online learning of pure quantum states can be as hard as learning mixed states: the two settings have the same regret scaling under ℓ1 loss.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2502.00823" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2502.00823" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub pub--selected">
-            <h3><a href="https://arxiv.org/abs/2410.19628" target="_blank" rel="noopener noreferrer">Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</a></h3>
-
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/LindbladODE.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Designing a Nearly Optimal Quantum Algorithm for Linear Differential Equations via Lindbladians"><img src="/figure/previews/LindbladODE.png" alt="Figure from Designing a Nearly Optimal Quantum Algorithm for Linear Differential Equations via Lindbladians" loading="lazy" decoding="async"></a><div class="pub__body">
+            <h3><a href="https://arxiv.org/abs/2410.19628" target="_blank" rel="noopener noreferrer">Designing a Nearly Optimal Quantum Algorithm for Linear Differential Equations via Lindbladians</a></h3>
+            <p class="pub__former">Earlier title: Design nearly optimal quantum algorithm for linear differential equations via Lindbladians</p>
             <p class="pub__authors">Zhong-Xia Shang, <strong>Naixu Guo</strong>, Dong An, Qi Zhao</p>
-            <p class="pub__venue">Physical Review Letters, 2025</p>
+            <p class="pub__venue">Physical Review Letters 135, 120604, 2025</p>
             <p class="pub__note">Linear differential equations encoded in Lindbladian dynamics, with query complexity close to the known lower bound under a plausible input model.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2410.19628" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2410.19628" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
         </ol>
       </section>
@@ -126,21 +174,23 @@
         <h2 id="year-2024">2024</h2>
         <ol class="pubs">
 
-          <li class="pub pub--selected">
+          <li class="pub pub--selected pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/QTransformer.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Quantum Transformer: Accelerating model inference via quantum linear algebra"><img src="/figure/previews/QTransformer.png" alt="Figure from Quantum Transformer: Accelerating model inference via quantum linear algebra" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2402.16714" target="_blank" rel="noopener noreferrer">Quantum Transformer: Accelerating model inference via quantum linear algebra</a></h3>
             <p class="pub__former">Earlier title: Quantum linear algebra is all you need for Transformer architectures</p>
             <p class="pub__authors"><strong>Naixu Guo</strong>, Zhan Yu, Matthew Choi, Yizhan Han, Aman Agrawal, Kouhei Nakaji, Alán Aspuru-Guzik, Patrick Rebentrost</p>
             <p class="pub__venue">arXiv preprint, 2024</p>
             <p class="pub__note">The operations inside a Transformer expressed through quantum linear-algebra routines, with the parameter regimes in which inference is faster.</p>
-            <p class="pub__links"><a href="https://arxiv.org/abs/2402.16714" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://pennylane.ai/blog/2024/04/quantum_transformers" target="_blank" rel="noopener noreferrer">PennyLane essay</a></p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2402.16714" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://pennylane.ai/blog/2024/04/quantum_transformers" target="_blank" rel="noopener noreferrer">PennyLane essay</a></p></div>
           </li>
-          <li class="pub">
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/NonlinearAmplitude.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Nonlinear transformation of complex amplitudes via quantum singular value transformation"><img src="/figure/previews/NonlinearAmplitude.png" alt="Figure from Nonlinear transformation of complex amplitudes via quantum singular value transformation" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2107.10764" target="_blank" rel="noopener noreferrer">Nonlinear transformation of complex amplitudes via quantum singular value transformation</a></h3>
 
             <p class="pub__authors"><strong>Naixu Guo</strong>, Kosuke Mitarai, Keisuke Fujii</p>
             <p class="pub__venue">Physical Review Research 6, 043227, 2024</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2107.10764" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.043227" target="_blank" rel="noopener noreferrer">Journal</a></p>
+            <p class="pub__note">Nonlinear transformations of complex amplitudes built from quantum singular value transformation and amplitude encoding.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2107.10764" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
         </ol>
       </section>
@@ -148,34 +198,27 @@
         <h2 id="year-2023">2023</h2>
         <ol class="pubs">
 
-          <li class="pub">
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/operatorshadow.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Estimating properties of a quantum state by importance-sampled operator shadows"><img src="/figure/previews/operatorshadow.png" alt="Figure from Estimating properties of a quantum state by importance-sampled operator shadows" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2305.09374" target="_blank" rel="noopener noreferrer">Estimating properties of a quantum state by importance-sampled operator shadows</a></h3>
 
             <p class="pub__authors"><strong>Naixu Guo</strong>, Feng Pan, Patrick Rebentrost</p>
             <p class="pub__venue">arXiv preprint, 2023</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2305.09374" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+            <p class="pub__note">Importance-sampled operator shadows reduce the measurements needed to estimate selected properties of a quantum state.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2305.09374" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
-          <li class="pub">
+          <li class="pub pub--illustrated">
+            <a class="pub__figure" data-figure-surface="paper" href="/figure/previews/QAlphatron.png" target="_blank" rel="noopener noreferrer" aria-label="View figure for Quantum Alphatron: quantum advantage for learning with kernels and noise"><img src="/figure/previews/QAlphatron.png" alt="Figure from Quantum Alphatron: quantum advantage for learning with kernels and noise" loading="lazy" decoding="async"></a><div class="pub__body">
             <h3><a href="https://arxiv.org/abs/2108.11670" target="_blank" rel="noopener noreferrer">Quantum Alphatron: quantum advantage for learning with kernels and noise</a></h3>
 
             <p class="pub__authors">Siyi Yang, <strong>Naixu Guo</strong>, Miklos Santha, Patrick Rebentrost</p>
             <p class="pub__venue">Quantum 7, 1174, 2023</p>
-
-            <p class="pub__links"><a href="https://arxiv.org/abs/2108.11670" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://quantum-journal.org/papers/q-2023-11-08-1174/" target="_blank" rel="noopener noreferrer">Journal</a></p>
+            <p class="pub__note">Quantum versions of the Alphatron algorithm, with polynomial speedups for kernel evaluation in specified learning regimes.</p>
+            <p class="pub__links"><a href="https://arxiv.org/abs/2108.11670" target="_blank" rel="noopener noreferrer">Paper</a></p></div>
           </li>
         </ol>
       </section>
     </section></main>
-
-  <footer class="site-foot">
-    <div class="wrap">
-      <div class="site-foot__row">
-        <p><strong>Naixu Guo</strong> <span lang="zh">郭乃绪</span><br>Quantum algorithms, learning, and open-system dynamics.<br>Centre for Quantum Technologies, National University of Singapore</p>
-        <ul class="site-foot__links"><li><a href="mailto:naixug@u.nus.edu">Email</a></li><li><a href="https://scholar.google.com/citations?user=r2I_WtAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li><li><a href="https://arxiv.org/a/guo_n_2" target="_blank" rel="noopener noreferrer">arXiv</a></li><li><a href="https://github.com/Naixu-Guo" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/naixu-guo-a0567626a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
-      </div>
-      <p class="site-foot__meta">© 2026 Naixu Guo</p>
-    </div>
-  </footer>
+  <footer class="site-foot"><div class="wrap site-foot__closing"><p>© 2026 Naixu Guo</p><a href="#content">Back to top</a></div></footer>
 </body>
 </html>

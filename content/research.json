@@ -1,0 +1,179 @@
+{
+  "$schema": "./schemas/research.schema.json",
+  "schemaVersion": 1,
+  "statement": "My research interests span quantum computing and agents for science: how we compute, learn, and investigate scientific questions.",
+  "intro": [
+    "In quantum computing, I develop algorithms for learning and scientific computation, and study what can be learned about quantum states and dynamics from limited observations.",
+    "For agents for science, I am interested in systems that can formulate questions, use scientific tools, and revise their ideas in response to evidence. This includes both building agents and evaluating the scientific work they produce."
+  ],
+  "homeFrame": "I work on quantum computing and on the development and evaluation of agents for science. I am interested in how agents can formulate research questions, investigate them using scientific tools, and produce conclusions supported by evidence.",
+  "homeInterests": [
+    {
+      "id": "quantum-learning",
+      "title": "Quantum Computing",
+      "question": "How can quantum algorithms help us compute, learn, and understand physical systems?"
+    },
+    {
+      "id": "agents-for-science",
+      "title": "Agents for Science",
+      "question": "How can agents ask useful questions, investigate them, and produce results we can check?",
+      "project": "Quantum-Harbor and QIQCBench: evaluating agents on quantum engineering through recorded experiments and independently verified conclusions."
+    }
+  ],
+  "directions": [
+    {
+      "id": "agents-for-science",
+      "title": "Agents for Science",
+      "question": "How can agents contribute to scientific research and produce conclusions we can check?",
+      "motif": "",
+      "summary": "Building and evaluating agents that work with scientific knowledge, conduct investigations, and connect their conclusions to evidence.",
+      "visuals": [
+        {
+          "label": "Quantum-Harbor · QIQCBench",
+          "alt": "Quantum-Harbor connects an agent and its tools to a virtual quantum laboratory, evidence log, and independent grader.",
+          "publicationId": "arxiv-2609-17439",
+          "demoLink": "https://gauge-forge.com/qiqc/case-study"
+        }
+      ],
+      "body": [
+        "I am interested in agents that can participate in sustained scientific work: reading papers, identifying open questions, choosing methods, running calculations or experiments, and using the results to decide what to try next. Scientific knowledge needs to remain traceable to its sources as an agent moves from the literature to a new hypothesis.",
+        "Quantum-Harbor and QIQCBench ask whether agents can carry out quantum engineering in controlled virtual laboratories. Agents choose experiments, operate scientific tools, analyze measurements, and submit conclusions. Their actions are recorded and their results are independently verified, giving us a setting for studying the reliability of their scientific work.",
+        "Beyond experimental tasks, I am interested in agents that explore theoretical questions and use exact computation to test mathematical proposals. Across both settings, I want to understand how to give agents room to explore while producing evidence that another researcher can inspect and reproduce."
+      ],
+      "results": [],
+      "outlook": "",
+      "related": [
+        {
+          "id": "system-learning",
+          "note": "scientific questions about what can be inferred from limited observations"
+        }
+      ]
+    },
+    {
+      "id": "quantum-learning",
+      "legacyId": "dynamics-probability",
+      "title": "Quantum Computing",
+      "question": "How can quantum algorithms improve learning, inference, and scientific computation?",
+      "motif": "polynomial",
+      "summary": "Quantum algorithms for learning and inference, differential equations, phase estimation, and rare-event discovery.",
+      "visuals": [
+        {
+          "label": "Dissipative quantum algorithms",
+          "alt": "Open-system evolution used as a computational resource.",
+          "publicationId": "arxiv-2410-19628"
+        },
+        {
+          "label": "Discovering unknown rare events",
+          "alt": "A quantum sampler feeds a rare-event amplifier, using spectral embedding and probability thresholding.",
+          "publicationId": "arxiv-2606-06316"
+        },
+        {
+          "label": "Quantum algorithms for Transformer inference",
+          "alt": "The components of Transformer inference expressed as quantum linear-algebra routines.",
+          "publicationId": "arxiv-2402-16714"
+        }
+      ],
+      "body": [
+        "I develop quantum algorithms for learning, inference, and scientific computing. This work includes nonlinear transformations of amplitudes, kernel methods, and coherent inference for Transformers and multilayer networks. I ask where an advantage remains once data access, nonlinear processing, and readout are included.",
+        "I also study algorithms that use dynamics and probability: encoding linear differential equations in open-system evolution, using fast-forwardable Lindbladians for phase estimation, and discovering rare events without knowing which outcomes to amplify. Across these problems, the aim is to identify the structure that leads to useful algorithmic savings."
+      ],
+      "results": [
+        {
+          "claim": "Nonlinear transformations of amplitudes.",
+          "detail": "A block encoding of complex amplitudes makes nonlinear functions accessible through quantum singular value transformation.",
+          "publicationId": "arxiv-2107-10764"
+        },
+        {
+          "claim": "Quantum advantage for Alphatron.",
+          "detail": "Quantum subroutines accelerate kernel-matrix and stochastic-gradient evaluation in a noisy learning model, yielding polynomial improvements in specified parameter regimes.",
+          "publicationId": "arxiv-2108-11670"
+        },
+        {
+          "claim": "Transformer inference through quantum linear algebra.",
+          "detail": "Self-attention, residual and normalization layers, and feed-forward operations are expressed as coherent quantum routines, with the input norm governing the leading complexity.",
+          "publicationId": "arxiv-2402-16714"
+        },
+        {
+          "claim": "Coherent inference for multilayer networks.",
+          "detail": "A framework for nonlinear activations, convolutions, residual blocks, and normalization characterizes the speedup available under three distinct data-access regimes.",
+          "publicationId": "arxiv-2510-07195"
+        },
+        {
+          "claim": "Linear differential equations through open-system dynamics.",
+          "detail": "A non-diagonal density-matrix encoding places a general linear differential equation in Lindbladian evolution, with near-optimal parameter dependence under the stated input model.",
+          "publicationId": "arxiv-2410-19628"
+        },
+        {
+          "claim": "Fast-forwarding turns dissipation into phase estimation.",
+          "detail": "Certain Lindbladian processes can be simulated in sublinear time; that ability enables quantum phase estimation at the Heisenberg limit.",
+          "publicationId": "arxiv-2510-06759"
+        },
+        {
+          "claim": "Unknown rare events can be found and sampled.",
+          "detail": "A quantum algorithm discovers rare outcomes without prior knowledge of what to amplify and samples from them with optimal dependence on the rarity threshold.",
+          "publicationId": "arxiv-2606-06316"
+        }
+      ],
+      "outlook": "I am interested in quantum advantages that remain meaningful once data access, evolution time, precision, and readout are counted.",
+      "related": [
+        {
+          "id": "system-learning",
+          "note": "where the object to be learned is itself a quantum state or process"
+        }
+      ]
+    },
+    {
+      "id": "system-learning",
+      "title": "Learning Quantum Systems",
+      "question": "What can restricted observations identify without full tomography?",
+      "motif": "lattice",
+      "summary": "Here I use the structure of the object or observable instead of attempting full tomography: importance-sampled operator shadows, graphical models for states, online lower bounds, and finite-time learning of local dynamics.",
+      "visualSummary": "Learning states and dynamics from limited measurements, using locality, graphical structure, and the observables we care about.",
+      "visuals": [
+        {
+          "label": "Learning local quantum dynamics",
+          "alt": "Local Lindbladian learning from short-time probes and local measurements.",
+          "publicationId": "arxiv-2606-20535"
+        },
+        {
+          "label": "Learning states through graphical structure",
+          "alt": "Measurement data reveals a graphical model, which is used to learn the quantum state.",
+          "publicationId": "arxiv-2309-09235"
+        }
+      ],
+      "body": [
+        "A learning problem is shaped by its access model: which states can be prepared, how an unknown process may be queried, and which measurements are allowed. Rather than reconstructing every degree of freedom, my work uses locality, graphical structure, or a specified family of observables to recover only the information the task requires. I also study lower bounds that separate genuine information limits from shortcomings of a particular protocol.",
+        "Importance-sampled operator shadows target structured observables such as local Hamiltonian energies. Graphical-model structure makes a class of restricted-Boltzmann-machine quantum states learnable with far fewer samples than naive tomography. In online learning, purity does not reduce the regret order: pure states can be as hard as mixed ones. Most recently, short-time probes, classical shadows, and local Fourier inversion give a near-optimal method for learning all coefficients of a local Lindbladian, together with matching limits on channel uses and total evolution time."
+      ],
+      "results": [
+        {
+          "claim": "Operator shadows tailored to the observable.",
+          "detail": "Importance sampling over Pauli terms improves the estimation of structured observables, including linear combinations of local terms.",
+          "publicationId": "arxiv-2305-09374"
+        },
+        {
+          "claim": "Graphical structure makes quantum states learnable.",
+          "detail": "For states close to suitable restricted Boltzmann machines, local structure yields provable learning with exponentially fewer samples than naive tomography.",
+          "publicationId": "arxiv-2309-09235"
+        },
+        {
+          "claim": "Purity does not make online learning easier.",
+          "detail": "Pure and mixed quantum states have the same regret scaling under the considered online learning model and ℓ1 loss.",
+          "publicationId": "arxiv-2502-00823"
+        },
+        {
+          "claim": "Local Lindbladians can be learned near-optimally.",
+          "detail": "A nonadaptive, ancilla-free protocol learns local Hamiltonian and dissipative coefficients from finite-time probes, with logarithmic system-size dependence and matching lower bounds.",
+          "publicationId": "arxiv-2606-20535"
+        }
+      ],
+      "outlook": "The next questions concern weaker structural assumptions, imperfect controls and measurements, and learning guarantees that remain meaningful at the time scales available in an experiment.",
+      "related": [
+        {
+          "id": "quantum-learning",
+          "note": "where known dynamics are used to perform a computation rather than inferred from data"
+        }
+      ]
+    }
+  ]
+}

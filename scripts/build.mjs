@@ -1,18 +1,25 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { loadSiteData } from "./content.mjs";
+import { homeInterests } from "./ink-home.mjs";
+import { researchDiagram } from "./research-diagrams.mjs";
+import { buildIcons } from "./build-icons.mjs";
 
 const root = process.cwd();
+await buildIcons(root);
 const baseUrl = "https://naixu-guo.github.io";
-const dataFiles = ["home.js", "publications.js", "research.js", "cv.js", "library.js"];
+const APPEARANCES = JSON.parse(await readFile(path.join(root, "assets/appearances.json"), "utf8"));
+const assetUrls = Object.fromEntries(await Promise.all(
+  ["style.css", "ink.css", "game.css", "appearance.css", "site.js", "ink-explorer.js", "research-diagrams.css", "research-diagrams.js", "research-scenes.js", "home-interests.css", "mark.svg", "favicon-32.png", "apple-touch-icon.png"].map(async (name) => {
+    const content = await readFile(path.join(root, "assets", name));
+    const version = createHash("sha256").update(content).digest("hex").slice(0, 12);
+    return [name, `/assets/${name}?v=${version}`];
+  }),
+));
+const faviconVersion = createHash("sha256").update(await readFile(path.join(root, "favicon.ico"))).digest("hex").slice(0, 12);
 
-globalThis.window = {};
-for (const file of dataFiles) {
-  const url = pathToFileURL(path.join(root, "src", "data", file));
-  await import(`${url.href}?build=${Date.now()}`);
-}
-
-const { SITE, NEWS, PUBLICATIONS, RESEARCH, CV, LIBRARY } = globalThis.window;
+const { SITE, NEWS, INTERESTS, PUBLICATIONS, RESEARCH, CV, LIBRARY, POLICY } = await loadSiteData(root);
 const year = new Date().getFullYear();
 
 /* ---------- helpers ---------- */
@@ -63,9 +70,9 @@ function renderInline(value = "") {
   return output + escapeHtml(value.slice(cursor));
 }
 
-function findPublication(title) {
-  const publication = PUBLICATIONS.find((item) => item.title === title);
-  if (!publication) throw new Error(`Unknown publication referenced: ${title}`);
+function findPublication(id) {
+  const publication = PUBLICATIONS.find((item) => item.id === id);
+  if (!publication) throw new Error(`Unknown publication referenced: ${id}`);
   return publication;
 }
 
@@ -107,51 +114,6 @@ function glowNode(x, y, id, { halo = 16, core = 2.2 } = {}) {
   return `<circle cx="${x}" cy="${y}" r="${halo}" fill="url(#${id})"/><circle cx="${x}" cy="${y}" r="${core}" fill="currentColor"/>`;
 }
 
-/** The homepage field: scattered points on the left settle into a lattice on the right,
- *  through a luminous centre. Thought becoming structure; the two intelligences meeting. */
-function heroField({ cols = 19, rows = 11, step = 40, seed = 5, pad = 12 } = {}) {
-  const rand = rng(seed);
-  const width = pad * 2 + (cols - 1) * step;
-  const height = pad * 2 + (rows - 1) * step;
-  const sites = [];
-  for (let r = 0; r < rows; r += 1) {
-    sites.push([]);
-    for (let c = 0; c < cols; c += 1) {
-      const t = c / (cols - 1);
-      const jitter = step * 0.55 * Math.pow(1 - t, 1.6);
-      const present = rand() < 0.22 + 0.78 * Math.pow(t, 1.1);
-      const x = pad + c * step + (rand() - 0.5) * 2 * jitter;
-      const y = pad + r * step + (rand() - 0.5) * 2 * jitter;
-      sites[r].push({ x: f(x), y: f(y), t, present });
-    }
-  }
-  let lines = "";
-  let dots = "";
-  for (let r = 0; r < rows; r += 1) {
-    for (let c = 0; c < cols; c += 1) {
-      const site = sites[r][c];
-      if (!site.present) continue;
-      dots += `<circle cx="${site.x}" cy="${site.y}" r="1.4" fill-opacity="${f(0.35 + 0.55 * site.t)}"/>`;
-      for (const next of [sites[r][c + 1], sites[r + 1]?.[c]]) {
-        if (!next?.present) continue;
-        if (rand() < 0.3 + 0.55 * site.t) lines += `<line x1="${site.x}" y1="${site.y}" x2="${next.x}" y2="${next.y}" stroke-opacity="${f(0.2 + 0.45 * site.t)}"/>`;
-      }
-    }
-  }
-  const cx = pad + 8 * step;
-  const cy = pad + 5 * step;
-  const rings = [1.6, 3.1, 4.7]
-    .map((k, i) => `<circle cx="${cx}" cy="${cy}" r="${step * k}" fill="none" stroke="currentColor" stroke-width="0.7" stroke-opacity="${[0.32, 0.22, 0.13][i]}"/>`)
-    .join("");
-  const axis = `<line x1="${cx}" y1="${cy - step * 3.6}" x2="${cx}" y2="${cy + step * 3.6}" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.2"/>`;
-  const warm = [cy - step * 3.6, cy + step * 3.6].map((y) => `<circle cx="${cx}" cy="${y}" r="2" style="fill:var(--warm)" fill-opacity="0.85"/>`).join("");
-  const centre = glowNode(cx, cy, "hero-glow", { halo: 40, core: 2.6 });
-  const glows = [[12, 3], [15, 7], [17, 2], [14, 9]]
-    .map(([c, r]) => glowNode(sites[r][c].x, sites[r][c].y, "hero-glow", { halo: 20, core: 1.8 }))
-    .join("");
-  const inner = `${glowDefs("hero-glow")}${rings}${axis}<g stroke="currentColor" stroke-width="0.8" fill="none">${lines}</g><g fill="currentColor">${dots}</g>${centre}${glows}${warm}`;
-  return svgWrap(width, height, inner, "hero__field");
-}
 
 /** A lattice with local couplings. Marked sites are the ones a learner probes. */
 function latticeMotif({ cols = 8, rows = 6, step = 30, bonds = 0.6, marked = [], seed = 11, pad = 10, className, glow = "" } = {}) {
@@ -276,52 +238,55 @@ const routes = [
   { href: "/library/", label: "Library", key: "library" },
 ];
 
-const themeIcon = `<svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>`;
+const primaryNavigation = [
+  ...["research", "publications", "library"].map(key => routes.find(route => route.key === key)),
+  routes.find(route => route.key === "cv"),
+  { href: "/#contact", label: "Contact", key: "contact" },
+];
 
 function header(active) {
-  const links = routes
-    .filter((route) => route.key !== "home")
-    .map((route) => `<a href="${route.href}"${route.key === active ? ' aria-current="page"' : ""}>${route.label}</a>`)
-    .join("");
   return `
   <header class="site-head">
     <div class="wrap site-head__row">
-      <a class="site-name" href="/">${escapeHtml(SITE.name)}</a>
-      <nav class="site-nav" aria-label="Primary">${links}</nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle>${themeIcon}</button>
+      <a class="site-name" href="/"${active === "home" ? ' aria-current="page"' : ""}>${escapeHtml(SITE.name)}<span class="ink-only ink-name-zh" lang="zh">${escapeHtml(SITE.nameZh)}</span></a>
+      <nav class="ink-nav" aria-label="Primary">${primaryNavigation.map(route => `<a href="${route.href}"${route.key === active ? ' aria-current="page"' : ''}>${route.label}</a>`).join("")}</nav>
+      <button class="ink-only ink-motion" type="button" data-motion-toggle aria-pressed="false" hidden>Motion off</button>
+      <div class="theme-picker" data-theme-picker hidden>
+        <button class="theme-picker__trigger" type="button" aria-label="Appearance: ${APPEARANCES[0].name}" title="Appearance: ${APPEARANCES[0].name}" aria-expanded="false" aria-controls="appearance-options">
+          <svg class="appearance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
+          <span class="visually-hidden" data-theme-name>${APPEARANCES[0].name}</span>
+        </button>
+        <fieldset class="theme-picker__options" id="appearance-options" hidden>
+          <legend class="visually-hidden">Website appearance</legend>
+          ${APPEARANCES.map(({id, name}) => `<label><input class="visually-hidden" type="radio" name="theme" value="${id}"${id === "ink" ? " checked" : ""}><span><span class="theme-picker__swatch theme-picker__swatch--${id}" aria-hidden="true">Aa</span><span class="theme-picker__label">${name}</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label>`).join("")}
+        </fieldset>
+      </div>
+      <details class="ink-menu"><summary><svg class="ink-menu-lines" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="ink-menu-close-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>Menu</summary><nav aria-label="Mobile navigation">${primaryNavigation.map(({ href, label, key }) => `<a href="${escapeHtml(href)}"${key === active ? ' aria-current="page"' : ""}>${label}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>`).join("")}</nav></details>
     </div>
   </header>`;
 }
 
-function contactLinks(className) {
-  const items = [{ label: "Email", href: `mailto:${SITE.email}` }, ...SITE.links];
+function contactLinks(className, labels = []) {
+  const allItems = [{ label: "Email", href: `mailto:${SITE.email}` }, ...SITE.links];
+  const items = labels.length ? allItems.filter((item) => labels.includes(item.label)) : allItems;
   return `<ul class="${className}">${items
     .map((item) => `<li>${item.href.startsWith("mailto:") ? `<a href="${safeHref(item.href)}">${escapeHtml(item.label)}</a>` : ext(item.label, item.href)}</li>`)
     .join("")}</ul>`;
 }
 
 function footer() {
-  return `
-  <footer class="site-foot">
-    <div class="wrap">
-      <div class="site-foot__row">
-        <p><strong>${escapeHtml(SITE.name)}</strong> <span lang="zh">${escapeHtml(SITE.nameZh)}</span><br>${escapeHtml(SITE.identity)}<br>${escapeHtml(SITE.institution)}</p>
-        ${contactLinks("site-foot__links")}
-      </div>
-      <p class="site-foot__meta">© ${year} ${escapeHtml(SITE.name)}</p>
-    </div>
-  </footer>`;
+  return `<footer class="site-foot"><div class="wrap site-foot__closing"><p>© ${year} ${escapeHtml(SITE.name)}</p><a href="#content">Back to top</a></div></footer>`;
 }
 
 const pageMeta = {
   home: {
     title: `${SITE.name}`,
-    description: `${SITE.name} designs quantum algorithms that use open-system dynamics as a computational resource and studies learning quantum systems from limited access. ${SITE.institutionShort}.`,
+    description: `${SITE.name} studies quantum computing and explores agents for science, including scientific reasoning, experiments, and verifiable results. PhD, National University of Singapore.`,
     path: "/",
   },
   research: {
     title: `Research · ${SITE.name}`,
-    description: `The research program of ${SITE.name}: open-system dynamics as a computational resource, learning quantum systems from limited access, quantum linear algebra for machine learning, and verifiable AI for research.`,
+    description: `Research interests of ${SITE.name}: quantum computing and agents for science, from quantum algorithms and learning to scientific investigation and evaluation.`,
     path: "/research/",
   },
   publications: {
@@ -349,7 +314,7 @@ const pageMeta = {
 function layout({ active, body, meta, noindex = false, schema = "", bodyClass = "" }) {
   const canonical = `${baseUrl}${meta.path}`;
   return `<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="ink">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -364,20 +329,24 @@ function layout({ active, body, meta, noindex = false, schema = "", bodyClass = 
   <meta property="og:image" content="${baseUrl}/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${escapeHtml(SITE.hero.question)} ${escapeHtml(SITE.name)}, ${escapeHtml(SITE.institutionShort)}.">
+  <meta property="og:image:alt" content="${escapeHtml(SITE.name)}: ${escapeHtml(SITE.hero.title)} ${escapeHtml(SITE.institutionShort)}.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafbfc">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1215">
-  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
-  <link rel="stylesheet" href="/assets/style.css">
-  <script>try{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const t=localStorage.getItem("ng-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+  <meta name="theme-color" content="${APPEARANCES[0].color}">
+  <link rel="icon" href="/favicon.ico?v=${faviconVersion}" type="image/x-icon" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="${assetUrls["favicon-32.png"]}" type="image/png" sizes="32x32">
+  <link rel="icon" href="${assetUrls["mark.svg"]}" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="${assetUrls["apple-touch-icon.png"]}" sizes="180x180">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/eb-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="${assetUrls["style.css"]}">
+  <link rel="stylesheet" href="${assetUrls["ink.css"]}" data-ink-theme>
+  <link rel="stylesheet" href="${assetUrls["game.css"]}" data-game-theme media="not all">
+  <link rel="stylesheet" href="${assetUrls["appearance.css"]}">
+  <script type="application/json" id="appearance-config">${JSON.stringify(APPEARANCES).replaceAll("<", "\\u003c")}</script>
+  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-theme");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
   ${schema}
-  <script src="/assets/site.js" defer></script>
+  <script src="${assetUrls["site.js"]}" defer></script>
+  ${["home", "research"].includes(active) ? `<script src="${assetUrls["ink-explorer.js"]}" defer></script>` : ""}
 </head>
 <body${bodyClass ? ` class="${bodyClass}"` : ""}>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -390,18 +359,7 @@ function layout({ active, body, meta, noindex = false, schema = "", bodyClass = 
 
 /* ---------- home ---------- */
 
-function directionRefs(direction, limit = 3) {
-  const refs = direction.results.slice(0, limit).map((result) => findPublication(result.publication));
-  if (!refs.length) return "";
-  return `<p class="direction-item__refs">${refs
-    .map((publication) => `<a href="${safeHref(paperHref(publication))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(publication.title)}">${escapeHtml(publication.short)}</a>`)
-    .join("")}</p>`;
-}
-
 function homePage() {
-  const recent = NEWS.slice(0, SITE.recentCount);
-  const earlier = NEWS.slice(SITE.recentCount);
-
   const personSchema = `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -410,66 +368,64 @@ function homePage() {
     url: `${baseUrl}/`,
     email: `mailto:${SITE.email}`,
     jobTitle: SITE.role,
-    affiliation: { "@type": "Organization", name: SITE.institution },
-    knowsAbout: ["Quantum algorithms", "Open quantum systems", "Quantum learning theory", "Quantum machine learning", "AI for science"],
+    alumniOf: { "@type": "Organization", name: SITE.institution },
+    knowsAbout: ["Quantum computing", "Agents for science", "Quantum algorithms", "Quantum learning theory", "Quantum machine learning", "Open quantum systems"],
     sameAs: SITE.links.map((link) => link.href),
   })}</script>`;
 
-  const streamItem = (item) => `<li><time>${escapeHtml(item.date)}</time><p>${renderInline(item.content)}</p></li>`;
-
   const body = `
-    <section class="wrap hero">
-      <h1 class="hero__statement">${escapeHtml(SITE.hero.question)}</h1>
-      <p class="hero__zh" lang="zh">${escapeHtml(SITE.hero.questionZh)}</p>
-      <div class="hero__lead">${SITE.hero.lead.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div>
-      <div class="hero__who">
-        <p class="hero__name">${escapeHtml(SITE.name)} <span lang="zh">${escapeHtml(SITE.nameZh)}</span></p>
-        <p class="hero__role">${escapeHtml(SITE.role)}, ${escapeHtml(SITE.institution)}. Advised by ${escapeHtml(SITE.advisors)}.</p>
-        ${contactLinks("hero__links")}
+    <div class="home-intro">
+    <section class="profile" aria-labelledby="home-title">
+      <div class="ink-only ink-world" aria-hidden="true"></div>
+      <div class="profile__geometry" aria-hidden="true"><span class="profile__star"></span><span class="profile__star profile__star--small"></span></div>
+      <div class="wrap profile__stage">
+        <div class="profile__identity">
+          <h1 class="profile__name" id="home-title" aria-label="${escapeHtml(SITE.name)}">${SITE.name.split(" ").map((word) => `<span class="name-word" aria-hidden="true">${Array.from(word).map((letter) => `<span class="name-letter">${escapeHtml(letter)}</span>`).join("")}</span>`).join(" ")}</h1>
+          <p class="profile__name-zh" lang="zh">${escapeHtml(SITE.nameZh)}</p>
+        </div>
+        <figure class="profile__portrait">
+          <div class="profile__photo">
+            <img src="/assets/portrait-800.jpg" srcset="/assets/portrait-400.jpg 400w, /assets/portrait-800.jpg 800w" sizes="(max-width: 640px) 42vw, (max-width: 1024px) 40vw, 380px" width="800" height="999" alt="Portrait of ${escapeHtml(SITE.name)}" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption><strong>${escapeHtml(SITE.role)}</strong></figcaption>
+        </figure>
+        <p class="profile__subject">${SITE.hero.titleLines.map((line) => `<span>${escapeHtml(line)}</span>`).join("")}</p>
+        <div class="profile__dialogue">
+          <p class="ink-only ink-hero-intro">Quantum computing and AI<br><em>for scientific discovery.</em></p>
+          <nav class="ink-hero-actions" aria-label="Research and academic profile"><a href="/research/">Explore research <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></nav>
+        </div>
+        <aside class="ink-only ink-inscription" lang="zh" aria-label="题句"><p>${SITE.hero.inscription.map(line => `<span>${escapeHtml(line)}</span>`).join("")}</p></aside>
+
       </div>
-      <figure class="hero__portrait">
-        <img src="/assets/portrait-800.jpg" srcset="/assets/portrait-400.jpg 400w, /assets/portrait-800.jpg 800w" sizes="(max-width: 720px) 88px, (max-width: 1024px) 220px, 300px" width="800" height="999" alt="Portrait of ${escapeHtml(SITE.name)}" fetchpriority="high" decoding="async">
-      </figure>
-      ${heroField()}
     </section>
 
-    <section class="wrap cols section" aria-labelledby="research-title">
-      <div class="cols__aside">
-        <h2 id="research-title">Research</h2>
-        <p>${escapeHtml(RESEARCH.homeFrame)}</p>
-        <a class="more" href="/research/">The research program</a>
-      </div>
-      <ol class="directions">
-        ${RESEARCH.directions
-          .map(
-            (direction) => `
-        <li class="direction-item">
-          <h3><a href="/research/#${escapeHtml(direction.id)}">${escapeHtml(direction.title)}</a></h3>
-          <p>${escapeHtml(direction.summary)}</p>
-          ${directionRefs(direction)}
-        </li>`,
-          )
-          .join("")}
-      </ol>
-    </section>
+    </div>
 
-    <section class="wrap cols section section--last" aria-labelledby="recent-title">
-      <div class="cols__aside">
-        <h2 id="recent-title">Recent</h2>
-        <p>Papers, talks, and visits, most recent first.</p>
+    <link rel="stylesheet" href="${assetUrls['home-interests.css']}">
+    ${homeInterests({ INTERESTS, escapeHtml, ext })}
+    <div class="home-personal">
+      <div class="wrap home-personal__grid">
+        <section class="home-biography" id="about" aria-labelledby="home-about-title">
+          <h2 id="home-about-title">About <em>me</em></h2>
+          <div class="home-biography__intro">
+            <figure class="home-portrait"><img src="/assets/portrait-400.jpg" srcset="/assets/portrait-400.jpg 400w, /assets/portrait-800.jpg 800w" sizes="(max-width: 540px) 128px, 160px" width="800" height="999" alt="Portrait of Naixu Guo" loading="lazy" decoding="async"></figure>
+            <div><p>${escapeHtml(SITE.biography)}</p></div>
+          </div>
+          <section class="home-contact" id="contact" aria-labelledby="home-contact-title">
+            <h3 class="visually-hidden" id="home-contact-title">Contact</h3>
+            <a class="home-contact__email" href="mailto:${escapeHtml(SITE.email)}">${escapeHtml(SITE.email)}</a>
+            ${contactLinks("home-contact__links", ["Google Scholar", "arXiv", "GitHub", "LinkedIn"])}
+          </section>
+        </section>
+        <section class="home-news" id="news" aria-labelledby="home-news-title">
+          <h2 id="home-news-title">Recent <em>news</em></h2>
+          <ol class="home-news__list">${NEWS.slice(0, POLICY.homeNewsLimit).map(item => `<li><span class="news-date">${escapeHtml(item.dateLabel)}</span><p>${renderInline(item.content)}</p></li>`).join("")}</ol>
+        </section>
       </div>
-      <div>
-        <ol class="stream">${recent.map(streamItem).join("")}</ol>
-        ${
-          earlier.length
-            ? `<details class="stream-more">
-          <summary>Earlier</summary>
-          <ol class="stream">${earlier.map(streamItem).join("")}</ol>
-        </details>`
-            : ""
-        }
-      </div>
-    </section>`;
+      ${!INTERESTS.perspective ? `<aside class="wrap home-question" aria-label="A wider question"><p>${escapeHtml(SITE.hero.questionLead)}</p><blockquote>${escapeHtml(SITE.hero.question)}</blockquote></aside>` : ""}
+    </div>
+
+    `;
 
   return layout({ active: "home", body, meta: pageMeta.home, schema: personSchema, bodyClass: "is-home" });
 }
@@ -477,89 +433,40 @@ function homePage() {
 /* ---------- research ---------- */
 
 function researchPage() {
-  const byId = new Map(RESEARCH.directions.map((direction, index) => [direction.id, { ...direction, number: index + 1 }]));
-
-  const map = `
-      <ol class="direction-map">
-        ${RESEARCH.directions
-          .map(
-            (direction, index) => `
-        <li><a href="#${escapeHtml(direction.id)}"><span class="direction-map__n">${index + 1}</span><span class="direction-map__t">${escapeHtml(direction.title)}</span><span class="direction-map__q">${escapeHtml(direction.question)}</span></a></li>`,
-          )
-          .join("")}
-      </ol>`;
-
-  const directions = RESEARCH.directions
-    .map((direction, index) => {
-      const results = direction.results.length
-        ? `
-          <ol class="results">
-            ${direction.results
-              .map((result) => {
-                const publication = findPublication(result.publication);
-                return `
-            <li>
-              <p class="results__claim">${escapeHtml(result.claim)}</p>
-              <p class="results__detail">${escapeHtml(result.detail)}</p>
-              <p class="results__ref"><a href="${safeHref(paperHref(publication))}" target="_blank" rel="noopener noreferrer">${escapeHtml(publication.title)}</a> · ${escapeHtml(venueLine(publication))}</p>
-            </li>`;
-              })
-              .join("")}
-          </ol>`
-        : "";
-
-      const related = direction.related.length
-        ? `<p class="direction__related">Related: ${direction.related
-            .map((link) => {
-              const target = byId.get(link.id);
-              if (!target) throw new Error(`Unknown related direction: ${link.id}`);
-              return `<a href="#${escapeHtml(target.id)}">${escapeHtml(target.title)}</a>, ${escapeHtml(link.note)}`;
-            })
-            .join("; ")}.</p>`
-        : "";
-
-      return `
-      <article class="wrap direction" id="${escapeHtml(direction.id)}" aria-labelledby="${escapeHtml(direction.id)}-title">
-        <div class="direction__aside">
-          <p class="direction__n">${index + 1}</p>
-          ${motifs[direction.motif] ? motifs[direction.motif]() : ""}
-        </div>
-        <div class="direction__main">
-          <h2 class="direction__title" id="${escapeHtml(direction.id)}-title">${escapeHtml(direction.title)}</h2>
-          <p class="direction__q">${escapeHtml(direction.question)}${direction.status ? ` <span class="direction__status">${escapeHtml(direction.status)}</span>` : ""}</p>
-          <div class="prose">${direction.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div>
-          ${results}
-          ${direction.outlook ? `<p class="direction__outlook"><strong>Where it goes.</strong> ${escapeHtml(direction.outlook)}</p>` : ""}
-          ${related}
-        </div>
-      </article>`;
-    })
-    .join("");
-
-  const body = `
-    <section class="wrap cols research-open">
-      <div class="cols__aside"><h1>Research</h1></div>
-      <div>
-        <p class="research-open__statement">${escapeHtml(RESEARCH.statement)}</p>
-        <div class="prose">${RESEARCH.intro.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div>
-        ${map}
+  const directions = RESEARCH.directions.map((direction, index) => {
+    // A theme is illustrated by one representative work; Publications owns the full record.
+    const visual = direction.visuals[0];
+    const paper = findPublication(visual.publicationId);
+    return `<article class="research-feature" id="${escapeHtml(direction.id)}" aria-labelledby="${escapeHtml(direction.id)}-title">
+      <div class="research-feature__text"${direction.legacyId ? ` id="${escapeHtml(direction.legacyId)}"` : ''}>
+        <h2 id="${escapeHtml(direction.id)}-title">${escapeHtml(direction.title)}</h2>
+        <p>${escapeHtml(direction.visualSummary || direction.summary)}</p>
       </div>
+      <figure class="research-feature__figure">
+        ${researchDiagram(direction.id, escapeHtml)}
+        <figcaption><span>${escapeHtml(direction.question)}</span></figcaption>
+      </figure>
+      <p class="research-feature__sources"><span>${escapeHtml(visual.label)}</span>${ext('Read paper', paperHref(paper))}${visual.demoLink ? ext('Explore QIQCBench demos', visual.demoLink) : ''}${paper.figure ? `<a href="${escapeHtml(paper.figure)}" target="_blank" rel="noopener noreferrer">Original figure</a>` : ""}</p>
+    </article>`;
+  }).join('');
+  const body = `
+    <section class="wrap page-head">
+      <h1>Research</h1>
+      <p>Quantum algorithms, learning from physical systems, and agents for science.</p>
+      <nav class="page-head__nav" aria-label="Research directions">${RESEARCH.directions.map(direction => `<a href="#${escapeHtml(direction.id)}">${escapeHtml(direction.title)}</a>`).join('')}</nav>
     </section>
-    ${directions}
-    <section class="wrap cols section section--last">
-      <div class="cols__aside"></div>
-      <p class="research-close">Papers, preprints, and links for every result above are collected on the <a href="/publications/">publications page</a>.</p>
-    </section>`;
-
-  return layout({ active: "research", body, meta: pageMeta.research });
+    <link rel="stylesheet" href="${assetUrls['research-diagrams.css']}">
+    <div class="wrap research-body">${directions}
+      <p class="research-close"><a href="/publications/">All publications &amp; preprints</a></p>
+    </div>
+    <script type="module" src="${assetUrls['research-diagrams.js']}" data-scene-module="${assetUrls['research-scenes.js']}"></script>`;
+  return layout({ active: "research", body, meta: pageMeta.research, bodyClass: "is-research" });
 }
 
 /* ---------- publications ---------- */
 
 function publicationLinks(publication) {
-  const links = [];
-  if (publication.arxiv) links.push(ext("arXiv", `https://arxiv.org/abs/${publication.arxiv}`));
-  if (publication.journalLink) links.push(ext("Journal", publication.journalLink));
+  const links = [ext("Paper", paperHref(publication))];
   if (publication.code) links.push(ext("Code", publication.code));
   if (publication.media) links.push(ext(publication.media.label, publication.media.href));
   return `<p class="pub__links">${links.join("")}</p>`;
@@ -578,7 +485,8 @@ function publicationsPage() {
   const body = `
     <section class="wrap page-head">
       <h1>Publications</h1>
-      <p>Papers and preprints, newest first. The record is also kept on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
+      <p>Papers and preprints. Also on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
+      <nav class="page-head__nav" aria-label="Publication years">${years.map(y => `<a href="#year-${y}">${y}</a>`).join("")}</nav>
     </section>
     <section class="wrap">
       ${years
@@ -591,13 +499,14 @@ function publicationsPage() {
             .get(y)
             .map(
               (publication) => `
-          <li class="pub${publication.selected ? " pub--selected" : ""}">
+          <li class="pub${publication.selected ? " pub--selected" : ""}${publication.figure ? " pub--illustrated" : ""}">
+            ${publication.figure ? `<a class="pub__figure" data-figure-surface="${publication.figureSurface || "paper"}" href="${escapeHtml(publication.figure)}" target="_blank" rel="noopener noreferrer" aria-label="View figure for ${escapeHtml(publication.title)}"><img src="${escapeHtml(publication.figure)}" alt="Figure from ${escapeHtml(publication.title)}" loading="lazy" decoding="async"></a>` : ""}<div class="pub__body">
             <h3><a href="${safeHref(paperHref(publication))}" target="_blank" rel="noopener noreferrer">${escapeHtml(publication.title)}</a></h3>
             ${publication.formerTitle ? `<p class="pub__former">Earlier title: ${escapeHtml(publication.formerTitle)}</p>` : ""}
             <p class="pub__authors">${renderInline(publication.authors)}</p>
             <p class="pub__venue">${escapeHtml(venueLine(publication))}</p>
-            ${publication.selected ? `<p class="pub__note">${escapeHtml(publication.summary)}</p>` : ""}
-            ${publicationLinks(publication)}
+            ${publication.summary ? `<p class="pub__note">${escapeHtml(publication.summary)}</p>` : ""}
+            ${publicationLinks(publication)}</div>
           </li>`,
             )
             .join("")}
@@ -617,7 +526,7 @@ function cvPage() {
     <section class="wrap page-head cv-head">
       <div>
         <h1>Curriculum vitae</h1>
-        <p>${escapeHtml(SITE.name)}, ${escapeHtml(SITE.role)}, ${escapeHtml(SITE.institution)}.</p>
+        <p>${escapeHtml(SITE.name)}, ${escapeHtml(SITE.role)}.</p>
         ${contactLinks("page-head__links")}
       </div>
       <button class="text-button" type="button" data-print>Print or save as PDF</button>
@@ -633,7 +542,7 @@ function cvPage() {
             .map(
               (item) => `
           <li class="cv-row">
-            <span class="cv-row__date">${escapeHtml(item.date || "")}</span>
+            <span class="cv-row__date">${escapeHtml((item.date || "").replaceAll(" — ", "–"))}</span>
             <div>
               <p class="cv-row__title">${item.link ? ext(item.title, item.link) : escapeHtml(item.title)}</p>
               ${item.org ? `<p class="cv-row__org">${escapeHtml(item.org)}</p>` : ""}
@@ -703,6 +612,17 @@ function libraryPage() {
   return layout({ active: "library", body, meta: pageMeta.library });
 }
 
+/* ---------- about and complete news archive ---------- */
+
+function aboutRedirect() {
+  return `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · ${escapeHtml(SITE.name)}</title><link rel="canonical" href="${baseUrl}/#about">
+<meta http-equiv="refresh" content="0; url=/#about">
+<script>location.replace(["#contact", "#news"].includes(location.hash) ? "/" + location.hash : "/#about")</script>
+</head><body><h1>About ${escapeHtml(SITE.name)}</h1><p><a href="/#about">About me</a> is now on the homepage.</p></body></html>`;
+}
+
 /* ---------- 404 and redirects ---------- */
 
 function notFoundPage() {
@@ -743,6 +663,7 @@ await Promise.all([
   write("publications/index.html", publicationsPage()),
   write("cv/index.html", cvPage()),
   write("library/index.html", libraryPage()),
+  write("about/index.html", aboutRedirect()),
   write("404.html", notFoundPage()),
   write("mini_lib/index.html", legacyLibraryRedirect()),
   write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`),
@@ -752,4 +673,4 @@ await Promise.all([
   ),
 ]);
 
-console.log(`Built ${routes.length} pages and a 404 page from src/data/.`);
+console.log(`Built ${routes.length} pages and a 404 page from content/.`);

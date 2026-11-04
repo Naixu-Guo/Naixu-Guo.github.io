@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "collection": {
+      "enum": [
+        "publications",
+        "news",
+        "site",
+        "interests",
+        "research",
+        "cv",
+        "library"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+    },
+    "baseHash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "record": {
+      "type": "object"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "collection",
+    "id",
+    "baseHash",
+    "record",
+    "reason"
+  ]
+}

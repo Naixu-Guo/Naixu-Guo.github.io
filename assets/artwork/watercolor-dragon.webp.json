@@ -1,0 +1,13 @@
+{
+  "prompt": "Use case: precise-object-edit\nAsset type: full-viewport background plate for a real academic personal homepage.\nInput image: edit target and strict composition/style reference.\nEdit the supplied image into a clean, high-resolution TEXT-FREE watercolor background. Remove ALL text, letters, navigation, labels, arrows and thin UI rules: top navigation, large Naixu Guo title, all paragraphs and links on the left, and all three labels/rules along the bottom. Seamlessly fill those areas with the same very pale cool off-white watercolor paper.\nPreserve the beautiful Chinese dragon on the right: its exact pose, long curling body, intelligent face looking down-left, sweeping whiskers, delicate ink and watercolor brushwork in restrained blue-gray. Keep its face at about 54% width, 50% height and body filling the right half. Keep the left 40% extremely quiet and nearly empty, with only faint natural paper texture. Preserve the current calm tonal balance and generous light negative space. Keep the far bottom-left clean. The right artwork may bleed at the right edge as in the reference.\nOutput a wide 8:5 landscape illustration, ideally 2560 by 1600 pixels. No new subjects, no people, no mountain ranges, no moon, no buildings, no ornaments. No artificial sharpened scales, no luminous eyes, no digital glow, no dark vignette, no UI. This is a background image only, with NO TEXT anywhere.",
+  "createdAt": "2026-11-02T11:18:12.256Z",
+  "tool": "built-in image_gen",
+  "input": "User supplied codex-clipboard-225c160f-2cf5-4ce2-8d8e-a14b7c572bfd.png; copied reference in .impeccable/review/ink-watercolor/reference.png",
+  "generatedSource": "image_gen output: exec-ef0e980b-e7f5-4e9e-93e8-9c8cddb15520.png",
+  "conversion": "cwebp -q 95 -metadata all; no resize",
+  "dimensions": [
+    1586,
+    992
+  ],
+  "note": "Requested larger size, actual native size1586\u00d7992; no4K/upscaling claim."
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-04-invited-talk-on-quantum-linear-algebra-for-transformer-architectures",
+  "date": "2025-04",
+  "order": 22,
+  "content": "Invited talk on [quantum linear algebra for Transformer architectures](https://arxiv.org/abs/2402.16714) at Nanyang Technological University, hosted by Mile Gu.",
+  "publicationIds": [
+    "arxiv-2402-16714"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2402.16714"
+    }
+  ]
+}

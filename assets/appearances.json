@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ink",
+    "name": "Light",
+    "color": "#f2f6f5",
+    "stylesheet": "ink"
+  },
+  {
+    "id": "black",
+    "name": "Dark",
+    "color": "#0b141b",
+    "stylesheet": "ink"
+  },
+  {
+    "id": "dark",
+    "name": "Game",
+    "color": "#101010",
+    "stylesheet": "base"
+  }
+]

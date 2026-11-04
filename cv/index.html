@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="ink">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,36 +14,51 @@
   <meta property="og:image" content="https://naixu-guo.github.io/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="If intelligence becomes as cheap and available as water and electricity, where does science go? Naixu Guo, Centre for Quantum Technologies, NUS.">
+  <meta property="og:image:alt" content="Naixu Guo: Quantum Computing and Agents for Science Centre for Quantum Technologies, NUS.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafbfc">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1215">
-  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
-  <link rel="stylesheet" href="/assets/style.css">
-  <script>try{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const t=localStorage.getItem("ng-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+  <meta name="theme-color" content="#f2f6f5">
+  <link rel="icon" href="/favicon.ico?v=5493c744d0bf" type="image/x-icon" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/favicon-32.png?v=780e4218e52a" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/mark.svg?v=9d7327ad7804" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=038dbee3afbf" sizes="180x180">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/eb-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css?v=1c836a0dcb22">
+  <link rel="stylesheet" href="/assets/ink.css?v=f6bc94675fa7" data-ink-theme>
+  <link rel="stylesheet" href="/assets/game.css?v=95e7ce9d9fa7" data-game-theme media="not all">
+  <link rel="stylesheet" href="/assets/appearance.css?v=93db229592b4">
+  <script type="application/json" id="appearance-config">[{"id":"ink","name":"Light","color":"#f2f6f5","stylesheet":"ink"},{"id":"black","name":"Dark","color":"#0b141b","stylesheet":"ink"},{"id":"dark","name":"Game","color":"#101010","stylesheet":"base"}]</script>
+  <script>{const legacy={"#/research":"/research/","#/publications":"/publications/","#/cv":"/cv/","#/library":"/library/"};if(legacy[location.hash])location.replace(legacy[location.hash]);const themes=JSON.parse(document.getElementById("appearance-config").textContent);let appearance=themes[0];try{const saved=localStorage.getItem("ng-theme");appearance=themes.find(theme=>theme.id===saved)||themes[0]}catch(e){}document.documentElement.dataset.theme=appearance.id;document.querySelector("[data-ink-theme]").media=appearance.stylesheet==="ink"?"all":"not all";document.querySelector("[data-game-theme]").media=appearance.stylesheet==="base"?"all":"not all";document.querySelector('meta[name="theme-color"]').content=appearance.color}</script>
 
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js?v=eafc98038ca2" defer></script>
+
 </head>
 <body class="is-cv">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-head">
     <div class="wrap site-head__row">
-      <a class="site-name" href="/">Naixu Guo</a>
-      <nav class="site-nav" aria-label="Primary"><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/cv/" aria-current="page">CV</a><a href="/library/">Library</a></nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg></button>
+      <a class="site-name" href="/">Naixu Guo<span class="ink-only ink-name-zh" lang="zh">郭乃绪</span></a>
+      <nav class="ink-nav" aria-label="Primary"><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/library/">Library</a><a href="/cv/" aria-current="page">CV</a><a href="/#contact">Contact</a></nav>
+      <button class="ink-only ink-motion" type="button" data-motion-toggle aria-pressed="false" hidden>Motion off</button>
+      <div class="theme-picker" data-theme-picker hidden>
+        <button class="theme-picker__trigger" type="button" aria-label="Appearance: Light" title="Appearance: Light" aria-expanded="false" aria-controls="appearance-options">
+          <svg class="appearance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
+          <span class="visually-hidden" data-theme-name>Light</span>
+        </button>
+        <fieldset class="theme-picker__options" id="appearance-options" hidden>
+          <legend class="visually-hidden">Website appearance</legend>
+          <label><input class="visually-hidden" type="radio" name="theme" value="ink" checked><span><span class="theme-picker__swatch theme-picker__swatch--ink" aria-hidden="true">Aa</span><span class="theme-picker__label">Light</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label><label><input class="visually-hidden" type="radio" name="theme" value="black"><span><span class="theme-picker__swatch theme-picker__swatch--black" aria-hidden="true">Aa</span><span class="theme-picker__label">Dark</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label><label><input class="visually-hidden" type="radio" name="theme" value="dark"><span><span class="theme-picker__swatch theme-picker__swatch--dark" aria-hidden="true">Aa</span><span class="theme-picker__label">Game</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></span></label>
+        </fieldset>
+      </div>
+      <details class="ink-menu"><summary><svg class="ink-menu-lines" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="ink-menu-close-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>Menu</summary><nav aria-label="Mobile navigation"><a href="/research/">Research<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/publications/">Publications<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/library/">Library<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/cv/" aria-current="page">CV<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="/#contact">Contact<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></nav></details>
     </div>
   </header>
   <main id="content">
     <section class="wrap page-head cv-head">
       <div>
         <h1>Curriculum vitae</h1>
-        <p>Naixu Guo, PhD candidate in computer science, Centre for Quantum Technologies, National University of Singapore.</p>
+        <p>Naixu Guo, Quantum-information researcher.</p>
         <ul class="page-head__links"><li><a href="mailto:naixug@u.nus.edu">Email</a></li><li><a href="https://scholar.google.com/citations?user=r2I_WtAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li><li><a href="https://arxiv.org/a/guo_n_2" target="_blank" rel="noopener noreferrer">arXiv</a></li><li><a href="https://github.com/Naixu-Guo" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/naixu-guo-a0567626a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
       </div>
       <button class="text-button" type="button" data-print>Print or save as PDF</button>
@@ -55,15 +70,15 @@
         <ol class="cv-rows">
 
           <li class="cv-row">
-            <span class="cv-row__date">2022 — 2026</span>
+            <span class="cv-row__date">2022–2026</span>
             <div>
               <p class="cv-row__title">PhD in Computer Science (Quantum Information)</p>
               <p class="cv-row__org">National University of Singapore</p>
-              <p class="cv-row__detail">Advisors: Patrick Rebentrost and Miklos Santha. Expected 2026.</p>
+              <p class="cv-row__detail">Advisors: Patrick Rebentrost and Miklos Santha.</p>
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">2020 — 2022</span>
+            <span class="cv-row__date">2020–2022</span>
             <div>
               <p class="cv-row__title">MEng in Electrical Engineering</p>
               <p class="cv-row__org">Osaka University</p>
@@ -71,7 +86,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">2016 — 2020</span>
+            <span class="cv-row__date">2016–2020</span>
             <div>
               <p class="cv-row__title">BEng in Applied Physics</p>
               <p class="cv-row__org">Kyoto University</p>
@@ -109,7 +124,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">2017 — 2022</span>
+            <span class="cv-row__date">2017–2022</span>
             <div>
               <p class="cv-row__title">Hirose International Scholarship</p>
               <p class="cv-row__org">Hirose Foundation</p>
@@ -117,7 +132,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">2016 — 2017</span>
+            <span class="cv-row__date">2016–2017</span>
             <div>
               <p class="cv-row__title">Monbukagakusho Honors Scholarship</p>
               <p class="cv-row__org">MEXT, Japan</p>
@@ -139,7 +154,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">Aug — Sep 2025</span>
+            <span class="cv-row__date">Aug–Sep 2025</span>
             <div>
               <p class="cv-row__title">University of Toronto</p>
               <p class="cv-row__org">Hosted by Alán Aspuru-Guzik</p>
@@ -163,7 +178,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">Jun — Jul 2024</span>
+            <span class="cv-row__date">Jun–Jul 2024</span>
             <div>
               <p class="cv-row__title">RWTH Aachen and Free University of Berlin</p>
               <p class="cv-row__org">Hosted by Mario Berta and Jens Eisert</p>
@@ -171,7 +186,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">Jul 2021 — Mar 2022</span>
+            <span class="cv-row__date">Jul 2021–Mar 2022</span>
             <div>
               <p class="cv-row__title">Nagoya University</p>
               <p class="cv-row__org">Hosted by François Le Gall</p>
@@ -179,7 +194,7 @@
             </div>
           </li>
           <li class="cv-row">
-            <span class="cv-row__date">Mar — Jul 2019</span>
+            <span class="cv-row__date">Mar–Jul 2019</span>
             <div>
               <p class="cv-row__title">Kyoto University</p>
               <p class="cv-row__org">Hosted by Keisuke Fujii</p>
@@ -219,15 +234,6 @@
         </ol>
       </section>
     </section></main>
-
-  <footer class="site-foot">
-    <div class="wrap">
-      <div class="site-foot__row">
-        <p><strong>Naixu Guo</strong> <span lang="zh">郭乃绪</span><br>Quantum algorithms, learning, and open-system dynamics.<br>Centre for Quantum Technologies, National University of Singapore</p>
-        <ul class="site-foot__links"><li><a href="mailto:naixug@u.nus.edu">Email</a></li><li><a href="https://scholar.google.com/citations?user=r2I_WtAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li><li><a href="https://arxiv.org/a/guo_n_2" target="_blank" rel="noopener noreferrer">arXiv</a></li><li><a href="https://github.com/Naixu-Guo" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/naixu-guo-a0567626a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
-      </div>
-      <p class="site-foot__meta">© 2026 Naixu Guo</p>
-    </div>
-  </footer>
+  <footer class="site-foot"><div class="wrap site-foot__closing"><p>© 2026 Naixu Guo</p><a href="#content">Back to top</a></div></footer>
 </body>
 </html>

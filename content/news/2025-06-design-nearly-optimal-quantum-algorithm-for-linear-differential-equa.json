@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-06-design-nearly-optimal-quantum-algorithm-for-linear-differential-equa",
+  "date": "2025-06",
+  "order": 20,
+  "content": "[Design nearly optimal quantum algorithm for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) accepted for a talk at AQIS 2025.",
+  "publicationIds": [
+    "arxiv-2410-19628"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2410.19628"
+    }
+  ]
+}

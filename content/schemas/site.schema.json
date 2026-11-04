@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "site content, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "nameZh": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "biography": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "institutionShort": {
+      "type": "string"
+    },
+    "advisors": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "identity": {
+      "type": "string"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "href"
+        ]
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inscription": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "titleLines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intro": {
+          "type": "string"
+        },
+        "questionLead": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "questionZh": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "inscription",
+        "title",
+        "titleLines",
+        "intro",
+        "questionLead",
+        "question",
+        "questionZh"
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "name",
+    "nameZh",
+    "email",
+    "role",
+    "biography",
+    "institution",
+    "institutionShort",
+    "advisors",
+    "location",
+    "identity",
+    "links",
+    "hero"
+  ]
+}

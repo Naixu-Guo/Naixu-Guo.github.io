@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2410-19628",
+  "order": 9,
+  "title": "Designing a Nearly Optimal Quantum Algorithm for Linear Differential Equations via Lindbladians",
+  "formerTitle": "Design nearly optimal quantum algorithm for linear differential equations via Lindbladians",
+  "authors": "Zhong-Xia Shang, **Naixu Guo**, Dong An, Qi Zhao",
+  "venue": "Physical Review Letters 135, 120604",
+  "short": "PRL 2025",
+  "year": 2025,
+  "category": "journal",
+  "arxiv": "2410.19628",
+  "journalLink": "https://doi.org/10.1103/cvl9-97qg",
+  "figure": "/figure/previews/LindbladODE.png",
+  "summary": "Linear differential equations encoded in Lindbladian dynamics, with query complexity close to the known lower bound under a plausible input model.",
+  "selected": true,
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2410.19628"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://doi.org/10.1103/cvl9-97qg"
+    }
+  ]
+}

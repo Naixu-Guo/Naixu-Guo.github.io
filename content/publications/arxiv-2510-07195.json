@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2510-07195",
+  "order": 5,
+  "title": "Accelerating Inference for Multilayer Neural Networks with Quantum Computers",
+  "authors": "Arthur G. Rattew, Po-Wei Huang, **Naixu Guo**, Lirandë Pira, Patrick Rebentrost",
+  "venue": "International Conference on Learning Representations (ICLR) 2026",
+  "short": "ICLR 2026",
+  "year": 2026,
+  "category": "conference",
+  "arxiv": "2510.07195",
+  "figure": "/figure/previews/QMultiNN.png",
+  "summary": "A quantum inference method for multilayer neural networks, with an analysis of when it improves on classical evaluation.",
+  "selected": true,
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2510.07195"
+    }
+  ]
+}

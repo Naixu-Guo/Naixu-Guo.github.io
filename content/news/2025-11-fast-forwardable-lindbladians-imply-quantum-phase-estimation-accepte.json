@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-11-fast-forwardable-lindbladians-imply-quantum-phase-estimation-accepte",
+  "date": "2025-11",
+  "order": 12,
+  "content": "[Fast-forwardable Lindbladians imply quantum phase estimation](https://arxiv.org/abs/2510.06759) accepted for a contributed talk at **QIP 2026**.",
+  "publicationIds": [
+    "arxiv-2510-06759"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2510.06759"
+    }
+  ]
+}

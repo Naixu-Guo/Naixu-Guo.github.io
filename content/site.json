@@ -1,0 +1,47 @@
+{
+  "$schema": "./schemas/site.schema.json",
+  "schemaVersion": 1,
+  "name": "Naixu Guo",
+  "nameZh": "郭乃绪",
+  "email": "naixug@u.nus.edu",
+  "role": "Quantum-information researcher",
+  "biography": "I completed my PhD at the Centre for Quantum Technologies, National University of Singapore, supervised by Patrick Rebentrost. I will soon join Alan Aspuru-Guzik at the University of Toronto as a postdoctoral researcher.",
+  "institution": "Centre for Quantum Technologies, National University of Singapore",
+  "institutionShort": "Centre for Quantum Technologies, NUS",
+  "advisors": "Patrick Rebentrost and Miklos Santha",
+  "location": "Singapore",
+  "identity": "Quantum computing and agents for science.",
+  "links": [
+    {
+      "label": "Google Scholar",
+      "href": "https://scholar.google.com/citations?user=r2I_WtAAAAAJ"
+    },
+    {
+      "label": "arXiv",
+      "href": "https://arxiv.org/a/guo_n_2"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Naixu-Guo"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/naixu-guo-a0567626a/"
+    }
+  ],
+  "hero": {
+    "inscription": [
+      "若遂平生济世愿",
+      "堂前应是佛拜我"
+    ],
+    "title": "Quantum Computing and Agents for Science",
+    "titleLines": [
+      "Quantum Computing",
+      "Agents for Science"
+    ],
+    "intro": "My research spans quantum computing and agents for science. I work on quantum algorithms and learning, and on ways to build and evaluate agents that carry out scientific research.",
+    "questionLead": "Beyond the immediate technical problems, I keep one wider question in view.",
+    "question": "If intelligence becomes as cheap and available as water and electricity, where does science go?",
+    "questionZh": "倘若智能如水电一样便宜、易得，科学将何去何从？"
+  }
+}

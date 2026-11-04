@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-02-started-a-two-month-research-internship-at-the-a-star-institute-of-h",
+  "date": "2026-02",
+  "order": 9,
+  "content": "Started a two-month research internship at the A*STAR Institute of High Performance Computing, hosted by Yunlong Xiao.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "author",
+      "note": "Preserved from the author’s existing website and records."
+    }
+  ]
+}

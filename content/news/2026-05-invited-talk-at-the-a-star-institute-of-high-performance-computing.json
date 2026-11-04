@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-05-invited-talk-at-the-a-star-institute-of-high-performance-computing",
+  "date": "2026-05",
+  "order": 8,
+  "content": "[Invited talk](https://www.linkedin.com/feed/update/urn:li:activity:7462363229818720256/) at the A*STAR Institute of High Performance Computing.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7462363229818720256/"
+    }
+  ]
+}

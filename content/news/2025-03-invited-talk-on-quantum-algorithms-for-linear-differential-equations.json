@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-03-invited-talk-on-quantum-algorithms-for-linear-differential-equations",
+  "date": "2025-03",
+  "order": 24,
+  "content": "Invited talk on [quantum algorithms for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at the University of Latvia, hosted by Andris Ambainis.",
+  "publicationIds": [
+    "arxiv-2410-19628"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2410.19628"
+    }
+  ]
+}

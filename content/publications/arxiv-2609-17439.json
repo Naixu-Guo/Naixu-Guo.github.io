@@ -1,0 +1,24 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2609-17439",
+  "order": 1,
+  "title": "Evaluating Verified Autonomy in Quantum Engineering",
+  "authors": "**Naixu Guo**, Changhao Li, Siyu Cheng, Qicheng Tang, Binzhao Luo, Bikun Li, Yuxuan Du, Shihao Ru, Jiaqi Cai",
+  "venue": "arXiv preprint",
+  "short": "arXiv 2026",
+  "year": 2026,
+  "category": "preprint",
+  "arxiv": "2609.17439",
+  "figure": "/assets/research/quantum-harbor-framework.webp",
+  "figureSurface": "slate",
+  "summary": "Quantum-Harbor provides a virtual laboratory for agent-operated quantum engineering; QIQCBench evaluates agents through recorded actions and independently verified conclusions.",
+  "selected": true,
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2609.17439"
+    }
+  ]
+}

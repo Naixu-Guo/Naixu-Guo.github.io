@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-08-awarded-the-research-excellence-scholarship-by-sandboxaq",
+  "date": "2025-08",
+  "order": 18,
+  "content": "Awarded the [Research Excellence Scholarship](https://www.sandboxaq.com/company/scholarships) by SandboxAQ.",
+  "publicationIds": [],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://www.sandboxaq.com/company/scholarships"
+    }
+  ]
+}

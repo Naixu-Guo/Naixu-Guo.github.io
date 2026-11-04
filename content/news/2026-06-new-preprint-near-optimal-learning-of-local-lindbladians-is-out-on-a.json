@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-06-new-preprint-near-optimal-learning-of-local-lindbladians-is-out-on-a",
+  "date": "2026-06",
+  "order": 6,
+  "content": "New paper: [Near-Optimal Learning of Local Lindbladians](https://arxiv.org/abs/2606.20535).",
+  "publicationIds": [
+    "arxiv-2606-20535"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2606.20535"
+    }
+  ]
+}

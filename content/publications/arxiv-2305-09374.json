@@ -1,0 +1,22 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2305-09374",
+  "order": 12,
+  "title": "Estimating properties of a quantum state by importance-sampled operator shadows",
+  "authors": "**Naixu Guo**, Feng Pan, Patrick Rebentrost",
+  "venue": "arXiv preprint",
+  "short": "arXiv 2023",
+  "year": 2023,
+  "category": "preprint",
+  "arxiv": "2305.09374",
+  "figure": "/figure/previews/operatorshadow.png",
+  "summary": "Importance-sampled operator shadows reduce the measurements needed to estimate selected properties of a quantum state.",
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2305.09374"
+    }
+  ]
+}

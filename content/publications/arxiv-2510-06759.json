@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2510-06759",
+  "order": 4,
+  "title": "Fast-forwardable Lindbladians imply quantum phase estimation",
+  "authors": "Zhong-Xia Shang, **Naixu Guo** (co-first author), Patrick Rebentrost, Alán Aspuru-Guzik, Tongyang Li, Qi Zhao",
+  "venue": "arXiv preprint (2025); contributed talk at QIP 2026",
+  "short": "arXiv 2025; QIP 2026 talk",
+  "year": 2025,
+  "category": "preprint",
+  "arxiv": "2510.06759",
+  "figure": "/figure/previews/lindff.png",
+  "summary": "Fast-forwardable Lindbladian dynamics can implement quantum phase estimation at the Heisenberg limit, connecting open-system simulation to a standard algorithmic primitive.",
+  "selected": true,
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2510.06759"
+    },
+    {
+      "kind": "web",
+      "url": "https://www.tongyangli.com/papers",
+      "note": "Coauthor publication list distinguishes the QIP 2026 contributed talk."
+    }
+  ]
+}

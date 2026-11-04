@@ -1,0 +1,27 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2108-11670",
+  "order": 13,
+  "title": "Quantum Alphatron: quantum advantage for learning with kernels and noise",
+  "authors": "Siyi Yang, **Naixu Guo**, Miklos Santha, Patrick Rebentrost",
+  "venue": "Quantum 7, 1174",
+  "short": "Quantum 2023",
+  "year": 2023,
+  "category": "journal",
+  "arxiv": "2108.11670",
+  "figure": "/figure/previews/QAlphatron.png",
+  "journalLink": "https://quantum-journal.org/papers/q-2023-11-08-1174/",
+  "summary": "Quantum versions of the Alphatron algorithm, with polynomial speedups for kernel evaluation in specified learning regimes.",
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2108.11670"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://quantum-journal.org/papers/q-2023-11-08-1174/"
+    }
+  ]
+}

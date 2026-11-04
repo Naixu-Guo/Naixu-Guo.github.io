@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-06-new-preprint-quantum-enhanced-rare-event-discovery-and-sampling-is-o",
+  "date": "2026-06",
+  "order": 7,
+  "content": "New paper: [Quantum enhanced rare event discovery and sampling](https://arxiv.org/abs/2606.06316).",
+  "publicationIds": [
+    "arxiv-2606-06316"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2606.06316"
+    }
+  ]
+}

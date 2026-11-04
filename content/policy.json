@@ -1,0 +1,18 @@
+{
+  "$schema": "./schemas/policy.schema.json",
+  "schemaVersion": 1,
+  "homeNewsLimit": 5,
+  "ownerNames": [
+    "Naixu Guo",
+    "Guo, Naixu"
+  ],
+  "excludedTitles": [
+    "COMPOSITE-STEM",
+    "AgentIF-OneDay",
+    "DeepMath-Creative"
+  ],
+  "sourceProfiles": {
+    "arxiv": "https://arxiv.org/a/guo_n_2",
+    "linkedin": "https://www.linkedin.com/in/naixu-guo-a0567626a/"
+  }
+}

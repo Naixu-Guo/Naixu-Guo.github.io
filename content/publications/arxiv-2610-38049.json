@@ -1,0 +1,22 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2610-38049",
+  "order": 0,
+  "title": "Perspective on AI and quantum open-source software",
+  "authors": "Changhao Li, Bradley A. Chase, Veena Vijayakumar, Mathys Rennela, Alessandro Cosentino, **Naixu Guo**, Sebastian Hassinger, Farrokh Labib, Seun Omonije, Patrick Rebentrost, Vincent Russo, Nathan Shammah, William J. Zeng, Ben Castanon",
+  "venue": "arXiv preprint",
+  "short": "arXiv 2026",
+  "year": 2026,
+  "category": "preprint",
+  "arxiv": "2610.38049",
+  "figure": "/assets/research/quantum-software-verification.svg",
+  "summary": "Verification practices and contribution standards for AI-assisted quantum open-source software, informed by public repositories and community surveys.",
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2610.38049"
+    }
+  ]
+}

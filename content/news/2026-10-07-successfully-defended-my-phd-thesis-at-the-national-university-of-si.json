@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-10-07-successfully-defended-my-phd-thesis-at-the-national-university-of-si",
+  "date": "2026-10-07",
+  "order": 1,
+  "content": "Successfully defended my PhD thesis at the National University of Singapore on 7 October.",
+  "publicationIds": [],
+  "verification": "author-confirmed",
+  "sources": [
+    {
+      "kind": "author",
+      "note": "Preserved from the author’s existing website and records."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2025-05-talk-on-quantum-algorithms-for-linear-differential-equations-via-lin",
+  "date": "2025-05",
+  "order": 21,
+  "content": "Talk on [quantum algorithms for linear differential equations via Lindbladians](https://arxiv.org/abs/2410.19628) at the joint CQT–MCQST workshop.",
+  "publicationIds": [
+    "arxiv-2410-19628"
+  ],
+  "verification": "inherited",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://arxiv.org/abs/2410.19628"
+    }
+  ]
+}
