@@ -266,11 +266,18 @@ function header(active) {
   </header>`;
 }
 
+function emailControl(className = "") {
+  const { local, domain } = SITE.email;
+  const encoded = Buffer.from(`${local}@${domain}`, "utf8").toString("base64");
+  const fallback = `${local} [at] ${domain.replaceAll(".", " [dot] ")}`;
+  return `<button class="email-link ${className}" type="button" data-email="${encoded}" aria-label="Email Naixu Guo" hidden>Email</button><noscript><span class="email-fallback">${escapeHtml(fallback)}</span></noscript>`;
+}
+
 function contactLinks(className, labels = []) {
-  const allItems = [{ label: "Email", href: `mailto:${SITE.email}` }, ...SITE.links];
+  const allItems = [{ label: "Email", isEmail: true }, ...SITE.links];
   const items = labels.length ? allItems.filter((item) => labels.includes(item.label)) : allItems;
   return `<ul class="${className}">${items
-    .map((item) => `<li>${item.href.startsWith("mailto:") ? `<a href="${safeHref(item.href)}">${escapeHtml(item.label)}</a>` : ext(item.label, item.href)}</li>`)
+    .map((item) => `<li>${item.isEmail ? emailControl() : ext(item.label, item.href)}</li>`)
     .join("")}</ul>`;
 }
 
@@ -366,7 +373,6 @@ function homePage() {
     name: SITE.name,
     alternateName: SITE.nameZh,
     url: `${baseUrl}/`,
-    email: `mailto:${SITE.email}`,
     jobTitle: SITE.role,
     alumniOf: { "@type": "Organization", name: SITE.institution },
     knowsAbout: ["Quantum computing", "Agents for science", "Quantum algorithms", "Quantum learning theory", "Quantum machine learning", "Open quantum systems"],
@@ -413,7 +419,7 @@ function homePage() {
           </div>
           <section class="home-contact" id="contact" aria-labelledby="home-contact-title">
             <h3 class="visually-hidden" id="home-contact-title">Contact</h3>
-            <a class="home-contact__email" href="mailto:${escapeHtml(SITE.email)}">${escapeHtml(SITE.email)}</a>
+            ${emailControl("home-contact__email")}
             ${contactLinks("home-contact__links", ["Google Scholar", "arXiv", "GitHub", "LinkedIn"])}
           </section>
         </section>

@@ -133,3 +133,7 @@ Home retains What I’m working on, its two commitments, supporting QIQCOP parag
 ## Research introduction deduplication (2026-11-04)
 
 The user rejects the stacked scope sentence, Toward QuantumAGI heading and paragraph. Current Research header is one h1, one concise summary paragraph, then direction navigation. Render perspective.text only; perspective.title is metadata. The paragraph preserves the tentative long-term QuantumAGI ambition. This supersedes the previous recommendation to prepend a current-work overview. No duplicated topic list or second introductory heading.
+
+## Contact control (2026-11-04)
+
+Home and CV display an Email button, using the author-requested Gmail. It retains underlined link styling and44px keyboard-accessible target, with recipient decoding only on activation. No complete address in rendered markup/JSON-LD; [at]/[dot] no-JavaScript fallback. Content stores email.local/email.domain for human and agent maintenance. This supersedes the prior visible institutional email.

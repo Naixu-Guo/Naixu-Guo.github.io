@@ -17,7 +17,14 @@
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local", "domain"],
+      "properties": {
+        "local": { "type": "string", "pattern": "^[A-Za-z0-9._%+-]+$" },
+        "domain": { "type": "string", "pattern": "^[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+$" }
+      },
+      "description": "Public contact address in separate human-editable parts. Render only an Email control; do not publish a complete address or mailto in page source."
     },
     "role": {
       "type": "string"

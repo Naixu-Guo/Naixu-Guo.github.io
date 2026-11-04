@@ -26,7 +26,7 @@ function environment({ saved = null, legacySaved = null, blocked = false, reduce
     location: {hash:"", replace(){}},
     localStorage: {getItem(k) {if(blocked) throw new Error("unavailable");return values.get(k);},setItem(k,v) {if(blocked) throw new Error("unavailable");values.set(k,v);}},
     matchMedia(q) {return q.includes("reduced-motion") ? reducedMedia : {matches:true};},
-    innerWidth:1440,innerHeight:900,setTimeout,clearTimeout,
+    innerWidth:1440,innerHeight:900,setTimeout,clearTimeout,atob,
   });
   return {context,root,elements,button,buttonEvents,documentEvents,windowEvents,reducedMedia,mediaEvents,values,styles};
 }
@@ -59,6 +59,31 @@ test("every route opens in Light despite a legacy Game preference", async () => 
     assert.equal(env.root.dataset.theme, "ink", `${route}: old tabs cannot restore Game`);
     assert.equal(env.values.get("ng-appearance"), null, "only an explicit choice should be saved");
   }
+});
+
+test("Email controls reveal the configured contact only on activation", async () => {
+  const { SITE } = await loadSiteData();
+  const address = `${SITE.email.local}@${SITE.email.domain}`;
+  for (const route of ["index.html", "cv/index.html"]) {
+    const source = await readFile(new URL(`../${route}`, import.meta.url), "utf8");
+    assert.ok(!source.includes(address), 'Do not expose the complete address in HTML or structured data');
+    assert.doesNotMatch(source, /mailto:|@u\.nus\.edu/);
+    const encoded = source.match(/data-email="([^"]+)"/)?.[1];
+    assert.equal(atob(encoded), address);
+    const handlers = {};
+    const button = {dataset:{email:encoded},hidden:true,addEventListener(name,fn){handlers[name]=fn;}};
+    const env = environment();
+    env.context.document.querySelectorAll = selector => selector === '[data-email]' ? [button] : [];
+    vm.runInContext(bootstrap, env.context);
+    vm.runInContext(controller, env.context);
+    assert.equal(button.hidden, false);
+    assert.equal(env.context.location.href, undefined, 'Loading the page must not open a mail client');
+    handlers.click();
+    assert.equal(env.context.location.href, `mailto:${address}`);
+    assert.ok(source.includes(`${SITE.email.local} [at] ${SITE.email.domain.replaceAll('.', ' [dot] ')}`), 'No-JavaScript visitors retain a readable contact');
+  }
+  const record = await readFile(new URL('../content/site.json', import.meta.url), 'utf8');
+  assert.ok(!record.includes(address), 'The public content record stores separate editable parts');
 });
 
 test("motion is opt-in, bounded, persistent, and overridden by reduced motion",()=>{
@@ -235,7 +260,7 @@ test("Research curates themes; Publications retains every paper; home avoids rep
     assert.ok(html.includes(`href="${topic.researchHref || "/research/"}"`));
     assert.ok(html.includes(`id="${topic.id}"`));
   }
-  assert.ok(html.includes(`href="mailto:${SITE.email}"`));
+  assert.match(html, /class="email-link home-contact__email"/);
   const aboutText = html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ");
   for (const item of NEWS.slice(0, 5)) {
     assert.ok(html.includes(text(item.dateLabel)));

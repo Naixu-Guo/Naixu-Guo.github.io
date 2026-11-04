@@ -24,7 +24,7 @@ test('content contracts validate the catalog, precise dates and resolvable refer
  assert.ok(data.publications.length>=14);assert.ok(data.news.length>=25);
  assert.equal(data.policy.homeNewsLimit,5);assert.ok(isValidDate('2024-02-29'));assert.ok(!isValidDate('2025-02-29'));assert.ok(!isValidDate('2026-13'));
  const renamed=structuredClone(data);renamed.publications.find(p=>p.arxiv==='2609.17439').title='A corrected paper title';await validateContent(renamed);
- for(const mutate of [d=>d.publications.push({...d.publications[0],id:'duplicate'}),d=>d.research.directions[0].visuals[0].publicationId='missing',d=>d.news[0].date='2026-02-30',d=>d.publications[0].figure='/../secret',d=>d.publications[0].journalLink='javascript:alert(1)',d=>d.site.unusedField='typo']){
+ for(const mutate of [d=>d.publications.push({...d.publications[0],id:'duplicate'}),d=>d.research.directions[0].visuals[0].publicationId='missing',d=>d.news[0].date='2026-02-30',d=>d.publications[0].figure='/../secret',d=>d.publications[0].journalLink='javascript:alert(1)',d=>d.site.unusedField='typo',d=>d.site.email.local='invalid@name',d=>d.site.email.domain='gmail.com?bcc=someone']){
   const invalid=structuredClone(data);mutate(invalid);await assert.rejects(validateContent(invalid));
  }
  for(const title of data.policy.excludedTitles){const invalid=structuredClone(data);invalid.publications[0].title=title;await assert.rejects(validateContent(invalid),/Excluded/);}

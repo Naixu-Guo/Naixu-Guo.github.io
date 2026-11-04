@@ -155,3 +155,12 @@ document.addEventListener("pointerdown", (event) => {
 mobileMenu?.addEventListener("focusout", (event) => {
   if (event.relatedTarget && !mobileMenu.contains(event.relatedTarget)) mobileMenu.open = false;
 });
+
+// Resolve contact details only after a visitor activates the Email control.
+// Obfuscation reduces simple address scraping; it is not access control.
+for (const button of document.querySelectorAll("[data-email]")) {
+  button.addEventListener("click", () => {
+    location.href = `mailto:${atob(button.dataset.email)}`;
+  });
+  button.hidden = false;
+}

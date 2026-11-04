@@ -490,6 +490,11 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .home-biography__research, .home-contact { margin-top: 28px; }
 .home-contact__links { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0; }
 .home-contact__email, .home-contact__links a { display: inline-flex; align-items: center; min-height: 44px; }
+.email-link { display:inline-flex; align-items:center; min-height:44px; padding:0; border:0; border-radius:0; background:none; color:var(--accent); font:inherit; text-align:left; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; cursor:pointer; }
+.email-link[hidden] { display:none; }
+.email-link:hover { color:var(--text); }
+.email-link:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+.email-fallback { overflow-wrap:anywhere; }
 .home-news__list { list-style: none; margin: 0; padding: 0; }
 .home-news__list li { padding-block: 16px; border-bottom: 1px solid var(--line); }
 .home-news__list .news-date { font-size: 13px; color: var(--text-3); }

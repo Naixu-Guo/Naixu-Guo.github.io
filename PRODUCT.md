@@ -30,6 +30,8 @@ The two main interests are Quantum Computing and Agents for Science. The quantum
 
 ## Brand Commitments
 
+- 2026-11-04 contact correction: use the author’s Gmail and show Email instead of a full address on Home and CV. Avoid a plain address in rendered source or Person structured data. Keep contact convenient through a deliberate click and readable no-JavaScript fallback; do not claim complete spam prevention. The human/agent content source must remain straightforward to update.
+
 - 2026-11-04 repeated-information correction: Research opens with one h1, one concise summary paragraph, then direction navigation. Remove the generic topic-list sentence and separate Toward QuantumAGI heading; both duplicated adjacent information. Shorten the summary without strengthening its tentative ambition. This supersedes the immediately preceding stacked introduction.
 
 - 2026-11-04 post-publication corrections: default to the white Light appearance. Ignore legacy `ng-theme` values, whose `dark` value would restore Game; save only new explicit choices under `ng-appearance`. Move the unchanged Toward QuantumAGI paragraph from Home to the Research opening summary (the author explicitly corrected the earlier bottom placement), while retaining the let’s talk invitation on Home. These corrections supersede earlier placement/default notes.

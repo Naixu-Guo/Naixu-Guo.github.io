@@ -2173,6 +2173,14 @@
         "rim": "#746C58",
         "selection": "Editorial choice after four-way comparison; user feedback pending"
       }
+    },
+    "contactPrivacy": {
+      "date": "2026-11-04",
+      "label": "Email",
+      "destination": "Author-requested Gmail",
+      "storage": "Separate email.local and email.domain in content/site.json",
+      "behavior": "Decode encoded recipient on explicit activation; do not render a complete address or mailto in HTML or JSON-LD. Provide an [at]/[dot] no-JavaScript fallback.",
+      "limitation": "Reduces simple scraping; not encryption or guaranteed spam prevention."
     }
   },
   "components": [

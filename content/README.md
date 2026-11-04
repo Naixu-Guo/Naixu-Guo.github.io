@@ -19,7 +19,7 @@ The desk remains available while its terminal process is running. Stop with Ctrl
 
 | File | What to edit |
 | --- | --- |
-| `site.json` | Name, biography, affiliation, email, social links and homepage copy |
+| `site.json` | Name, biography, affiliation, contact email (`email.local` and `email.domain`), social links and homepage copy |
 | `publications/<id>.json` | One paper or book, its venue, authors, summary, figure and sources. Optional `figureSurface`: `paper` (default) or `slate` for transparent artwork with light lettering; no image inversion |
 | `news/<id>.json` | One dated announcement and its sources |
 | `research.json` | Three research directions; short visual introductions and retained detailed notes |
@@ -38,6 +38,10 @@ Dates use `YYYY-MM` or `YYYY-MM-DD`. Preserve the precision of the evidence. Do 
 Publication `year` is the bibliographic/venue year, which can differ from its arXiv submission year. An accepted 2027 conference paper can be listed under 2027 before the conference occurs; keep **accepted** in `venue` and `short`. A conference talk is not an archival publication. Do not infer a job’s start date or a formally awarded degree from a defence announcement.
 
 Text is plain English with optional `**bold**` and `[label](https://example.com)` in fields supported by the renderer (authors, news and some CV text). Do not insert HTML. `figure` is an optional repository path under `/assets/` or `/figure/`. Put a new figure there first and retain its provenance/license sidecar. Do not replace an original research figure with an invented result.
+
+## Contact email
+
+The author chose Gmail for website contact and requested no complete visible address. `site.json` stores `email.local` (before the at sign) and `email.domain` separately; the local profile form edits these two fields directly. Keep both parts current together. The public Home and CV show an Email button. The build encodes its target, and the browser constructs a mailto only when the visitor activates it. Person structured data omits email. No-JavaScript visitors receive a readable [at]/[dot] fallback. This reduces simple scraping; it is not encryption or a guarantee against spam. Never put a complete address in page text, JSON-LD or a second public content field.
 
 ## Sources and verification
 

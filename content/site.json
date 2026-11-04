@@ -3,7 +3,10 @@
   "schemaVersion": 1,
   "name": "Naixu Guo",
   "nameZh": "郭乃绪",
-  "email": "naixug@u.nus.edu",
+  "email": {
+    "local": "naixuguo",
+    "domain": "gmail.com"
+  },
   "role": "Quantum-information researcher",
   "biography": "I completed my PhD at the Centre for Quantum Technologies, National University of Singapore, supervised by Patrick Rebentrost. I will soon join Alan Aspuru-Guzik at the University of Toronto as a postdoctoral researcher.",
   "institution": "Centre for Quantum Technologies, National University of Singapore",

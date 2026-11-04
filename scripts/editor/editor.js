@@ -31,7 +31,8 @@ function renderForm(){
   sourceInput.value=(current.record.sources||[]).filter(s=>s.url).map(s=>s.url).join('\n');
   sourceInput.addEventListener('input',()=>{delete current.record._sourceUrls;const old=current.record.sources||[];current.record.sources=sourceInput.value.split('\n').map(s=>s.trim()).filter(Boolean).map(url=>old.find(s=>s.url===url)||{kind:'web',url});if(!current.record.sources.length)current.record.sources=[{kind:'author',note:'Confirmed by Naixu Guo.'}];syncJSON();});
  }else if(current.collection==='site'){
-  for(const [label,key]of [['Name','name'],['Chinese name','nameZh'],['Email','email'],['Role','role'],['Institution','institution'],['Short institution','institutionShort'],['Location','location'],['Footer identity','identity']])field(label,key);
+  for(const [label,key]of [['Name','name'],['Chinese name','nameZh'],['Role','role'],['Institution','institution'],['Short institution','institutionShort'],['Location','location'],['Footer identity','identity']])field(label,key);
+  field('Email name','email.local',{help:'The part before @. The public page shows an Email button.'});field('Email domain','email.domain',{help:'For example gmail.com. Stored separately to avoid a complete address in the public source.'});
   field('Biography','biography',{wide:true,area:true});field('Research introduction','hero.intro',{wide:true,area:true});field('Personal question','hero.question',{wide:true,area:true});
  }
  $('#advanced').open=!['publications','news','site'].includes(current.collection);syncJSON();
