@@ -2,7 +2,7 @@
   "$schema": "../schemas/publication.schema.json",
   "schemaVersion": 1,
   "id": "arxiv-2610-38049",
-  "order": 0,
+  "order": 1,
   "title": "Perspective on AI and quantum open-source software",
   "authors": "Changhao Li, Bradley A. Chase, Veena Vijayakumar, Mathys Rennela, Alessandro Cosentino, **Naixu Guo**, Sebastian Hassinger, Farrokh Labib, Seun Omonije, Patrick Rebentrost, Vincent Russo, Nathan Shammah, William J. Zeng, Ben Castanon",
   "venue": "arXiv preprint",

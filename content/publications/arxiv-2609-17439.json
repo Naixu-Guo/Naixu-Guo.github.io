@@ -2,7 +2,7 @@
   "$schema": "../schemas/publication.schema.json",
   "schemaVersion": 1,
   "id": "arxiv-2609-17439",
-  "order": 1,
+  "order": 2,
   "title": "Evaluating Verified Autonomy in Quantum Engineering",
   "authors": "**Naixu Guo**, Changhao Li, Siyu Cheng, Qicheng Tang, Binzhao Luo, Bikun Li, Yuxuan Du, Shihao Ru, Jiaqi Cai",
   "venue": "arXiv preprint",

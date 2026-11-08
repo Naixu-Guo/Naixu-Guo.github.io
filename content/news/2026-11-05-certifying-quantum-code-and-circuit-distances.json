@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-11-05-certifying-quantum-code-and-circuit-distances",
+  "order": 0,
+  "date": "2026-11-05",
+  "publicationIds": [
+    "arxiv-2611-08247"
+  ],
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2611.08247"
+    }
+  ],
+  "content": "New paper: [Certifying quantum code and circuit distances at scale](https://arxiv.org/abs/2611.08247)."
+}

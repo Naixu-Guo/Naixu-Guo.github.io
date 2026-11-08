@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/publication.schema.json",
+  "schemaVersion": 1,
+  "id": "arxiv-2611-08247",
+  "order": 0,
+  "title": "Certifying quantum code and circuit distances at scale",
+  "authors": "Bin Cheng, **Naixu Guo**, Feng Pan",
+  "venue": "arXiv preprint",
+  "short": "arXiv 2026",
+  "year": 2026,
+  "category": "preprint",
+  "arxiv": "2611.08247",
+  "figure": "/assets/research/certified-code-circuit-distances.svg",
+  "summary": "Tropical partition functions, rank-based dynamic programming and weight-bounded search certify quantum code and circuit distances, supporting audits of published estimates and circuit design.",
+  "code": "https://github.com/Fanerst/tropidist",
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "arxiv",
+      "url": "https://arxiv.org/abs/2611.08247"
+    }
+  ]
+}
