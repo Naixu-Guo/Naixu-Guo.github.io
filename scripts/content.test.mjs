@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, cp, rm, readFile, writeFile, readdir } from 'node:fs/pr
 import path from 'node:path';
 import { once } from 'node:events';
 import { spawnSync } from 'node:child_process';
-import { root, readContent, validateContent, snapshot, prepareCandidate, applyCandidate, hash, serialize, isValidDate, recordPath } from './content.mjs';
+import { root, readContent, validateContent, snapshot, prepareCandidate, applyCandidate, hash, serialize, isValidDate, recordPath, publicationYear, comparePublications } from './content.mjs';
 import { importArxiv } from './content-cli.mjs';
 import { createContentServer } from './content-server.mjs';
 
@@ -18,6 +18,20 @@ async function fixture(t){
  return base;
 }
 async function draft(base){const data=await readContent(base),record=structuredClone(data.news[0]);record.content+=' Test update.';return {schemaVersion:1,collection:'news',id:record.id,baseHash:hash(data.news[0]),reason:'Test',record};}
+
+test('publication chronology follows initial arXiv submissions and preserves venue years',async()=>{
+ const {publications}=await readContent();
+ const ids=publications.map(p=>p.arxiv),soda=publications.find(p=>p.arxiv==='2606.20535');
+ assert.equal(publicationYear(soda),2026);assert.equal(soda.year,2027);assert.match(soda.venue,/SODA 2027.*accepted/);
+ assert.ok(ids.indexOf('2609.17439')<ids.indexOf(soda.arxiv));
+ assert.ok(ids.indexOf(soda.arxiv)<ids.indexOf('2606.06316'));
+ const journal=publications.find(p=>p.arxiv==='2309.09235');
+ assert.equal(publicationYear(journal),2023);assert.equal(journal.year,2026);
+ const records=[{id:'early',arxiv:'2606.00002',year:2030,order:0},{id:'late',arxiv:'2606.10000',year:2026,order:99},{id:'book',year:2026},{id:'older',year:2025}];
+ const before=serialize(records);
+ assert.deepEqual([...records].sort(comparePublications).map(p=>p.id),['late','early','book','older']);
+ assert.equal(serialize(records),before);assert.equal(publicationYear(records[2]),2026);
+});
 
 test('content contracts validate the catalog, precise dates and resolvable references',async()=>{
  const data=await readContent();await validateContent(data);

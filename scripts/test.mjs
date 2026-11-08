@@ -200,6 +200,11 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   const page = async name => readFile(new URL(`../${name}/index.html`, import.meta.url), "utf8");
   const publications = await page("publications"), research = await page("research"), library = await page("library"), cv = await page("cv");
   assert.equal((publications.match(/<li class="pub[ "-]/g) || []).length, PUBLICATIONS.length);
+  const sections = new Map([...publications.matchAll(/<section class="pub-year" aria-labelledby="year-(\d+)">([\s\S]*?)<\/section>/g)].map(match => [match[1],match[2]]));
+  assert.ok(sections.get('2026').includes('Near-Optimal Learning of Local Lindbladians'));
+  assert.match(sections.get('2026'), /SODA 2027.*accepted/);
+  assert.ok(sections.get('2023').includes('Provable learning of quantum states with graphical models'));
+  assert.ok(sections.get('2021').includes('Nonlinear transformation of complex amplitudes'));
   const paperActions = [...publications.matchAll(/<p class="pub__links">(.*?)<\/p>/gs)].map(match => match[1]);
   assert.equal(paperActions.length, PUBLICATIONS.length);
   assert.doesNotMatch(publications, /class="ink-only pub__figure"|class="pub__note ink-only"/);

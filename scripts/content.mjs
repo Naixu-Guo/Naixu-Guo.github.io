@@ -12,6 +12,16 @@ const validators = new Map();
 export const serialize = value => JSON.stringify(value,null,2)+'\n';
 export const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const normalizedTitle = value => value.normalize('NFKC').toLowerCase().replace(/[^a-z0-9]/g,'');
+// Modern arXiv IDs encode the original submission month and sequence, not revisions.
+function publicationChronology(publication) {
+  const match = /^(\d{2})(\d{2})\.(\d{4,5})$/.exec(publication.arxiv || '');
+  return match ? [2000 + Number(match[1]), Number(match[2]), Number(match[3])] : [publication.year, 0, 0];
+}
+export const publicationYear = publication => publicationChronology(publication)[0];
+export function comparePublications(a,b) {
+  const left=publicationChronology(a),right=publicationChronology(b);
+  return right[0]-left[0] || right[1]-left[1] || right[2]-left[2] || (a.order??9999)-(b.order??9999) || a.id.localeCompare(b.id);
+}
 export function recordPath(collection,id,base=root) {
   if(!collections.includes(collection) || !/^[a-z0-9]+(?:[.-][a-z0-9]+)*$/.test(id)) throw new Error('Invalid collection or ID.');
   if(singletons.includes(collection) && id!==collection) throw new Error('Document ID must equal its collection.');
@@ -33,7 +43,7 @@ export async function readContent(base=root) {
       data[name].push(record);
     }
   }
-  data.publications.sort((a,b)=>b.year-a.year||(a.order??9999)-(b.order??9999)||a.id.localeCompare(b.id));
+  data.publications.sort(comparePublications);
   data.news.sort((a,b)=>b.date.localeCompare(a.date)||(a.order??9999)-(b.order??9999)||a.id.localeCompare(b.id));
   return data;
 }

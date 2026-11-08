@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
-import { loadSiteData } from "./content.mjs";
+import { loadSiteData, publicationYear } from "./content.mjs";
 import { homeInterests } from "./ink-home.mjs";
 import { researchDiagram } from "./research-diagrams.mjs";
 import { buildIcons } from "./build-icons.mjs";
@@ -480,8 +480,9 @@ function publicationLinks(publication) {
 function publicationsPage() {
   const byYear = new Map();
   for (const publication of PUBLICATIONS) {
-    if (!byYear.has(publication.year)) byYear.set(publication.year, []);
-    byYear.get(publication.year).push(publication);
+    const firstYear = publicationYear(publication);
+    if (!byYear.has(firstYear)) byYear.set(firstYear, []);
+    byYear.get(firstYear).push(publication);
   }
   const years = Array.from(byYear.keys()).sort((a, b) => b - a);
   const scholar = SITE.links.find((link) => link.label === "Google Scholar");
@@ -490,7 +491,7 @@ function publicationsPage() {
   const body = `
     <section class="wrap page-head">
       <h1>Publications</h1>
-      <p>Papers and preprints. Also on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
+      <p>Papers and preprints, ordered by first arXiv submission. Also on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
       <nav class="page-head__nav" aria-label="Publication years">${years.map(y => `<a href="#year-${y}">${y}</a>`).join("")}</nav>
     </section>
     <section class="wrap">
