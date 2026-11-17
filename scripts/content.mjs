@@ -90,7 +90,7 @@ export async function validateContent(data,base=root) {
   const files=[];
   walk(data,(key,value)=>{
     if(key==='publicationId'&&!ids.has(value))throw new Error(`Unknown publication reference: ${value}`);
-    if(['href','url','link','journalLink','code','demoLink'].includes(key) && typeof value==='string') {
+    if(['href','url','link','journalLink','code','projectLink','demoLink'].includes(key) && typeof value==='string') {
       if(/^\/(?!\/)[a-zA-Z0-9/#?&=._-]*$/.test(value)&&!value.includes('..'))return;
       const u=new URL(value);
       if(!['https:','http:','mailto:'].includes(u.protocol))throw new Error(`Unsupported link: ${value}`);

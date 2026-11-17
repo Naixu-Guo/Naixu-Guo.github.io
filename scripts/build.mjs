@@ -472,6 +472,7 @@ function researchPage() {
 
 function publicationLinks(publication) {
   const links = [ext("Paper", paperHref(publication))];
+  if (publication.projectLink) links.push(ext("Project page", publication.projectLink));
   if (publication.code) links.push(ext("Code", publication.code));
   if (publication.media) links.push(ext(publication.media.label, publication.media.href));
   return `<p class="pub__links">${links.join("")}</p>`;

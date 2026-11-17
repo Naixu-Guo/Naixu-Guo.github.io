@@ -143,6 +143,11 @@
     "code": {
       "type": "string",
       "pattern": "^https?://"
+    },
+    "projectLink": {
+      "type": "string",
+      "pattern": "^https?://",
+      "description": "Official project or interactive showcase page."
     }
   },
   "required": [

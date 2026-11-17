@@ -38,11 +38,17 @@
       "kind": "web",
       "url": "https://www.36kr.com/p/4019848249118850",
       "note": "Authorized republication credited to Xinzhiyuan, dated 2026-10-10, explicitly linking arXiv:2609.17439. Checked 2026-11-17."
+    },
+    {
+      "kind": "web",
+      "url": "https://gauge-forge.com/qiqc",
+      "note": "Official GaugeForge QIQCBench showcase; verified in the browser on 2026-11-17 with the paper title and arXiv:2609.17439 link."
     }
   ],
   "media": {
     "label": "News coverage",
     "href": "https://www.36kr.com/p/4019848249118850"
   },
-  "code": "https://github.com/GaugeForge/Quantum-Harbor"
+  "code": "https://github.com/GaugeForge/Quantum-Harbor",
+  "projectLink": "https://gauge-forge.com/qiqc"
 }
