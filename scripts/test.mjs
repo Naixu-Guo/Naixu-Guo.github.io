@@ -204,7 +204,10 @@ test("Research curates themes; Publications retains every paper; home avoids rep
   assert.ok(sections.get('2026').includes('Near-Optimal Learning of Local Lindbladians'));
   assert.match(sections.get('2026'), /SODA 2027.*accepted/);
   assert.ok(sections.get('2023').includes('Provable learning of quantum states with graphical models'));
-  assert.ok(sections.get('2021').includes('Nonlinear transformation of complex amplitudes'));
+  assert.ok(sections.get('2024').includes('Nonlinear transformation of complex amplitudes'));
+  assert.ok(sections.get('2023').includes('Quantum Alphatron'));
+  assert.deepEqual([...sections.keys()],['2026','2025','2024','2023']);
+  assert.doesNotMatch(publications,/year-2021|ordered by first arXiv submission/);
   const paperActions = [...publications.matchAll(/<p class="pub__links">(.*?)<\/p>/gs)].map(match => match[1]);
   assert.equal(paperActions.length, PUBLICATIONS.length);
   assert.doesNotMatch(publications, /class="ink-only pub__figure"|class="pub__note ink-only"/);

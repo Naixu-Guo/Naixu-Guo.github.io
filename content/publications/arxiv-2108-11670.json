@@ -13,7 +13,7 @@
   "figure": "/figure/previews/QAlphatron.png",
   "journalLink": "https://quantum-journal.org/papers/q-2023-11-08-1174/",
   "summary": "Quantum versions of the Alphatron algorithm, with polynomial speedups for kernel evaluation in specified learning regimes.",
-  "verification": "inherited",
+  "verification": "source-checked",
   "sources": [
     {
       "kind": "arxiv",
@@ -22,6 +22,19 @@
     {
       "kind": "publisher",
       "url": "https://quantum-journal.org/papers/q-2023-11-08-1174/"
+    },
+    {
+      "kind": "publisher",
+      "url": "https://quantum-journal.org/papers/q-2023-11-08-1174/pdf/",
+      "note": "The published PDF footer states Accepted in Quantum 2023-07-31; the journal landing page confirms title, authors and bibliographic metadata. Checked 2026-11-17."
+    },
+    {
+      "kind": "author",
+      "note": "Author requested using the acceptance date for this publication in the website chronology on 2026-11-17."
     }
-  ]
+  ],
+  "chronology": {
+    "basis": "acceptance",
+    "date": "2023-07-31"
+  }
 }

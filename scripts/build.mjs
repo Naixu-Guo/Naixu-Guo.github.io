@@ -492,7 +492,7 @@ function publicationsPage() {
   const body = `
     <section class="wrap page-head">
       <h1>Publications</h1>
-      <p>Papers and preprints, ordered by first arXiv submission. Also on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
+      <p>Papers and preprints. Also on ${ext("arXiv", arxiv.href)} and ${ext("Google Scholar", scholar.href)}.</p>
       <nav class="page-head__nav" aria-label="Publication years">${years.map(y => `<a href="#year-${y}">${y}</a>`).join("")}</nav>
     </section>
     <section class="wrap">

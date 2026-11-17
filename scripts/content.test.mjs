@@ -19,7 +19,7 @@ async function fixture(t){
 }
 async function draft(base){const data=await readContent(base),record=structuredClone(data.news[0]);record.content+=' Test update.';return {schemaVersion:1,collection:'news',id:record.id,baseHash:hash(data.news[0]),reason:'Test',record};}
 
-test('publication chronology follows initial arXiv submissions and preserves venue years',async()=>{
+test('publication chronology honors selected acceptance dates and otherwise follows first arXiv submission',async()=>{
  const {publications}=await readContent();
  const ids=publications.map(p=>p.arxiv),soda=publications.find(p=>p.arxiv==='2606.20535');
  assert.equal(publicationYear(soda),2026);assert.equal(soda.year,2027);assert.match(soda.venue,/SODA 2027.*accepted/);
@@ -27,6 +27,15 @@ test('publication chronology follows initial arXiv submissions and preserves ven
  assert.ok(ids.indexOf(soda.arxiv)<ids.indexOf('2606.06316'));
  const journal=publications.find(p=>p.arxiv==='2309.09235');
  assert.equal(publicationYear(journal),2023);assert.equal(journal.year,2026);
+ const alphatron=publications.find(p=>p.arxiv==='2108.11670'),ntca=publications.find(p=>p.arxiv==='2107.10764');
+ assert.equal(alphatron.chronology.date,'2023-07-31');assert.equal(publicationYear(alphatron),2023);
+ assert.equal(ntca.chronology.date,'2024-09-25');assert.equal(publicationYear(ntca),2024);
+ assert.ok(ids.indexOf('2410.19628')<ids.indexOf(ntca.arxiv));assert.ok(ids.indexOf(ntca.arxiv)<ids.indexOf('2402.16714'));
+ assert.ok(ids.indexOf('2309.09235')<ids.indexOf(alphatron.arxiv));assert.ok(ids.indexOf(alphatron.arxiv)<ids.indexOf('2305.09374'));
+ assert.equal(Math.min(...publications.map(publicationYear)),2023);
+ const exceptions=publications.filter(p=>p.chronology).map(p=>p.arxiv).sort();assert.deepEqual(exceptions,['2107.10764','2108.11670']);
+ const accepted=[{id:'earlier',arxiv:'2107.10764',year:2025,chronology:{basis:'acceptance',date:'2024-09-01'}},{id:'later',arxiv:'2108.11670',year:2023,chronology:{basis:'acceptance',date:'2024-09-25'}}];
+ assert.deepEqual(accepted.sort(comparePublications).map(p=>p.id),['later','earlier']);
  const records=[{id:'early',arxiv:'2606.00002',year:2030,order:0},{id:'late',arxiv:'2606.10000',year:2026,order:99},{id:'book',year:2026},{id:'older',year:2025}];
  const before=serialize(records);
  assert.deepEqual([...records].sort(comparePublications).map(p=>p.id),['late','early','book','older']);
@@ -38,7 +47,7 @@ test('content contracts validate the catalog, precise dates and resolvable refer
  assert.ok(data.publications.length>=14);assert.ok(data.news.length>=25);
  assert.equal(data.policy.homeNewsLimit,5);assert.ok(isValidDate('2024-02-29'));assert.ok(!isValidDate('2025-02-29'));assert.ok(!isValidDate('2026-13'));
  const renamed=structuredClone(data);renamed.publications.find(p=>p.arxiv==='2609.17439').title='A corrected paper title';await validateContent(renamed);
- for(const mutate of [d=>d.publications.push({...d.publications[0],id:'duplicate'}),d=>d.research.directions[0].visuals[0].publicationId='missing',d=>d.news[0].date='2026-02-30',d=>d.publications[0].figure='/../secret',d=>d.publications[0].journalLink='javascript:alert(1)',d=>d.site.unusedField='typo',d=>d.site.email.local='invalid@name',d=>d.site.email.domain='gmail.com?bcc=someone']){
+ for(const mutate of [d=>d.publications.push({...d.publications[0],id:'duplicate'}),d=>d.research.directions[0].visuals[0].publicationId='missing',d=>d.news[0].date='2026-02-30',d=>d.publications[0].chronology={basis:'acceptance',date:'2024-02-30'},d=>d.publications[0].chronology={basis:'publication',date:'2024-02-20'},d=>d.publications[0].figure='/../secret',d=>d.publications[0].journalLink='javascript:alert(1)',d=>d.site.unusedField='typo',d=>d.site.email.local='invalid@name',d=>d.site.email.domain='gmail.com?bcc=someone']){
   const invalid=structuredClone(data);mutate(invalid);await assert.rejects(validateContent(invalid));
  }
  for(const title of data.policy.excludedTitles){const invalid=structuredClone(data);invalid.publications[0].title=title;await assert.rejects(validateContent(invalid),/Excluded/);}

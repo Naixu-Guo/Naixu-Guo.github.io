@@ -12,15 +12,20 @@ const validators = new Map();
 export const serialize = value => JSON.stringify(value,null,2)+'\n';
 export const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const normalizedTitle = value => value.normalize('NFKC').toLowerCase().replace(/[^a-z0-9]/g,'');
-// Modern arXiv IDs encode the original submission month and sequence, not revisions.
+// Use first arXiv submission unless the author explicitly selects acceptance chronology.
 function publicationChronology(publication) {
+  if (publication.chronology?.basis === 'acceptance') {
+    const [year,month,day] = publication.chronology.date.split('-').map(Number);
+    return [year,month,day,0];
+  }
   const match = /^(\d{2})(\d{2})\.(\d{4,5})$/.exec(publication.arxiv || '');
-  return match ? [2000 + Number(match[1]), Number(match[2]), Number(match[3])] : [publication.year, 0, 0];
+  // arXiv IDs encode month and sequence, not a day; retain that precision.
+  return match ? [2000 + Number(match[1]), Number(match[2]), 0, Number(match[3])] : [publication.year, 0, 0, 0];
 }
 export const publicationYear = publication => publicationChronology(publication)[0];
 export function comparePublications(a,b) {
   const left=publicationChronology(a),right=publicationChronology(b);
-  return right[0]-left[0] || right[1]-left[1] || right[2]-left[2] || (a.order??9999)-(b.order??9999) || a.id.localeCompare(b.id);
+  return right[0]-left[0] || right[1]-left[1] || right[2]-left[2] || right[3]-left[3] || (a.order??9999)-(b.order??9999) || a.id.localeCompare(b.id);
 }
 export function recordPath(collection,id,base=root) {
   if(!collections.includes(collection) || !/^[a-z0-9]+(?:[.-][a-z0-9]+)*$/.test(id)) throw new Error('Invalid collection or ID.');
@@ -80,6 +85,7 @@ export async function validateContent(data,base=root) {
   const ids=new Set(data.publications.map(p=>p.id));
   for(const p of data.publications) {
     if(excluded(p,data.policy))throw new Error(`Excluded by author: ${p.title}`);
+    if(p.chronology&&!isValidDate(p.chronology.date))throw new Error(`${p.id}: invalid chronology date ${p.chronology.date}`);
     if(!p.arxiv&&!p.journalLink)throw new Error(`${p.id}: provide an arXiv ID or publication link.`);
   }
   for(const n of data.news) {
