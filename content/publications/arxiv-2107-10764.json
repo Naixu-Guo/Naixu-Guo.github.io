@@ -13,7 +13,7 @@
   "figure": "/figure/previews/NonlinearAmplitude.png",
   "journalLink": "https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.043227",
   "summary": "Nonlinear transformations of complex amplitudes built from quantum singular value transformation and amplitude encoding.",
-  "verification": "inherited",
+  "verification": "source-checked",
   "sources": [
     {
       "kind": "arxiv",
@@ -22,6 +22,15 @@
     {
       "kind": "publisher",
       "url": "https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.043227"
+    },
+    {
+      "kind": "web",
+      "url": "https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes",
+      "note": "PennyLane demo published 2026-10-19; reference [3] identifies this paper. Checked 2026-11-17."
     }
-  ]
+  ],
+  "media": {
+    "label": "PennyLane demo",
+    "href": "https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes"
+  }
 }

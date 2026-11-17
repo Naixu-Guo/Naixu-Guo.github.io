@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/news.schema.json",
+  "schemaVersion": 1,
+  "id": "2026-10-19-pennylane-nonlinear-transformation-of-complex-amplitudes",
+  "verification": "source-checked",
+  "sources": [
+    {
+      "kind": "web",
+      "url": "https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes",
+      "note": "Published 2026-10-19. Authors: Naixu Guo, Rishabh Gupta, Po-Wei George Huang, Yizhan Han. Checked 2026-11-17."
+    }
+  ],
+  "date": "2026-10-19",
+  "content": "New tutorial on Xanadu's PennyLane: [Nonlinear transformation of complex amplitudes](https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes).",
+  "publicationIds": [
+    "arxiv-2107-10764"
+  ]
+}
