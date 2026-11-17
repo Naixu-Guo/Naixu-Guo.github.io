@@ -14,11 +14,35 @@
   "figureSurface": "slate",
   "summary": "Quantum-Harbor provides a virtual laboratory for agent-operated quantum engineering; QIQCBench evaluates agents through recorded actions and independently verified conclusions.",
   "selected": true,
-  "verification": "inherited",
+  "verification": "author-confirmed",
   "sources": [
     {
       "kind": "arxiv",
       "url": "https://arxiv.org/abs/2609.17439"
+    },
+    {
+      "kind": "web",
+      "url": "https://mp.weixin.qq.com/s/vEnKLcSPibQr3YyqrD0kQw",
+      "note": "Xinzhiyuan (新智元): 全球17大顶级AI实验室大逃杀！惨遭集体翻车，GPT-5.6与Opus断层领先。"
+    },
+    {
+      "kind": "author",
+      "note": "Naixu Guo confirmed the outlet, headline and connection to this paper on 2026-11-17. Existing paper metadata and summary are preserved."
+    },
+    {
+      "kind": "web",
+      "url": "https://github.com/GaugeForge/Quantum-Harbor",
+      "note": "The public repository README and citation identify the framework for arXiv:2609.17439. Checked 2026-11-17."
+    },
+    {
+      "kind": "web",
+      "url": "https://www.36kr.com/p/4019848249118850",
+      "note": "Authorized republication credited to Xinzhiyuan, dated 2026-10-10, explicitly linking arXiv:2609.17439. Checked 2026-11-17."
     }
-  ]
+  ],
+  "media": {
+    "label": "News coverage",
+    "href": "https://www.36kr.com/p/4019848249118850"
+  },
+  "code": "https://github.com/GaugeForge/Quantum-Harbor"
 }

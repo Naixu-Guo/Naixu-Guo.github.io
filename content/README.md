@@ -108,4 +108,4 @@ A future scheduled agent can collect → verify → prepare candidates → diff 
 
 Direct file edits are supported: run `npm run verify` afterward. Commit both content and regenerated public pages only at an approved milestone. The old `src/data/*.js` copies have been removed after migration equivalence checks to avoid a second source of truth.
 
-Publication actions use one **Paper** link (arXiv when present, otherwise the journal/book URL). Both source URLs and venue/status metadata remain editable. Figure source/license records belong beside the asset, not in the public `media` actions.
+Publication actions use one **Paper** link (arXiv when present, otherwise the journal/book URL). Populate `code` to display a **Code** link when a public companion repository or official code examples can be verified against the paper or project documentation. Check this when adding or updating publications; preserve existing links and do not infer a repository from its name alone. Both source URLs and venue/status metadata remain editable. Figure source/license records belong beside the asset, not in the public `media` actions.

@@ -18,11 +18,17 @@
   },
   "summary": "The operations inside a Transformer expressed through quantum linear-algebra routines, with the parameter regimes in which inference is faster.",
   "selected": true,
-  "verification": "inherited",
+  "verification": "source-checked",
   "sources": [
     {
       "kind": "arxiv",
       "url": "https://arxiv.org/abs/2402.16714"
+    },
+    {
+      "kind": "web",
+      "url": "https://github.com/Naixu-Guo/Quantum-Transformer",
+      "note": "The public repository description identifies this paper; the README describes its numerical experiments. Checked 2026-11-17."
     }
-  ]
+  ],
+  "code": "https://github.com/Naixu-Guo/Quantum-Transformer"
 }

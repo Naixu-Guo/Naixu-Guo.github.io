@@ -26,6 +26,12 @@
     {
       "kind": "publisher",
       "url": "https://link.springer.com/book/10.1007/978-981-95-1284-3"
+    },
+    {
+      "kind": "web",
+      "url": "https://qml-tutorial.github.io/code/",
+      "note": "The arXiv abstract links the official tutorial, whose Code Examples section contains implementations accompanying the tutorial. Checked 2026-11-17."
     }
-  ]
+  ],
+  "code": "https://qml-tutorial.github.io/code/"
 }

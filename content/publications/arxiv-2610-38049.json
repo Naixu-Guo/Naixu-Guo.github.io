@@ -17,6 +17,12 @@
     {
       "kind": "arxiv",
       "url": "https://arxiv.org/abs/2610.38049"
+    },
+    {
+      "kind": "web",
+      "url": "https://github.com/unitaryfoundation/ai4qoss",
+      "note": "The paper Data and code availability section and this public repository README identify the companion data and analysis code for arXiv:2610.38049. Checked 2026-11-17."
     }
-  ]
+  ],
+  "code": "https://github.com/unitaryfoundation/ai4qoss"
 }
