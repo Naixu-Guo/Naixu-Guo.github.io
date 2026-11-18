@@ -10,7 +10,7 @@
   "year": 2024,
   "category": "journal",
   "arxiv": "2107.10764",
-  "figure": "/figure/previews/NonlinearAmplitude.png",
+  "figure": "/figure/previews/NonlinearAmplitude-PennyLane.png",
   "journalLink": "https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.043227",
   "summary": "Nonlinear transformations of complex amplitudes built from quantum singular value transformation and amplitude encoding.",
   "verification": "source-checked",
@@ -26,7 +26,7 @@
     {
       "kind": "web",
       "url": "https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes",
-      "note": "PennyLane demo published 2026-10-19; reference [3] identifies this paper. Checked 2026-11-17."
+      "note": "PennyLane demo published 2026-10-19; reference [3] identifies this paper. Checked 2026-11-17. Figure 1 reused unchanged at the author’s request on 2026-11-18; asset provenance is recorded beside the image."
     },
     {
       "kind": "publisher",

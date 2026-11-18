@@ -1,0 +1,11 @@
+{
+  "title": "Figure 1: A schematic of the nonlinear transformation of complex amplitudes method with QSVT",
+  "source": "https://pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes",
+  "assetUrl": "https://blog-assets.cloud.pennylane.ai/demos/nonlinear_transformation_of_complex_amplitudes/main/_assets/images/pennylane-demo-nonlinear-transformation-of-complex-amplitudes-qsvt-method.png",
+  "credit": "PennyLane / Xanadu; tutorial by Naixu Guo, Rishabh Gupta, Po-Wei George Huang, and Yizhan Han",
+  "retrieved": "2026-11-18",
+  "usage": "Reused unchanged at the author\u2019s request for his NTCA publication entry. Original pixels, colors and aspect ratio retained.",
+  "sha256": "bbcf376d427813c85aec1c30c96f69a298d973bda226871fe1429cae37c018ff",
+  "width": 2500,
+  "height": 1201
+}
